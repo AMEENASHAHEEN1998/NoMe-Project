@@ -2,7 +2,7 @@
     <div class="navbar-header">
         <ul class="nav navbar-nav flex-row">
             <li class="nav-item me-auto"><a class="navbar-brand" href="{{-- route('site') --}}"><span class="brand-logo">
-                <svg viewbox="0 0 139 95" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                {{-- <svg viewbox="0 0 139 95" version="1.1" xmlns="http://www.w3.org/2000/svg"
                      xmlns:xlink="http://www.w3.org/1999/xlink" height="24">
                   <defs>
                     <lineargradient id="linearGradient-1" x1="100%" y1="10.5120544%" x2="50%" y2="89.4879456%">
@@ -32,8 +32,9 @@
                       </g>
                     </g>
                   </g>
-                </svg></span>
-                    <h2 class="brand-text">Vuexy</h2></a></li>
+                </svg></span> --}}
+                <img src="{{ asset('image/logo-3.png') }}" height="40px"/>
+                    <h2 class="brand-text" style="color:#b71f76" >متجر نو مي</h2></a></li>
             <li class="nav-item nav-toggle"><a class="nav-link modern-nav-toggle pe-0" data-bs-toggle="collapse"><i
                         class="d-block d-xl-none text-primary toggle-icon font-medium-4" data-feather="x"></i><i
                         class="d-none d-xl-block collapse-toggle-icon font-medium-4  text-primary" data-feather="disc"
