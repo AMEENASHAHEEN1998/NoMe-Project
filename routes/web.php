@@ -37,3 +37,7 @@ Route::prefix('/NoMe')->name('NoMe.')->group(function(){
     Route::get('productpage',[HomeController::class ,'productpage'])->name('productpage');
     Route::get('contact',[HomeController::class ,'contact'])->name('contact');
 });
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
