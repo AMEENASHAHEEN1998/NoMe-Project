@@ -1,7 +1,9 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\HomePageController;
+
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoryController;
 
 /*
@@ -18,6 +20,7 @@ use App\Http\Controllers\CategoryController;
 // Route::get('/', function () {
 //     return view('welcome');
 // });
+
 // Route::get('/', function () {
 //     return view('admin.index');
 // });
@@ -36,7 +39,28 @@ Route::name('NoMe.')->group(function(){
     Route::get('products',[HomeController::class ,'products'])->name('products');
     Route::get('productpage',[HomeController::class ,'productpage'])->name('productpage');
     Route::get('contact',[HomeController::class ,'contact'])->name('contact');
+
+Route::get('/categories', function () {
+    return view('admin.page.Category.index');
 });
+Route::get('/category/create', function () {
+    return view('admin.page.Category.create');
+});
+Route::get('/category/edit', function () {
+    return view('admin.page.Category.edit');
+});
+
+Route::prefix('/NoMe')->name('NoMe.')->group(function(){
+    Route::get('/',[HomePageController::class ,'home'])->name('home');
+    Route::get('about',[HomePageController::class ,'about'])->name('about');
+    Route::get('centers',[HomePageController::class ,'centers'])->name('centers');
+    Route::get('products',[HomePageController::class ,'products'])->name('products');
+    Route::get('productpage',[HomePageController::class ,'productpage'])->name('productpage');
+    Route::get('contact',[HomePageController::class ,'contact'])->name('contact');
+
+
+});
+
 
 Route::prefix('admin')->name('admin.')->group(function(){
     Route::get('/',[HomeController::class ,'control_panel'])->name('control_panel');
