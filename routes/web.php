@@ -38,8 +38,15 @@ Route::name('NoMe.')->group(function(){
     Route::get('productpage',[HomeController::class ,'productpage'])->name('productpage');
     Route::get('contact',[HomeController::class ,'contact'])->name('contact');
 });
+
 Route::prefix('admin')->name('admin.')->group(function(){
     Route::get('/',[HomeController::class ,'control_panel'])->name('control_panel');
     Route::resource('categories', CategoryController::class);
     Route::resource('products', ProductController::class);
 });
+
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
