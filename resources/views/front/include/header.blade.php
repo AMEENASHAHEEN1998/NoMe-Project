@@ -277,7 +277,7 @@
                     </div>
                     <div class="site-header__phone">
                         <div class="site-header__phone-title">خدمة العملاء</div>
-                        <div class="site-header__phone-number">059-250-2504</div>
+                        <div class="site-header__phone-number">059-722-8827</div>
                     </div>
                 </div>
                 <div class="site-header__nav-panel">
@@ -891,32 +891,26 @@
                                                 </div>
                                             </a>
                                         </li> -->
-                                        
+
                                     </ul>
                                 </div>
                                 <!-- .nav-links / end -->
                                 <div class="nav-panel__indicators" >
                                     <div class="indicator" style="margin-left: 10px;">
-                                        <a href="" style="color: #f5a1d1"  class="indicator__button">
+                                        <a href="https://www.facebook.com/NO.ME888/" style="color: #f5a1d1"  class="indicator__button">
 
                                             <i class="fa fa-facebook-square fa-1x" aria-hidden="true"></i>
                                         </a>
                                     </div>
-                                    <div class="indicator indicator--trigger--click" style="margin-left: 10px;">
-                                        <a href="" style="color: #f5a1d1" class="indicator__button">
+                                    <div class="indicator " style="margin-left: 10px;">
+                                        <a href="https://www.instagram.com/no.me.88/?utm_medium=copy_link" style="color: #f5a1d1" class="indicator__button">
 
                                             <i class="fa fa-instagram" aria-hidden="true"></i>
                                         </a>
 
                                     </div>
-                                    <!-- <div class="indicator indicator--trigger--click" style="margin-left: 5px;">
-                                        <a href="" style="color: #f5a1d1" class="indicator__button">
-
-                                            <i class="fa fa-twitter-square" aria-hidden="true"></i>
-                                        </a>
-                                    </div> -->
-                                    <div class="indicator indicator--trigger--click" style="margin-left: 10px;">
-                                        <a href="" style="color: #f5a1d1" class="indicator__button">
+                                    <div class="indicator " style="margin-left: 10px;">
+                                        <a href="https://wa.me/970597228827" style="color: #f5a1d1" class="indicator__button">
 
                                             <i class="fa fa-whatsapp" aria-hidden="true"></i>
                                         </a>

@@ -2,7 +2,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="format-detection" content="telephone=no">
 <title> @yield('title') </title>
-<link rel="shortcut icon" href="{{asset('front/css/image/logo.jpeg')}}}">
+<link rel="shortcut icon" href="{{asset('front/css/image/logo.jpeg')}}">
 
 <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&amp;display=swap" rel="stylesheet">
 <!-- css -->
