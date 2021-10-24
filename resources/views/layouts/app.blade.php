@@ -29,7 +29,7 @@
 </head>
 <body>
     {{-- <div id="aapp"> --}}
-            {{-- @guest
+            @guest
                            
             @else
                 
@@ -49,7 +49,7 @@
                         </form>
                     </div>
                 
-            @endguest --}}
+            @endguest
 
         {{-- <main class="py-4">
             @yield('content')
