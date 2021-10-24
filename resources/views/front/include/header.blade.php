@@ -50,7 +50,7 @@
                                     </span>
                                 </a>
                             </div>
-                            
+
                         </div>
                     </div>
                                 </div>
@@ -96,8 +96,8 @@
                                     </button>
                                 </div>
                             </div>
-                            
-                            
+
+
                             <div class="topbar__item">
                                 <div class="topbar-dropdown">
                                     <button class="topbar-dropdown__btn" type="button">
@@ -122,7 +122,7 @@
                     <div class="site-header__search">
                         <div class="search search--location--header ">
                             <div class="search__body">
-        
+
                                 <form class="search__form" action="/search" method="GET" style="margin-bottom: 0px;">
                                     <select class="search__categories" aria-label="Category" name="c">
                                         <option value="all">جميع التصنيفات</option>
@@ -292,19 +292,19 @@
                                             <div class="departments__links-wrapper">
                                                 <div class="departments__submenus-container"></div>
                                                 <ul class="departments__links">
-        
+
                                                     <li class="departments__item">
                                                     <a class="departments__item-link " href="/category/197" id="197">
                                                         أزياء نسائي
                                                         <i class="fa fa-arrow-right departments__item-arrow" width="6px" height="9px"></i>
-                                    
-                                                        
+
+
                                                     </a>
                                             <div class="departments__submenu departments__submenu--type--megamenu departments__submenu--size--lg">
                                 <!-- .megamenu -->
                                 <div class="megamenu  megamenu--departments ">
                                     <div class="megamenu__body">
-        
+
                                         <div class="row">
                                                                                     <div class="col-4">
                                                     <ul class="megamenu__links megamenu__links--level--0">
@@ -315,25 +315,25 @@
                                                                         <a href="/category/700">تبانات</a>
                                                                     </li>
                                                                 </ul>
-        
+
                                                                                                                     <ul class="megamenu__links megamenu__links--level--1">
                                                                     <li class="megamenu__item" id="5689">
                                                                         <a href="/category/5689">تي شيرت</a>
                                                                     </li>
                                                                 </ul>
-        
+
                                                                                                                     <ul class="megamenu__links megamenu__links--level--1">
                                                                     <li class="megamenu__item" id="5690">
                                                                         <a href="/category/5690">هوديز</a>
                                                                     </li>
                                                                 </ul>
-        
+
                                                                                                                     <ul class="megamenu__links megamenu__links--level--1">
                                                                     <li class="megamenu__item" id="5773">
                                                                         <a href="/category/5773">سواريه</a>
                                                                     </li>
                                                                 </ul>
-        
+
                                                                                                             </li>
                                                     </ul>
                                                 </div>
@@ -353,19 +353,19 @@
                                                                         <a href="/category/1911">بدل عرائس</a>
                                                                     </li>
                                                                 </ul>
-        
+
                                                                                                                     <ul class="megamenu__links megamenu__links--level--1">
                                                                     <li class="megamenu__item" id="5692">
                                                                         <a href="/category/5692">فساتين كاجوال</a>
                                                                     </li>
                                                                 </ul>
-        
+
                                                                                                                     <ul class="megamenu__links megamenu__links--level--1">
                                                                     <li class="megamenu__item" id="5693">
                                                                         <a href="/category/5693">فساتين سهرة</a>
                                                                     </li>
                                                                 </ul>
-        
+
                                                                                                             </li>
                                                     </ul>
                                                 </div>
@@ -406,19 +406,19 @@
                                                                         <a href="/category/5683">سليبرز</a>
                                                                     </li>
                                                                 </ul>
-        
+
                                                                                                                     <ul class="megamenu__links megamenu__links--level--1">
                                                                     <li class="megamenu__item" id="5684">
                                                                         <a href="/category/5684">سنيكرز</a>
                                                                     </li>
                                                                 </ul>
-        
+
                                                                                                                     <ul class="megamenu__links megamenu__links--level--1">
                                                                     <li class="megamenu__item" id="5685">
                                                                         <a href="/category/5685">كعب عالي</a>
                                                                     </li>
                                                                 </ul>
-        
+
                                                                                                             </li>
                                                     </ul>
                                                 </div>
@@ -466,19 +466,19 @@
                                                                         <a href="/category/1902">ملابس داخلي</a>
                                                                     </li>
                                                                 </ul>
-        
+
                                                                                                                     <ul class="megamenu__links megamenu__links--level--1">
                                                                     <li class="megamenu__item" id="5686">
                                                                         <a href="/category/5686">مايوهات سباحة</a>
                                                                     </li>
                                                                 </ul>
-        
+
                                                                                                                     <ul class="megamenu__links megamenu__links--level--1">
                                                                     <li class="megamenu__item" id="5687">
                                                                         <a href="/category/5687">قمصان نوم</a>
                                                                     </li>
                                                                 </ul>
-        
+
                                                                                                             </li>
                                                     </ul>
                                                 </div>
@@ -502,20 +502,20 @@
                                 <!-- .megamenu / end -->
                             </div>
                                     </li>
-                
-            
-            
+
+
+
                             <li class="departments__item">
                         <a class="departments__item-link " href="/category/198" id="198">
                             أزياء رجالي
                             <i class="fa fa-arrow-right departments__item-arrow" width="6px" height="9px"></i>
-                            
+
                         </a>
                                             <div class="departments__submenu departments__submenu--type--megamenu departments__submenu--size--sm">
                                 <!-- .megamenu -->
                                 <div class="megamenu  megamenu--departments ">
                                     <div class="megamenu__body">
-        
+
                                         <div class="row">
                                             <div class="col-12">
                                                 <ul class="megamenu__links megamenu__links--level--0">
@@ -558,20 +558,20 @@
                                     </div>
                                 </div>
                                     </div></li>
-                
-            
-            
+
+
+
                             <li class="departments__item">
                         <a class="departments__item-link " href="/category/199" id="199">
                             أطفال
                             <i class="fa fa-arrow-right departments__item-arrow" width="6px" height="9px"></i>
-                            
+
                         </a>
                                             <div class="departments__submenu departments__submenu--type--megamenu departments__submenu--size--sm">
                                 <!-- .megamenu -->
                                 <div class="megamenu  megamenu--departments ">
                                     <div class="megamenu__body">
-        
+
                                         <div class="row">
                                             <div class="col-12">
                                                 <ul class="megamenu__links megamenu__links--level--0">
@@ -596,20 +596,20 @@
                                     </div>
                                 </div>
                                     </div></li>
-                
-            
-            
+
+
+
                             <li class="departments__item">
                         <a class="departments__item-link " href="/category/201" id="201">
                             إكسسوارات الأزياء
                             <i class="fa fa-arrow-right departments__item-arrow" width="6px" height="9px"></i>
-                            
+
                         </a>
                                             <div class="departments__submenu departments__submenu--type--megamenu departments__submenu--size--sm">
                                 <!-- .megamenu -->
                                 <div class="megamenu  megamenu--departments ">
                                     <div class="megamenu__body">
-        
+
                                         <div class="row">
                                             <div class="col-12">
                                                 <ul class="megamenu__links megamenu__links--level--0">
@@ -625,20 +625,20 @@
                                     </div>
                                 </div>
                                     </div></li>
-                
-            
-            
+
+
+
                             <li class="departments__item">
                         <a class="departments__item-link " href="/category/221" id="221">
                             إكسسوارات موبايل
                             <i class="fa fa-arrow-right departments__item-arrow" width="6px" height="9px"></i>
-                            
+
                         </a>
                                             <div class="departments__submenu departments__submenu--type--megamenu departments__submenu--size--sm">
                                 <!-- .megamenu -->
                                 <div class="megamenu  megamenu--departments ">
                                     <div class="megamenu__body">
-        
+
                                         <div class="row">
                                             <div class="col-12">
                                                 <ul class="megamenu__links megamenu__links--level--0">
@@ -659,19 +659,19 @@
                                         </div>
                                     </div>
                                 </div>
-                                    </div></li>    
-            
+                                    </div></li>
+
                             <li class="departments__item">
                         <a class="departments__item-link " href="/category/1874" id="1874">
                             أدوات مكتبية
                             <i class="fa fa-arrow-right departments__item-arrow" width="6px" height="9px"></i>
-                            
+
                         </a>
                                             <div class="departments__submenu departments__submenu--type--megamenu departments__submenu--size--sm">
                                 <!-- .megamenu -->
                                 <div class="megamenu  megamenu--departments ">
                                     <div class="megamenu__body">
-        
+
                                         <div class="row">
                                             <div class="col-12">
                                                 <ul class="megamenu__links megamenu__links--level--0">
@@ -696,18 +696,18 @@
                                     </div>
                                 </div>
                                     </div></li>
-        
+
                             <li class="departments__item">
                         <a class="departments__item-link " href="/category/2465" id="2465">
                             مختارات وصلة
                             <i class="fa fa-arrow-right departments__item-arrow" width="6px" height="9px"></i>
-                            
+
                         </a>
                                             <div class="departments__submenu departments__submenu--type--megamenu departments__submenu--size--sm">
                                 <!-- .megamenu -->
                                 <div class="megamenu  megamenu--departments ">
                                     <div class="megamenu__body">
-        
+
                                         <div class="row">
                                             <div class="col-12">
                                                 <ul class="megamenu__links megamenu__links--level--0">
@@ -735,18 +735,18 @@
                                     </div>
                                 </div>
                                     </div></li>
-            
+
                             <li class="departments__item">
                         <a class="departments__item-link " href="/category/5681" id="5681">
                             مستلزمات منزلية
                             <i class="fa fa-arrow-right departments__item-arrow" width="6px" height="9px"></i>
-                            
+
                         </a>
                                             <div class="departments__submenu departments__submenu--type--megamenu departments__submenu--size--sm">
                                 <!-- .megamenu -->
                                 <div class="megamenu  megamenu--departments ">
                                     <div class="megamenu__body">
-        
+
                                         <div class="row">
                                             <div class="col-12">
                                                 <ul class="megamenu__links megamenu__links--level--0">
@@ -771,18 +771,18 @@
                                     </div>
                                 </div>
                                     </div></li>
-            
+
                             <li class="departments__item">
                         <a class="departments__item-link " href="/category/5682" id="5682">
                             مستلزمات رياضية
                             <i class="fa fa-arrow-right departments__item-arrow" width="6px" height="9px"></i>
-                            
+
                         </a>
                                             <div class="departments__submenu departments__submenu--type--megamenu departments__submenu--size--sm">
                                 <!-- .megamenu -->
                                 <div class="megamenu  megamenu--departments ">
                                     <div class="megamenu__body">
-        
+
                                         <div class="row">
                                             <div class="col-12">
                                                 <ul class="megamenu__links megamenu__links--level--0">
@@ -804,19 +804,19 @@
                                     </div>
                                 </div>
                                     </div></li>
-                
-            
+
+
                             <li class="departments__item">
                         <a class="departments__item-link " href="/category/6207" id="6207">
                             ماركات عالمية
                             <i class="fa fa-arrow-right departments__item-arrow" width="6px" height="9px"></i>
-                            
+
                         </a>
                                             <div class="departments__submenu departments__submenu--type--megamenu departments__submenu--size--sm">
                                 <!-- .megamenu -->
                                 <div class="megamenu  megamenu--departments ">
                                     <div class="megamenu__body">
-        
+
                                         <div class="row">
                                             <div class="col-12">
                                                 <ul class="megamenu__links megamenu__links--level--0">
@@ -841,7 +841,7 @@
                                     </div>
                                 </div>
                                     </div></li>
-        
+
                                                 </ul>
                                             </div>
                                         </div>
@@ -891,39 +891,33 @@
                                                 </div>
                                             </a>
                                         </li> -->
-                                        <li class="nav-links__item  nav-links__item--has-submenu ">
-                                            <a class="nav-links__item-link" href="{{route('NoMe.centers')}}">
-                                                <div class="nav-links__item-body">
-                                                    المراكز
-                                                </div>
-                                            </a>
-                                        </li>
+                                        
                                     </ul>
                                 </div>
                                 <!-- .nav-links / end -->
                                 <div class="nav-panel__indicators" >
                                     <div class="indicator" style="margin-left: 10px;">
                                         <a href="" style="color: #f5a1d1"  class="indicator__button">
-                                            
+
                                             <i class="fa fa-facebook-square fa-1x" aria-hidden="true"></i>
                                         </a>
                                     </div>
                                     <div class="indicator indicator--trigger--click" style="margin-left: 10px;">
                                         <a href="" style="color: #f5a1d1" class="indicator__button">
-                                            
+
                                             <i class="fa fa-instagram" aria-hidden="true"></i>
                                         </a>
-                                        
+
                                     </div>
                                     <!-- <div class="indicator indicator--trigger--click" style="margin-left: 5px;">
                                         <a href="" style="color: #f5a1d1" class="indicator__button">
-                                            
+
                                             <i class="fa fa-twitter-square" aria-hidden="true"></i>
                                         </a>
                                     </div> -->
                                     <div class="indicator indicator--trigger--click" style="margin-left: 10px;">
                                         <a href="" style="color: #f5a1d1" class="indicator__button">
-                                            
+
                                             <i class="fa fa-whatsapp" aria-hidden="true"></i>
                                         </a>
                                     </div>

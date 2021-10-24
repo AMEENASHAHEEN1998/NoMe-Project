@@ -31,9 +31,8 @@ use App\Http\Controllers\CategoryController;
 //     return view('admin.page.Category.edit');
 // });
 Route::name('NoMe.')->group(function(){
-    Route::get('/',[HomeController::class ,'home'])->name('home');
+    Route::get('/',[HomeController::class ,'index'])->name('home');
     Route::get('about',[HomeController::class ,'about'])->name('about');
-    Route::get('centers',[HomeController::class ,'centers'])->name('centers');
     Route::get('products',[HomeController::class ,'products'])->name('products');
     Route::get('productpage',[HomeController::class ,'productpage'])->name('productpage');
     Route::get('contact',[HomeController::class ,'contact'])->name('contact');
@@ -48,5 +47,5 @@ Route::prefix('admin')->name('admin.')->group(function(){
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+//Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
