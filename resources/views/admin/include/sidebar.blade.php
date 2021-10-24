@@ -56,11 +56,11 @@
             <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="hash"></i><span
                         class="menu-title text-truncate" data-i18n="Invoice">الأقسام</span></a>
                 <ul class="menu-content">
-                    <li><a class="d-flex align-items-center" href=""><i
+                    <li><a class="d-flex align-items-center" href="{{ route('admin.categories.index') }}"><i
                                 data-feather="circle"></i><span class="menu-item text-truncate"
                                                                 data-i18n="List">عرض الأقسام</span></a>
                     </li>
-                    <li><a class="d-flex align-items-center" href=""><i
+                    <li><a class="d-flex align-items-center" href="{{ route('admin.categories.create') }}"><i
                                 data-feather="circle"></i><span class="menu-item text-truncate"
                                                                 data-i18n="Preview">اضافة قسم</span></a>
                     </li>
@@ -69,11 +69,11 @@
             <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="feather"></i><span
                         class="menu-title text-truncate" data-i18n="Invoice">المنتجات</span></a>
                 <ul class="menu-content">
-                    <li><a class="d-flex align-items-center" href=""><i
+                    <li><a class="d-flex align-items-center" href="{{ route('admin.products.index') }}"><i
                                 data-feather="circle"></i><span class="menu-item text-truncate"
-                                                                data-i18n="List">غرض المنتجات</span></a>
+                                                                data-i18n="List">عرض المنتجات</span></a>
                     </li>
-                    <li><a class="d-flex align-items-center" href=""><i
+                    <li><a class="d-flex align-items-center" href="{{ route('admin.products.create') }}"><i
                                 data-feather="circle"></i><span class="menu-item text-truncate"
                                                                 data-i18n="Preview">اضافة منتج</span></a>
                     </li>

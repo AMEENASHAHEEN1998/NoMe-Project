@@ -28,7 +28,7 @@
                         </div>
                         <h2 class="text-white">Sorry, something went wrong</h2>
                         <p class="lead">The page you are looking for might have been removed had its name changed or is temporarily
-                            unavailable.</p><a class="btn btn-brand-03" href="{{ route('site') }}">Go to Homepage</a>
+                            unavailable.</p><a class="btn btn-brand-03" href="{{ route('NoMe.home') }}">Go to Homepage</a>
                     </div>
                 </div>
             </div>
