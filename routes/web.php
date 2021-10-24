@@ -1,12 +1,9 @@
 <?php
 
-<<<<<<< HEAD
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\HomePageController;
-=======
->>>>>>> f0bffcf0e86decee1edecc0f75b0c334677d1eb1
+
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CategoryController;
 
 /*
@@ -23,7 +20,7 @@ use App\Http\Controllers\CategoryController;
 // Route::get('/', function () {
 //     return view('welcome');
 // });
-<<<<<<< HEAD
+
 Route::get('/', function () {
     return view('admin.index');
 });
@@ -36,6 +33,7 @@ Route::get('/category/create', function () {
 Route::get('/category/edit', function () {
     return view('admin.page.Category.edit');
 });
+
 Route::prefix('/NoMe')->name('NoMe.')->group(function(){
     Route::get('/',[HomePageController::class ,'home'])->name('home');
     Route::get('about',[HomePageController::class ,'about'])->name('about');
@@ -43,28 +41,10 @@ Route::prefix('/NoMe')->name('NoMe.')->group(function(){
     Route::get('products',[HomePageController::class ,'products'])->name('products');
     Route::get('productpage',[HomePageController::class ,'productpage'])->name('productpage');
     Route::get('contact',[HomePageController::class ,'contact'])->name('contact');
-=======
-// Route::get('/', function () {
-//     return view('admin.index');
-// });
-// Route::get('/categories', function () {
-//     return view('admin.page.Category.index');
-// });
-// Route::get('/category/create', function () {
-//     return view('admin.page.Category.create');
-// });
-// Route::get('/category/edit', function () {
-//     return view('admin.page.Category.edit');
-// });
-Route::name('NoMe.')->group(function(){
-    Route::get('/',[HomeController::class ,'home'])->name('home');
-    Route::get('about',[HomeController::class ,'about'])->name('about');
-    Route::get('centers',[HomeController::class ,'centers'])->name('centers');
-    Route::get('products',[HomeController::class ,'products'])->name('products');
-    Route::get('productpage',[HomeController::class ,'productpage'])->name('productpage');
-    Route::get('contact',[HomeController::class ,'contact'])->name('contact');
->>>>>>> f0bffcf0e86decee1edecc0f75b0c334677d1eb1
+
+
 });
+
 
 Route::prefix('admin')->name('admin.')->group(function(){
     Route::get('/',[HomeController::class ,'control_panel'])->name('control_panel');
