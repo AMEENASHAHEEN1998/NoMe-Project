@@ -33,46 +33,32 @@
                                     <h4 class="card-title">تعديل قسم</h4>
                                 </div>
                                 <div class="card-body">
-                                    <form class="form" method="post" action="" enctype="multipart/form-data">
+                                    <form class="form" method="post" action="{{ route('admin.categories.update',$category->id) }}" enctype="multipart/form-data">
                                         @csrf
-                                                        <div class="row">
+                                        @method('patch')
+                                            <div class="row">
                                             <div class="col-md-4 col-12">
                                                 <div class="mb-1">
-                                                    <label class="form-label" for="title">اسم القسم</label>
+                                                    <label class="form-label" for="category_name">اسم القسم</label>
                                                     <input
                                                         type="text"
-                                                        id="title"
-                                                        class="form-control @error('title') is-invalid @enderror"
-                                                        placeholder="Please enter English title"
-                                                        name="title"
-                                                        value="{{ old('title')?? 'القيمة القديمة'?? '' }}"
+                                                        id="category_name"
+                                                        class="form-control @error('category_name') is-invalid @enderror"
+                                                        placeholder="ادخل اسم القسم"
+                                                        name="category_name"
+                                                        value="{{ old('category_name')?? old('category_name') ?? $category->category_name }}"
                                                     />
-                                                    @if($errors->has('title'))
+                                                    @if($errors->has('category_name'))
                                                         <div
-                                                            class="invalid-feedback">{{ $errors -> first('title') }}</div>
+                                                            class="invalid-feedback">{{ $errors -> first('category_name') }}</div>
                                                     @endif
                                                 </div>
                                             </div>
 
-                                            <div class="col-md-12 col-12">
-                                                <div class="mb-1">
-                                                    <label class="form-label" for="image-file"><img style="width: 150px; cursor: pointer" id="image" src="{{ asset($about->image?? '') }}" alt="image"></label>
-                                                    <input
-                                                        type="file"
-                                                        id="image-file"
-                                                        style="display: none"
-                                                        name="image"
-                                                        onchange="document.getElementById('image').src = window.URL.createObjectURL(this.files[0])"
-                                                    />
-                                                    @if($errors->has('image'))
-                                                        <div
-                                                            class="invalid-feedback">{{ $errors -> first('image') }}</div>
-                                                    @endif
-                                                </div>
-                                            </div>
+
                                             <div class="col-12">
                                                 <button type="submit" class="btn btn-primary me-1">تعديل</button>
-                                                <a href="" class="btn btn-outline-secondary">عودة</a>
+                                                <a href="{{ route('admin.categories.index') }}" class="btn btn-outline-secondary">عودة</a>
                                             </div>
                                         </div>
                                     </form>

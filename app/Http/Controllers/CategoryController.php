@@ -14,7 +14,8 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        //
+        $categories = category::orderBy('id' , 'desc')->get();
+        return view('admin.page.Category.index' , ['categories' => $categories]);
     }
 
     /**
@@ -24,7 +25,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.page.Category.create');
     }
 
     /**
@@ -35,7 +36,17 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        try{
+        $validated = $request->validate([
+            'category_name' => 'required',
+        ]);
+        // dd($request->all());
+        category::create(['category_name' => $request->category_name,]);
+
+        }catch (\Exception $e){
+            return redirect()->route('admin.categories.index')->with('warning','فشل في عملية انشاء القسم');
+        }
+        return redirect()->route('admin.categories.index')->with('success' , 'تم اضافة القسم بنجاح');
     }
 
     /**
@@ -57,7 +68,9 @@ class CategoryController extends Controller
      */
     public function edit(category $category)
     {
-        //
+        $category = category::findOrFail($category->id);
+
+        return view('admin.page.Category.edit',['category' =>$category]);
     }
 
     /**
@@ -69,7 +82,17 @@ class CategoryController extends Controller
      */
     public function update(Request $request, category $category)
     {
-        //
+        try{
+            $validated = $request->validate([
+                'category_name' => 'required',
+            ]);
+            // dd($request->all());
+            $category = category::findOrFail($category->id);
+            $category->update(['category_name' => $request->category_name,]);
+            }catch (\Exception $e){
+                return redirect()->route('admin.categories.index')->with('warning','فشل في عملية تعديل القسم');
+            }
+            return redirect()->route('admin.categories.index')->with('success' , 'تم تعديل القسم بنجاح');
     }
 
     /**
@@ -80,6 +103,8 @@ class CategoryController extends Controller
      */
     public function destroy(category $category)
     {
-        //
+        $category = category::findOrFail($category->id);
+        $category->delete();
+        return redirect()->route('admin.categories.index')->with('delete' , 'تم حذف القسم بنجاح');
     }
 }

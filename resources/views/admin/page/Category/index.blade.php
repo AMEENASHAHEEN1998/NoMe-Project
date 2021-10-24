@@ -40,10 +40,22 @@
                 <section id="responsive-datatable">
                     <div class="row">
                         <div class="col-12">
+                            @if (session('success'))
+                                <div class="alert alert-success">{{ session('success') }}</div>
+                            @endif
+                            @if (session('delete'))
+                                <div class="alert alert-success">{{ session('delete') }}</div>
+                            @endif
+                            @if (session('update'))
+                                <div class="alert alert-info">{{ session('update') }}</div>
+                            @endif
+                            @if (session('warning'))
+                                <div class="alert alert-danger">{{ session('warning') }}</div>
+                            @endif
                             <div class="card">
                                 <div class="card-header border-bottom">
                                     <h4 class="card-title">الأقسام</h4>
-                                    <a href=""
+                                    <a href="{{ route('admin.categories.create') }}"
                                        class="btn btn-primary me-1">اضافة قسم</a>
                                 </div>
                                 <div class="card-datatable">
@@ -52,18 +64,16 @@
                                         <tr>
                                             <th>#</th>
                                             <th>اسم القسم</th>
-                                            <th>صورة القسم</th>
                                             <th>تاريخ الاضافة</th>
                                             <th>العمليات</th>
                                         </tr>
                                         </thead>
                                         <tbody>
-
+                                            @forelse ($categories as $category )
                                             <tr>
-                                                <td>1</td>
-                                                <td>أحذية أطفال</td>
-                                                <td><img src="" width="100%" height="100px"/></td>
-                                                <td>1/1/2021</td>
+                                                <td>{{ $loop->iteration }}</td>
+                                                <td>{{ $category->category_name }}</td>
+                                                <td>{{ $category->created_at }}</td>
                                                 <td>
                                                     <div class="dropdown">
                                                         <button
@@ -76,23 +86,30 @@
                                                             </a>
                                                         </button>
                                                         <div class="dropdown-menu dropdown-menu-end">
-                                                            <a class="dropdown-item" href="">
+                                                            <a class="dropdown-item" href="{{ route('admin.categories.edit', $category->id ) }}">
                                                                 <i data-feather="edit-2" class="me-50"></i>
                                                                 <span>تعديل</span>
                                                             </a>
-                                                            <form class="dropdown-item" method="post" action="">
+                                                            <form class="dropdown-item" method="post" action="{{ route('admin.categories.destroy', $category->id ) }}">
                                                                 @csrf
                                                                 @method('delete')
                                                                 <i data-feather="trash" class="me-50"></i>
-                                                                <span><button style="background: none; border: none; outline: none" type="submit">حذف</button></span>
+                                                                <input type="hidden" value="{{ $category->id }}" name="id" />
+                                                                <span><button  style="background: none; border: none; outline: none" type="submit">حذف</button></span>
                                                             </form>
                                                         </div>
                                                     </div>
                                                 </td>
                                             </tr>
+                                            @empty
+                                            <tr colspan="3">لا يوجد أقسام</tr>
+                                            @endforelse
+
 
                                         </tbody>
                                     </table>
+
+                                    
                                 </div>
                             </div>
                         </div>
