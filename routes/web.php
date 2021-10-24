@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -27,4 +28,12 @@ Route::get('/category/create', function () {
 });
 Route::get('/category/edit', function () {
     return view('admin.page.Category.edit');
+});
+Route::prefix('/NoMe')->name('NoMe.')->group(function(){
+    Route::get('/',[HomeController::class ,'home'])->name('home');
+    Route::get('about',[HomeController::class ,'about'])->name('about');
+    Route::get('centers',[HomeController::class ,'centers'])->name('centers');
+    Route::get('products',[HomeController::class ,'products'])->name('products');
+    Route::get('productpage',[HomeController::class ,'productpage'])->name('productpage');
+    Route::get('contact',[HomeController::class ,'contact'])->name('contact');
 });
