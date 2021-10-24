@@ -33,22 +33,23 @@ use App\Http\Controllers\CategoryController;
 // Route::get('/category/edit', function () {
 //     return view('admin.page.Category.edit');
 // });
+Auth::routes();
 Route::name('NoMe.')->group(function(){
-    Route::get('/',[HomeController::class ,'index'])->name('home');
-    Route::get('about',[HomeController::class ,'about'])->name('about');
-    Route::get('products',[HomeController::class ,'products'])->name('products');
-    Route::get('productpage',[HomeController::class ,'productpage'])->name('productpage');
-    Route::get('contact',[HomeController::class ,'contact'])->name('contact');
-
-Route::get('/categories', function () {
-    return view('admin.page.Category.index');
+    Route::get('/', [HomeController::class ,'index'])->name('home');
+    Route::get('about', [HomeController::class ,'about'])->name('about');
+    Route::get('products', [HomeController::class ,'products'])->name('products');
+    Route::get('productpage', [HomeController::class ,'productpage'])->name('productpage');
+    Route::get('contact', [HomeController::class ,'contact'])->name('contact');
 });
-Route::get('/category/create', function () {
-    return view('admin.page.Category.create');
-});
-Route::get('/category/edit', function () {
-    return view('admin.page.Category.edit');
-});
+// Route::get('/categories', function () {
+//     return view('admin.page.Category.index');
+// });
+// Route::get('/category/create', function () {
+//     return view('admin.page.Category.create');
+// });
+// Route::get('/category/edit', function () {
+//     return view('admin.page.Category.edit');
+// });
 
 Route::prefix('/NoMe')->name('NoMe.')->group(function(){
     Route::get('/',[HomePageController::class ,'home'])->name('home');
@@ -69,7 +70,8 @@ Route::prefix('admin')->name('admin.')->group(function(){
 });
 
 
-Auth::routes();
+
 
 //Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
 
