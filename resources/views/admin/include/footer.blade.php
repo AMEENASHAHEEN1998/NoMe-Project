@@ -10,7 +10,14 @@
 
 <script src="{{ asset('dashboard/app-assets/js/core/app-menu.min.js') }}"></script>
 <script src="{{ asset('dashboard/app-assets/js/core/app.min.js') }}"></script>
-<script src='jquery.repeater.min.js'></script>
+<!-- jquery -->
+<script src="{{ URL::asset('dashboard/app-assets/js/jquery-3.3.1.min.js') }}"></script>
+<!-- plugins-jquery -->
+<script src="{{ URL::asset('dashboard/app-assets/js/plugins-jquery.js') }}"></script>
+<!-- plugin_path -->
+<script>
+    var plugin_path = 'js/';
+</script>
 <script>
     $(window).on('load',  function(){
         if (feather) {

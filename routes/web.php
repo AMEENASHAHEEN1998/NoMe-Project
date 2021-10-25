@@ -8,7 +8,6 @@ use App\Http\Controllers\ProductController;
 
 use App\Http\Controllers\CategoryController;
 
-use GuzzleHttp\Middleware;
 
 
 use App\Http\Controllers\HomePageController;
