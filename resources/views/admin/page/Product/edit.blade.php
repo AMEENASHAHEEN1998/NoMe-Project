@@ -1,6 +1,6 @@
 @extends('admin.layout')
 
-@section('title', "تعديل قسم"))
+@section('title', __('المنتجات'))
 
 @section('content')
     <div class="app-content content ">
@@ -11,12 +11,12 @@
                 <div class="content-header-left col-md-9 col-12 mb-2">
                     <div class="row breadcrumbs-top">
                         <div class="col-12">
-                            <h2 class="content-header-title float-start mb-0">تعديل قسم</h2>
+                            <h2 class="content-header-title float-start mb-0">تعديل منتج</h2>
                             <div class="breadcrumb-wrapper">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><a href="">لوحة التحكم</a>
                                     </li>
-                                    <li class="breadcrumb-item active"><a href="#">تعديل قسم</a>
+                                    <li class="breadcrumb-item active"><a href="#">تعديل منتج</a>
                                     </li>
                                 </ol>
                             </div>
@@ -30,51 +30,149 @@
                         <div class="col-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <h4 class="card-title">تعديل قسم</h4>
+                                    <h4 class="card-title">تعديل منتج</h4>
                                 </div>
                                 <div class="card-body">
-                                    <form class="form" method="post" action="" enctype="multipart/form-data">
+                                    <form class="form" method="post" action="{{route('admin.products.update',$products->id)}}" enctype="multipart/form-data">
                                         @csrf
-                                                        <div class="row">
+                                        @method('put')
+
+                                        
+                                        <div class="row">
+
                                             <div class="col-md-4 col-12">
                                                 <div class="mb-1">
-                                                    <label class="form-label" for="title">اسم القسم</label>
+                                                    <label class="form-label" for="name">اسم المنتج</label>
                                                     <input
                                                         type="text"
-                                                        id="title"
-                                                        class="form-control @error('title') is-invalid @enderror"
-                                                        placeholder="Please enter English title"
-                                                        name="title"
-                                                        value="{{ old('title')?? 'القيمة القديمة'?? '' }}"
+                                                        id="name"
+                                                        class="form-control @error('product_name') is-invalid @enderror"
+                                                        placeholder=" الرجاء ادخال اسم المنتج  "
+                                                        name="product_name"
+                                                        required
+                                                        value="{{ $products->product_name}}"
                                                     />
-                                                    @if($errors->has('title'))
+                                                    @if($errors->has('product_name'))
                                                         <div
-                                                            class="invalid-feedback">{{ $errors -> first('title') }}</div>
+                                                            class="invalid-feedback">{{ $errors -> first('product_name') }}</div>
                                                     @endif
                                                 </div>
-                                            </div>
-
-                                            <div class="col-md-12 col-12">
-                                                <div class="mb-1">
-                                                    <label class="form-label" for="image-file"><img style="width: 150px; cursor: pointer" id="image" src="{{ asset($about->image?? '') }}" alt="image"></label>
-                                                    <input
-                                                        type="file"
-                                                        id="image-file"
-                                                        style="display: none"
-                                                        name="image"
-                                                        onchange="document.getElementById('image').src = window.URL.createObjectURL(this.files[0])"
-                                                    />
-                                                    @if($errors->has('image'))
-                                                        <div
-                                                            class="invalid-feedback">{{ $errors -> first('image') }}</div>
-                                                    @endif
-                                                </div>
-                                            </div>
-                                            <div class="col-12">
-                                                <button type="submit" class="btn btn-primary me-1">تعديل</button>
-                                                <a href="" class="btn btn-outline-secondary">عودة</a>
                                             </div>
                                         </div>
+
+
+                                        <div class="row">
+                                            <div class="col-md-4 col-12">
+                                                <label for="name"
+                                                    class="mr-sm-2">اسم القسم
+                                                    :</label>
+
+                                                <div class="box col-md-12">
+                                                    <select class="form-control form-control-lg " name="category_id">
+                                                        @foreach ($categories as $category)
+                                                          
+                                                                <option value="{{ $category->id }}" @if ($category->id == $products->category_id) selected @endif >
+                                                                    {{ $category->category_name }}</option>
+
+
+
+                                                        @endforeach
+                                                    </select>
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+
+                                            <div class="col-md-4 col-12">
+                                                <div class="mb-1">
+                                                    <label class="form-label" for="price">السعر </label>
+                                                    <input
+                                                        type="text"
+                                                        id="price"
+                                                        required
+                                                        class="form-control @error('price') is-invalid @enderror"
+                                                        placeholder=" الرجاء ادخال سعر المنتج  "
+                                                        name="price"
+                                                        value="{{ $products->price}}"
+
+                                                    />
+                                                    @if($errors->has('price'))
+                                                        <div
+                                                            class="invalid-feedback">{{ $errors -> first('price') }}</div>
+                                                    @endif
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+
+                                            <div class="col-md-4 col-12">
+                                                <div class="mb-1">
+                                                    <label class="form-label" for="description">الوصف </label>
+                                                    <input
+                                                        type="text"
+                                                        id="description"
+                                                        class="form-control @error('description') is-invalid @enderror"
+                                                        placeholder=" الرجاء ادخال  وصف لمنتج  "
+                                                        name="description"
+                                                        value="{{ $products->description}}"
+                                                        required
+                                                    />
+                                                    @if($errors->has('description'))
+                                                        <div
+                                                            class="invalid-feedback">{{ $errors -> first('description') }}</div>
+                                                    @endif
+                                                </div>
+                                            </div>
+                                            
+
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-md-6">
+
+                                                <div class="form-group">
+                                                    <input type="checkbox" name="status_offer" class="switchery" data-color="success" 
+                                                    @if ($products->status_offer == 1) checked @endif value="{{$products->status_offer}}" />
+                                                    
+
+                                                    <label class="form-label" for="description">عرض </label>
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="row">
+                                
+                                            <div class="col">
+                                                <div class="form-group">
+                                                    <label
+                                                        for="exampleFormControlTextarea1">صورة لمنتج
+                                                        :</label>
+                                                    <input type="file" name="primary_image" class="form-control-file" 
+                                                        id="exampleFormControlFile1">
+
+                                                    <img src="{{asset('upload/admin/product/'.$products->primary_image)}}" style="width: 100px" alt="">
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <br>
+                                        <br>
+                                       
+
+                                            <div class="col-12">
+                                                <button type="submit" class="btn btn-primary me-1">حفظ</button>
+                                                <a href="" class="btn btn-outline-secondary">عودة</a>
+                                            </div>
+                                        
+
+
                                     </form>
                                 </div>
                             </div>
