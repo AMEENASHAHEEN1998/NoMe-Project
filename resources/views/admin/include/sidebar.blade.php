@@ -94,6 +94,21 @@
                     </li>
                 </ul>
             </li>
+
+            <li class=" nav-item"><a class="d-flex align-items-center" href="{{route('admin.users.index')}}"><i data-feather="users"></i><span
+                        class="menu-title text-truncate" data-i18n="Invoice">المستخدمين</span></a>
+                <ul class="menu-content">
+
+                    <li><a class="d-flex align-items-center" href="{{route('admin.users.index')}}"><i
+                                data-feather="circle"></i><span class="menu-item text-truncate"
+                                                                data-i18n="List">عرض المستخدمين</span></a>
+                    </li>
+                   
+                  
+                </ul>
+            </li>
+
+
             <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="briefcase"></i><span
                         class="menu-title text-truncate" data-i18n="Invoice">الطلبيات</span></a>
                 <ul class="menu-content">
