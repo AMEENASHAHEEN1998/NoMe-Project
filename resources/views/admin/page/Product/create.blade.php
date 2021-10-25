@@ -39,7 +39,7 @@
                                         
                                         <div class="row">
 
-                                            <div class="col-md-4 col-12">
+                                            <div class="col-md-4 col-6">
                                                 <div class="mb-1">
                                                     <label class="form-label" for="name">اسم المنتج</label>
                                                     <input
@@ -57,13 +57,10 @@
                                                     @endif
                                                 </div>
                                             </div>
-                                        </div>
 
-
-                                        <div class="row">
-                                            <div class="col-md-4 col-12">
+                                            <div class="col-md-4 col-6">
                                                 <label for="name"
-                                                    class="mr-sm-2">اسم القسم
+                                                    class="mr-sm-2"> اسم القسم الرئيسي
                                                     :</label>
 
                                                 <div class="box col-md-12">
@@ -81,7 +78,7 @@
 
                                         <div class="row">
 
-                                            <div class="col-md-4 col-12">
+                                            <div class="col-md-4 col-6">
                                                 <div class="mb-1">
                                                     <label class="form-label" for="price">السعر </label>
                                                     <input
@@ -99,11 +96,8 @@
                                                     @endif
                                                 </div>
                                             </div>
-                                        </div>
-
-                                        <div class="row">
-
-                                            <div class="col-md-4 col-12">
+                                        
+                                            <div class="col-md-4 col-6">
                                                 <div class="mb-1">
                                                     <label class="form-label" for="description">الوصف </label>
                                                     <input
@@ -113,7 +107,7 @@
                                                         placeholder=" الرجاء ادخال  وصف لمنتج  "
                                                         name="description"
                                                         value="{{ old('description') }}"
-                                                        required
+                                                        
                                                     />
                                                     @if($errors->has('description'))
                                                         <div
@@ -124,27 +118,13 @@
                                             
 
                                         </div>
-
-                                        <div class="row">
-                                            <div class="col-md-6">
-
-                                                <div class="form-group">
-                                                    <input type="checkbox" name="status_offer" class="switchery" data-color="success" value="1" />
-                                                    
-
-                                                    <label class="form-label" for="description">عرض </label>
-
-                                                </div>
-                                            </div>
-                                        </div>
-
-
+                                       
                                         <div class="row">
                                 
                                             <div class="col">
                                                 <div class="form-group">
                                                     <label
-                                                        for="exampleFormControlTextarea1">صورة لمنتج
+                                                        for="exampleFormControlTextarea1">صورة المنتج الرئيسية
                                                         :</label>
                                                     <input type="file" name="primary_image" class="form-control-file" required
                                                         id="exampleFormControlFile1">
@@ -152,6 +132,91 @@
                                             </div>
                                         </div>
 
+                                        <div class="repeater">
+                                            <div data-repeater-list="sizes">
+                                                <div data-repeater-item>
+                                                    <div class="row">
+                                                        <div class="col">
+                                                            <label class="form-label" for="name">ادخل المقاس </label>
+                                                                
+            
+                                                            <div class="box ">
+                                                                <input
+                                                                    type="text"
+                                                                    id="name"
+                                                                    class="form-control @error('product_name') is-invalid @enderror"
+                                                                    placeholder=" الرجاء ادخال المقاس  "
+                                                                    name="product_name"
+                                                                    required
+                                                                    value="{{ old('product_name') }}"
+                                                                />
+                                                                @if($errors->has('product_name'))
+                                                                    <div
+                                                                        class="invalid-feedback">{{ $errors -> first('product_name') }}</div>
+                                                                @endif
+                                                            </div> 
+                                                            
+            
+                                                        </div>
+                                                        <div class="col">
+                                                            <label for="Name_en"
+                                                                class="mr-sm-2">العمليات
+                                                                :</label>
+                                                            <input class="btn btn-danger btn-block" data-repeater-delete type="button"
+                                                                value="حذف المقاس" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+            
+                                            <div class="row">
+                                                <div class="row mt-20">
+                                                    <div class="col-12">
+                                                        <input class="button" data-repeater-create type="button"
+                                                            value="اضافة مقاس أخر" />
+                                                    </div>
+            
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="repeater">
+                                            <div data-repeater-list="images">
+                                                <div data-repeater-item>
+                                                    <div class="row">
+                                                        <div class="col">
+                                                            <label for="Name_en"
+                                                                class="mr-sm-2">اضافة صورة أخرى
+                                                                :</label>
+            
+                                                            <div class="box ">
+                                                                <input type="file" name="secand_image" class="form-control-file" 
+                                                                id="">
+                                                            </div>
+            
+                                                        </div>
+                                                        <div class="col">
+                                                            <label for="Name_en"
+                                                                class="mr-sm-2">العمليات
+                                                                :</label>
+                                                            <input class="btn btn-danger btn-block" data-repeater-delete type="button"
+                                                                value="حذف الصورة" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+            
+                                            <div class="row">
+                                                <div class="row mt-20">
+                                                    <div class="col-12">
+                                                        <input class="button" data-repeater-create type="button"
+                                                            value="اضافة صورة أخرى" />
+                                                    </div>
+            
+                                                </div>
+                                            </div>
+                                        </div>
+            
 
                                         <br>
                                         <br>

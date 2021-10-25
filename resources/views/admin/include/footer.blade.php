@@ -10,7 +10,7 @@
 
 <script src="{{ asset('dashboard/app-assets/js/core/app-menu.min.js') }}"></script>
 <script src="{{ asset('dashboard/app-assets/js/core/app.min.js') }}"></script>
-
+<script src='jquery.repeater.min.js'></script>
 <script>
     $(window).on('load',  function(){
         if (feather) {
