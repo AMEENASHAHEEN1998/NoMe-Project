@@ -1,12 +1,16 @@
 <?php
 
-use App\Http\Controllers\HomeController;
-use App\Http\Controllers\HomePageController;
-
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
+
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CategoryController;
+<<<<<<< HEAD
 use App\Http\Controllers\ProductController;
 use GuzzleHttp\Middleware;
+=======
+use App\Http\Controllers\HomePageController;
+>>>>>>> 95610aa367778a6294b9ec6810625843dcff2d4d
 
 /*
 |--------------------------------------------------------------------------
@@ -23,6 +27,7 @@ use GuzzleHttp\Middleware;
 //     return view('welcome');
 // });
 
+<<<<<<< HEAD
 Route::get('/', function () {
     return view('front.index');
 });
@@ -34,7 +39,37 @@ Route::get('/category/create', function () {
 });
 Route::get('/category/edit', function () {
     return view('admin.page.Category.edit');
+=======
+// Route::get('/', function () {
+//     return view('admin.index');
+// });
+// Route::get('/categories', function () {
+//     return view('admin.page.Category.index');
+// });
+// Route::get('/category/create', function () {
+//     return view('admin.page.Category.create');
+// });
+// Route::get('/category/edit', function () {
+//     return view('admin.page.Category.edit');
+// });
+Auth::routes();
+Route::name('NoMe.')->group(function(){
+    Route::get('/', [HomeController::class ,'index'])->name('home');
+    Route::get('about', [HomeController::class ,'about'])->name('about');
+    Route::get('products', [HomeController::class ,'products'])->name('products');
+    Route::get('productpage', [HomeController::class ,'productpage'])->name('productpage');
+    Route::get('contact', [HomeController::class ,'contact'])->name('contact');
+>>>>>>> 95610aa367778a6294b9ec6810625843dcff2d4d
 });
+// Route::get('/categories', function () {
+//     return view('admin.page.Category.index');
+// });
+// Route::get('/category/create', function () {
+//     return view('admin.page.Category.create');
+// });
+// Route::get('/category/edit', function () {
+//     return view('admin.page.Category.edit');
+// });
 
 
 Route::prefix('NoMe')->name('NoMe.')->group(function(){
@@ -54,7 +89,8 @@ Route::prefix('admin')->middleware('auth')->name('admin.')->group(function(){
 });
 
 
-Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+//Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
 

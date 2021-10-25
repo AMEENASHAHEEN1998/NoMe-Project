@@ -7,13 +7,13 @@
                         <div class="site-footer__widget footer-contacts">
                             <h5 class="footer-contacts__title">اتصل بنا</h5>
                             <div class="footer-contacts__text">
-                                شركة نو مي للتجارة العالية 
+                                شركة نو مي للتجارة العالية
                             </div>
                             <ul class="footer-contacts__contacts">
-                                <li><i class="footer-contacts__icon fa fa-globe"></i> فلسطين , غزة , شارع الوحدة , عمارة نابلس</li>
-                                <li><i class="footer-contacts__icon fa fa-envelope"></i> support@nome.com</li>
-                                <li><i class="footer-contacts__icon fa fa-mobile"></i> 059-250-2504 </li>
-                                
+                                <li><i class="footer-contacts__icon fa fa-globe"></i> فلسطين , غزة ,الرمال ,   مفترق السرايا</li>
+                                <li><i class="footer-contacts__icon fa fa-envelope"></i> nomeshoes@gmail.com</li>
+                                <li><i class="footer-contacts__icon fa fa-mobile"></i> 059-722-8827 </li>
+
                             </ul>
                         </div>
                     </div>
@@ -23,17 +23,16 @@
                         <div class="site-footer__widget footer-links">
                             <h5 class="footer-links__title">الصفحات</h5>
                             <ul class="footer-links__list">
-                                <li class="footer-links__item"><a href="index.html" class="footer-links__link" target="_blank">الرئيسية</a></li>
-                                <li class="footer-links__item"><a href="products.html" class="footer-links__link" target="_blank">المنتجات</a></li>
-                                <li class="footer-links__item"><a href="aboutus.html" class="footer-links__link" target="_blank">من نحن</a></li>
-                                <li class="footer-links__item"><a href="connectus.html" class="footer-links__link" target="_blank">تواصل معنا</a></li>
-                                <li class="footer-links__item"><a href="centers.html" class="footer-links__link" target="_blank">المراكز</a></li>
-                                
+                                <li class="footer-links__item"><a href="{{route('NoMe.home')}}" class="footer-links__link" target="_blank">الرئيسية</a></li>
+                                <li class="footer-links__item"><a href="{{route('NoMe.products')}}" class="footer-links__link" target="_blank">المنتجات</a></li>
+                                <li class="footer-links__item"><a href="{{route('NoMe.about')}}" class="footer-links__link" target="_blank">من نحن</a></li>
+                                <li class="footer-links__item"><a href="{{route('NoMe.contact')}}" class="footer-links__link" target="_blank">تواصل معنا</a></li>
+
                             </ul>
                         </div>
                     </div>
-                    
-                    
+
+
                 </div>
             </div>
             <div class="site-footer__bottom">

@@ -3,7 +3,7 @@
 @section('title', ' التواصل')
 
 @section('content')
-    
+
 <div class="site__body">
     <div class="page-header">
         <div class="page-header__container container">
@@ -52,6 +52,10 @@
                                 </div>
                                 <button type="submit" class="btn btn-primary">ارسال رسالة</button>
                             </form>
+                        </div>
+                        <div class="col-12">
+                            <img src="{{ asset('front/css/image/nome_contact.jpeg') }}" />
+
                         </div>
                     </div>
                 </div>
