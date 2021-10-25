@@ -4,11 +4,12 @@ use GuzzleHttp\Middleware;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\ProductController;
+use App\Http\Controllers\MailController;
 
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\HomePageController;
-use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -60,6 +61,10 @@ Route::prefix('NoMe')->name('NoMe.')->group(function(){
     Route::get('products',[HomePageController::class ,'products'])->name('products');
     Route::get('productpage',[HomePageController::class ,'productpage'])->name('productpage');
     Route::get('contact',[HomePageController::class ,'contact'])->name('contact');
+    Route::post('send-email', [MailController::class, 'sendEmail'])->name('send-email');
+    Route::get('send-email/index', [MailController::class, 'index'])->name('send-email.index');
+    // Route::post('send-email', [MailController::class, 'sendEmail'])->name('send-email');
+
 });
 
 
@@ -69,6 +74,7 @@ Route::prefix('admin')->middleware('auth','checkRole')->name('admin.')->group(fu
     Route::resource('products', ProductController::class);
     Route::resource('users', UserController::class);
 });
+
 
 
 
