@@ -3,9 +3,11 @@
 use GuzzleHttp\Middleware;
 use Illuminate\Support\Facades\Route;
 
-use App\Http\Controllers\HomeController;
-use App\Http\Controllers\ProductController;
 
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\MailController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CategoryController;
 
 
@@ -34,12 +36,17 @@ Route::get('/', function () {
 
 Auth::routes();
 
+
+
+
 Route::name('NoMe.')->group(function(){
-    Route::get('/', [HomeController::class ,'index'])->name('home');
-    Route::get('about', [HomeController::class ,'about'])->name('about');
-    Route::get('products', [HomeController::class ,'products'])->name('products');
-    Route::get('productpage', [HomeController::class ,'productpage'])->name('productpage');
-    Route::get('contact', [HomeController::class ,'contact'])->name('contact');
+    Route::get('/',[HomeController::class ,'home'])->name('home');
+    Route::get('about',[HomeController::class ,'about'])->name('about');
+    Route::get('products',[HomeController::class ,'products'])->name('products');
+    Route::get('productpage',[HomeController::class ,'productpage'])->name('productpage');
+    Route::get('contact',[HomeController::class ,'contact'])->name('contact');
+    Route::post('send-email', [MailController::class, 'sendEmail'])->name('send-email');
+    Route::get('send-email/index', [MailController::class, 'index'])->name('send-email.index');
 
 });
 
@@ -56,6 +63,11 @@ Route::prefix('admin')->middleware('auth','checkRole')->name('admin.')->group(fu
 
 
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 22b29fa86603c803052e76c38e4fa75547bc968e
 //Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 

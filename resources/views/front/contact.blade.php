@@ -31,24 +31,28 @@
                     <div class="document__content typography">
                         <div class="col-12">
                             <h4 class="contact-us__header card-title">تواصل معنا</h4>
-                            <form action="/connect" method="POST">
-                                <input type="hidden" name="_token" value="jPltwjuQpZppawltECo6QtvdVdcKFU6icjO2aj3I">                                <div class="form-row">
+                            <form action="{{route('NoMe.send-email')}}" method="post">
+                                @csrf
+                                <input type="hidden">                                
+                                <div class="form-row">
                                     <div class="form-group col-md-6">
                                         <label for="form-name">الاسم</label>
                                         <input type="text" id="form-name" class="form-control" placeholder="الاسم" name="name">
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label for="form-email">البريد الالكتروني</label>
-                                        <input type="email" id="form-email" class="form-control" placeholder="البريد الالكتروني">
+                                        <input type="email" id="form-email" name='email' class="form-control" placeholder="البريد الالكتروني">
                                     </div>
                                 </div>
+
+
                                 <div class="form-group">
                                     <label for="form-subject">العنوان</label>
-                                    <input type="text" id="form-subject" class="form-control" placeholder="العنوان" name="email">
+                                    <input type="text" id="form-subject" class="form-control" placeholder="العنوان" name="address">
                                 </div>
                                 <div class="form-group">
                                     <label for="form-message">الرسالة</label>
-                                    <textarea id="form-message" class="form-control" rows="4" name="content"></textarea>
+                                    <textarea id="form-message"  class="form-control" rows="4" name="content"></textarea>
                                 </div>
                                 <button type="submit" class="btn btn-primary">ارسال رسالة</button>
                             </form>
