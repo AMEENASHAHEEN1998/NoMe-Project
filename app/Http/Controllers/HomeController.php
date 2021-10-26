@@ -59,4 +59,22 @@ class HomeController extends Controller
 
         return view('front.contact',compact( 'categories' ,$categories));
     }
+    public function findProduct(Request $request)
+    
+    {
+
+        // return $request;
+        $search_text = $request->input('query');
+        $Products=[];
+
+        $Products =product::where('product_name', 'LIKE', '%' . $search_text . '%')->pluck('id')->toarray();
+        // $Products =product::where('product_name', 'LIKE',$search_text )->pluck('id')->toarray();
+    
+     
+        $products  = product::whereIn('id',$Products)->get();
+        $categories = category::orderBy('id' , 'desc')->get();
+
+
+        return view('front.products',compact('products' ,$products ,'categories' ,$categories));
+    }
 }

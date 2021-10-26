@@ -43,8 +43,11 @@ Route::name('NoMe.')->group(function(){
     Route::get('contact',[HomeController::class ,'contact'])->name('contact');
     Route::post('send-email', [MailController::class, 'sendEmail'])->name('send-email');
     Route::get('send-email/index', [MailController::class, 'index'])->name('send-email.index');
+    Route::get('findProduct',[HomeController::class ,'findProduct'])->name('findProduct');
 
 });
+
+
 
 
 
