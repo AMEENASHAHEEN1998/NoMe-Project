@@ -83,8 +83,17 @@
 
                                                 </td>
                                                 <td>
+                                                    
                                                     <div class="dropdown">
-                                                        
+                                                        <button
+                                                            type="button"
+                                                            class="btn btn-sm text-white dropdown-toggle hide-arrow py-0"
+                                                            data-bs-toggle="dropdown"
+                                                        >
+                                                            <a class="dropdown-item" href="#">
+                                                                <i data-feather="settings" class="me-50"></i>
+                                                            </a>
+                                                        </button>
                                                         <div class="dropdown-menu dropdown-menu-end">
                                                            
                                                             <form class="dropdown-item" method="post" action="{{route('admin.slider.destroy',$slider->id)}}">

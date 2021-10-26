@@ -36,9 +36,9 @@ class HomeController extends Controller
 
         $products = product::where('status_offer' , 0)->take(6)->get();
         $product = product::orderBy('id' , 'desc')->take(1)->get();
-        $slider = slider::all();
+        $sliders = slider::all();
 
-        return view('front.index',compact('latestProducts', $latestProducts , 'categories' ,$categories , 'offerProducts' , $offerProducts ,'products', $products ,'product' ,$product,'slider' ,$slider));
+        return view('front.index',compact('latestProducts', $latestProducts , 'categories' ,$categories , 'offerProducts' , $offerProducts ,'products', $products ,'product' ,$product,'sliders' ,$sliders));
 
     
     }

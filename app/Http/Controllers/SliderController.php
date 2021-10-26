@@ -64,7 +64,7 @@ class SliderController extends Controller
      */
     public function show($id)
     {
-        //
+        return view('errors.404');
     }
 
     /**
@@ -75,7 +75,7 @@ class SliderController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('errors.404');
     }
 
     /**
@@ -87,7 +87,7 @@ class SliderController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        return view('errors.404');
     }
 
     /**

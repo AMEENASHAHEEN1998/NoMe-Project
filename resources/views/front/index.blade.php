@@ -8,49 +8,7 @@
     <div class="block-slideshow block-slideshow--layout--with-departments block">
         <div class="container">
             <div class="row">
-                <!-- <div class="col-lg-3 d-none d-lg-block"></div>
-                <div class="col-12 col-lg-9">
-                    <div class="block-slideshow__body">
-                        <div class="owl-carousel owl-rtl owl-loaded owl-drag">
-                        
-                    <div class="owl-stage-outer"><div class="owl-stage" style="transform: translate3d(1680px, 0px, 0px); transition: all 0s ease 0s; width: 5880px;"><div class="owl-item cloned" style="width: 840px;"><a class="block-slideshow__slide" href="https://waslastore.ps/category/1874">
-                                <div class="block-slideshow__slide-image block-slideshow__slide-image--desktop" style="background-image: url('images/slider/1.jpg')">
-                                </div>
-                                <div class="block-slideshow__slide-image block-slideshow__slide-image--mobile" style="background-image: url(&quot; https://wasla-laravel.s3.me-south-1.amazonaws.com/images/sliders/eejVrGaukyTdgpxbVZgTOIqdENGUgXVRrzEqS4rE.png &quot;)">
-                                </div>
-                            </a></div><div class="owl-item cloned" style="width: 840px;"><a class="block-slideshow__slide" href="https://waslastore.ps/products/1024">
-                                <div class="block-slideshow__slide-image block-slideshow__slide-image--desktop" style="background-image: url(&quot; https://wasla-laravel.s3.me-south-1.amazonaws.com/images/sliders/pBQMIa3Qd1MopG8sDfsVo6mNV1g9F8yAEWpphMbB.png &quot;)">
-                                </div>
-                                <div class="block-slideshow__slide-image block-slideshow__slide-image--mobile" style="background-image: url(&quot; https://wasla-laravel.s3.me-south-1.amazonaws.com/images/sliders/pBQMIa3Qd1MopG8sDfsVo6mNV1g9F8yAEWpphMbB.png &quot;)">
-                                </div>
-                            </a></div><div class="owl-item active" style="width: 840px;"><a class="block-slideshow__slide" href="https://waslastore.ps/search?c=all&amp;p=%D8%B7%D9%82%D9%85+%D8%A3%D8%B7%D9%81%D8%A7%D9%84">
-                                <div class="block-slideshow__slide-image block-slideshow__slide-image--desktop" style="background-image: url(&quot; https://wasla-laravel.s3.me-south-1.amazonaws.com/images/sliders/X2QjlHXj59JAWHMhi4Jz9QFp4mZqZzg8BVpd3Twn.png &quot;)">
-                                </div>
-                                <div class="block-slideshow__slide-image block-slideshow__slide-image--mobile" style="background-image: url(&quot; https://wasla-laravel.s3.me-south-1.amazonaws.com/images/sliders/X2QjlHXj59JAWHMhi4Jz9QFp4mZqZzg8BVpd3Twn.png &quot;)">
-                                </div>
-                            </a></div><div class="owl-item" style="width: 840px;"><a class="block-slideshow__slide" href="https://waslastore.ps/category/1874">
-                                <div class="block-slideshow__slide-image block-slideshow__slide-image--desktop" style="background-image: url(&quot; https://wasla-laravel.s3.me-south-1.amazonaws.com/images/sliders/eejVrGaukyTdgpxbVZgTOIqdENGUgXVRrzEqS4rE.png &quot;)">
-                                </div>
-                                <div class="block-slideshow__slide-image block-slideshow__slide-image--mobile" style="background-image: url(&quot; https://wasla-laravel.s3.me-south-1.amazonaws.com/images/sliders/eejVrGaukyTdgpxbVZgTOIqdENGUgXVRrzEqS4rE.png &quot;)">
-                                </div>
-                            </a></div><div class="owl-item" style="width: 840px;"><a class="block-slideshow__slide" href="https://waslastore.ps/products/1024">
-                                <div class="block-slideshow__slide-image block-slideshow__slide-image--desktop" style="background-image: url(&quot; https://wasla-laravel.s3.me-south-1.amazonaws.com/images/sliders/pBQMIa3Qd1MopG8sDfsVo6mNV1g9F8yAEWpphMbB.png &quot;)">
-                                </div>
-                                <div class="block-slideshow__slide-image block-slideshow__slide-image--mobile" style="background-image: url(&quot; https://wasla-laravel.s3.me-south-1.amazonaws.com/images/sliders/pBQMIa3Qd1MopG8sDfsVo6mNV1g9F8yAEWpphMbB.png &quot;)">
-                                </div>
-                            </a></div><div class="owl-item cloned" style="width: 840px;"><a class="block-slideshow__slide" href="https://waslastore.ps/search?c=all&amp;p=%D8%B7%D9%82%D9%85+%D8%A3%D8%B7%D9%81%D8%A7%D9%84">
-                                <div class="block-slideshow__slide-image block-slideshow__slide-image--desktop" style="background-image: url(&quot; https://wasla-laravel.s3.me-south-1.amazonaws.com/images/sliders/X2QjlHXj59JAWHMhi4Jz9QFp4mZqZzg8BVpd3Twn.png &quot;)">
-                                </div>
-                                <div class="block-slideshow__slide-image block-slideshow__slide-image--mobile" style="background-image: url(&quot; https://wasla-laravel.s3.me-south-1.amazonaws.com/images/sliders/X2QjlHXj59JAWHMhi4Jz9QFp4mZqZzg8BVpd3Twn.png &quot;)">
-                                </div>
-                            </a></div><div class="owl-item cloned" style="width: 840px;"><a class="block-slideshow__slide" href="https://waslastore.ps/category/1874">
-                                <div class="block-slideshow__slide-image block-slideshow__slide-image--desktop" style="background-image: url(&quot; https://wasla-laravel.s3.me-south-1.amazonaws.com/images/sliders/eejVrGaukyTdgpxbVZgTOIqdENGUgXVRrzEqS4rE.png &quot;)">
-                                </div>
-                                <div class="block-slideshow__slide-image block-slideshow__slide-image--mobile" style="background-image: url(&quot; https://wasla-laravel.s3.me-south-1.amazonaws.com/images/sliders/eejVrGaukyTdgpxbVZgTOIqdENGUgXVRrzEqS4rE.png &quot;)">
-                                </div>
-                            </a></div></div></div><div class="owl-nav disabled"><button type="button" role="presentation" class="owl-prev"><span aria-label="Previous">‹</span></button><button type="button" role="presentation" class="owl-next"><span aria-label="Next">›</span></button></div><div class="owl-dots"><button role="button" class="owl-dot active"><span></span></button><button role="button" class="owl-dot"><span></span></button><button role="button" class="owl-dot"><span></span></button></div></div>
-                </div>
-            </div> -->
+                
             <div class="col-lg-3 d-none d-lg-block"></div>
                 <div class="col-12 col-lg-9">
                     <div class="block-slideshow__body">
@@ -58,44 +16,19 @@
             <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                 
                 <div class="carousel-inner">
+                @foreach ($sliders as $slider)
+                <div class="carousel-item {{ ($loop->iteration == 1) ?  'active' : '' }} cloned" ><a class="block-slideshow__slide" href="">
+                    <div class="block-slideshow__slide-image block-slideshow__slide-image--desktop" style="background-image: url({{ asset('upload/admin/slider/'. $slider->image_src) }})">
+                    </div>
+                    <div class="block-slideshow__slide-image block-slideshow__slide-image--mobile" style="background-image: url({{ asset('upload/admin/slider/'. $slider->image_src) }})">
+                    </div>
+                </a></div>
+                @endforeach
+                    
                 
-                    <div class="carousel-item active cloned" style="width: 840px;"><a class="block-slideshow__slide" href="https://waslastore.ps/products/1024">
-                        <div class="block-slideshow__slide-image block-slideshow__slide-image--desktop" style="background-image: url(&quot; https://wasla-laravel.s3.me-south-1.amazonaws.com/images/sliders/pBQMIa3Qd1MopG8sDfsVo6mNV1g9F8yAEWpphMbB.png &quot;)">
-                        </div>
-                        <div class="block-slideshow__slide-image block-slideshow__slide-image--mobile" style="background-image: url(&quot; https://wasla-laravel.s3.me-south-1.amazonaws.com/images/sliders/pBQMIa3Qd1MopG8sDfsVo6mNV1g9F8yAEWpphMbB.png &quot;)">
-                        </div>
-                    </a></div>
-                
-                    <div class="carousel-item cloned" style="width: 840px;"><a class="block-slideshow__slide" href="https://waslastore.ps/search?c=all&amp;p=%D8%B7%D9%82%D9%85+%D8%A3%D8%B7%D9%81%D8%A7%D9%84">
-                        <div class="block-slideshow__slide-image block-slideshow__slide-image--desktop" style="background-image: url(&quot; https://wasla-laravel.s3.me-south-1.amazonaws.com/images/sliders/X2QjlHXj59JAWHMhi4Jz9QFp4mZqZzg8BVpd3Twn.png &quot;)">
-                        </div>
-                        <div class="block-slideshow__slide-image block-slideshow__slide-image--mobile" style="background-image: url(&quot; https://wasla-laravel.s3.me-south-1.amazonaws.com/images/sliders/X2QjlHXj59JAWHMhi4Jz9QFp4mZqZzg8BVpd3Twn.png &quot;)">
-                        </div>
-                    </a></div>
-                    <div class="carousel-item cloned" style="width: 840px;"><a class="block-slideshow__slide" href="https://waslastore.ps/search?c=all&amp;p=%D8%B7%D9%82%D9%85+%D8%A3%D8%B7%D9%81%D8%A7%D9%84">
-                        <div class="block-slideshow__slide-image block-slideshow__slide-image--desktop" style="background-image: url(&quot; https://wasla-laravel.s3.me-south-1.amazonaws.com/images/sliders/X2QjlHXj59JAWHMhi4Jz9QFp4mZqZzg8BVpd3Twn.png &quot;)">
-                        </div>
-                        <div class="block-slideshow__slide-image block-slideshow__slide-image--mobile" style="background-image: url(&quot; https://wasla-laravel.s3.me-south-1.amazonaws.com/images/sliders/X2QjlHXj59JAWHMhi4Jz9QFp4mZqZzg8BVpd3Twn.png &quot;)">
-                        </div>
-                    </a></div>
-                    <div class="carousel-item cloned" style="width: 840px;"><a class="block-slideshow__slide" href="https://waslastore.ps/category/1874">
-                        <div class="block-slideshow__slide-image block-slideshow__slide-image--desktop" style="background-image: url(&quot; https://wasla-laravel.s3.me-south-1.amazonaws.com/images/sliders/eejVrGaukyTdgpxbVZgTOIqdENGUgXVRrzEqS4rE.png &quot;)">
-                        </div>
-                        <div class="block-slideshow__slide-image block-slideshow__slide-image--mobile" style="background-image: url(&quot; https://wasla-laravel.s3.me-south-1.amazonaws.com/images/sliders/eejVrGaukyTdgpxbVZgTOIqdENGUgXVRrzEqS4rE.png &quot;)">
-                        </div>
-                    </a></div>
-                    <div class="carousel-item cloned" style="width: 840px;"><a class="block-slideshow__slide" href="https://waslastore.ps/products/1024">
-                        <div class="block-slideshow__slide-image block-slideshow__slide-image--desktop" style="background-image: url(&quot; https://wasla-laravel.s3.me-south-1.amazonaws.com/images/sliders/pBQMIa3Qd1MopG8sDfsVo6mNV1g9F8yAEWpphMbB.png &quot;)">
-                        </div>
-                        <div class="block-slideshow__slide-image block-slideshow__slide-image--mobile" style="background-image: url(&quot; https://wasla-laravel.s3.me-south-1.amazonaws.com/images/sliders/pBQMIa3Qd1MopG8sDfsVo6mNV1g9F8yAEWpphMbB.png &quot;)">
-                        </div>
-                    </a></div>
-                    <div class="carousel-item cloned" style="width: 840px;"><a class="block-slideshow__slide" href="https://waslastore.ps/search?c=all&amp;p=%D8%B7%D9%82%D9%85+%D8%A3%D8%B7%D9%81%D8%A7%D9%84">
-                        <div class="block-slideshow__slide-image block-slideshow__slide-image--desktop" style="background-image: url(&quot; https://wasla-laravel.s3.me-south-1.amazonaws.com/images/sliders/X2QjlHXj59JAWHMhi4Jz9QFp4mZqZzg8BVpd3Twn.png &quot;)">
-                        </div>
-                        <div class="block-slideshow__slide-image block-slideshow__slide-image--mobile" style="background-image: url(&quot; https://wasla-laravel.s3.me-south-1.amazonaws.com/images/sliders/X2QjlHXj59JAWHMhi4Jz9QFp4mZqZzg8BVpd3Twn.png &quot;)">
-                        </div>
-                    </a></div>
+                    
+                    
+                    
                 </div>
                 
                 <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
