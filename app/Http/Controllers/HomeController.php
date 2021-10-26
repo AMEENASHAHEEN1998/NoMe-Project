@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\category;
+use App\Models\product;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -23,25 +25,38 @@ class HomeController extends Controller
      */
     public function home()
     {
-        return view('front.index');
+        $latestProducts = product::orderBy('id' , 'desc')->take(20)->get();
+        $categories = category::orderBy('id' , 'desc')->get();
+        return view('front.index',compact('latestProducts', $latestProducts , 'categories' ,$categories));
     }
     public function control_panel(){
         return view('admin.index');
     }
     public function about()
     {
-        return view('front.about');
+        $categories = category::orderBy('id' , 'desc')->get();
+
+        return view('front.about', 'categories' ,$categories);
     }
     public function products()
     {
-        return view('front.products');
+        $categories = category::orderBy('id' , 'desc')->get();
+
+        $products = product::orderBy('id' , 'desc')->get();
+        return view('front.products',compact('products', $products , 'categories' ,$categories));
     }
-    public function productpage()
+    public function productpage(product $product)
     {
-        return view('front.productpage');
+        $product = product::findOrFail($product->id);
+        $products = product::where('category_id' , $product->category_id)->orderBy('id' ,'desc')->get();
+        $categories = category::orderBy('id' , 'desc')->get();
+        
+        return view('front.productpage', compact($product , 'product' , $products , 'products' , 'categories' ,$categories));
     }
     public function contact()
     {
-        return view('front.contact');
+        $categories = category::orderBy('id' , 'desc')->get();
+
+        return view('front.contact',compact( 'categories' ,$categories));
     }
 }

@@ -33,7 +33,7 @@
                                     <h4 class="card-title">اضافة منتج</h4>
                                 </div>
                                 <div class="card-body">
-                                    <form class="form" method="post" action="{{route('admin.products.store')}}" enctype="multipart/form-data">
+                                    <form class="form" method="post" action="{{route('admin.products.store')}}" enctype="multipart/form-data" >
                                         @csrf
 
                                         
@@ -41,7 +41,7 @@
 
                                             <div class="col-md-4 col-6">
                                                 <div class="mb-1">
-                                                    <label class="form-label" for="name">اسم المنتج</label>
+                                                    <label class="form-label" for="name" style="font-size: 16px">اسم المنتج</label>
                                                     <input
                                                         type="text"
                                                         id="name"
@@ -60,7 +60,7 @@
 
                                             <div class="col-md-4 col-6">
                                                 <label for="name"
-                                                    class="mr-sm-2"> اسم القسم الرئيسي
+                                                    class="mr-sm-2" style="font-size: 16px"> اسم القسم الرئيسي
                                                     :</label>
 
                                                 <div class="box col-md-12">
@@ -80,7 +80,7 @@
 
                                             <div class="col-md-4 col-6">
                                                 <div class="mb-1">
-                                                    <label class="form-label" for="price">السعر </label>
+                                                    <label class="form-label" for="price" style="font-size: 16px">السعر </label>
                                                     <input
                                                         type="text"
                                                         id="price"
@@ -99,12 +99,12 @@
                                         
                                             <div class="col-md-4 col-6">
                                                 <div class="mb-1">
-                                                    <label class="form-label" for="description">الوصف </label>
+                                                    <label class="form-label" for="description" style="font-size: 16px">الوصف </label>
                                                     <input
                                                         type="text"
                                                         id="description"
                                                         class="form-control @error('description') is-invalid @enderror"
-                                                        placeholder=" الرجاء ادخال  وصف لمنتج  "
+                                                        placeholder=" الرجاء ادخال  وصف المنتج  "
                                                         name="description"
                                                         value="{{ old('description') }}"
                                                         
@@ -119,40 +119,28 @@
 
                                         </div>
                                        
-                                        <div class="row">
-                                
-                                            <div class="col">
-                                                <div class="form-group">
-                                                    <label
-                                                        for="exampleFormControlTextarea1">صورة المنتج الرئيسية
-                                                        :</label>
-                                                    <input type="file" name="primary_image" class="form-control-file" required
-                                                        id="exampleFormControlFile1">
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="repeater">
+                                        
+                                        <br> 
+                                        <div class="repeater-default">
                                             <div data-repeater-list="sizes">
                                                 <div data-repeater-item>
                                                     <div class="row">
                                                         <div class="col">
-                                                            <label class="form-label" for="name">ادخل المقاس </label>
+                                                            <label class="form-label" for="size" style="font-size: 16px">ادخل المقاس </label>
                                                                 
-            
                                                             <div class="box ">
                                                                 <input
                                                                     type="text"
-                                                                    id="name"
-                                                                    class="form-control @error('product_name') is-invalid @enderror"
+                                                                    id="size"
+                                                                    class="form-control @error('size') is-invalid @enderror"
                                                                     placeholder=" الرجاء ادخال المقاس  "
-                                                                    name="product_name"
+                                                                    name="size"
                                                                     required
-                                                                    value="{{ old('product_name') }}"
+                                                                    value="{{ old('size') }}"
                                                                 />
-                                                                @if($errors->has('product_name'))
+                                                                @if($errors->has('size'))
                                                                     <div
-                                                                        class="invalid-feedback">{{ $errors -> first('product_name') }}</div>
+                                                                        class="invalid-feedback">{{ $errors -> first('size') }}</div>
                                                                 @endif
                                                             </div> 
                                                             
@@ -160,7 +148,7 @@
                                                         </div>
                                                         <div class="col">
                                                             <label for="Name_en"
-                                                                class="mr-sm-2">العمليات
+                                                                class="mr-sm-2" style="font-size: 16px">العمليات
                                                                 :</label>
                                                             <input class="btn btn-danger btn-block" data-repeater-delete type="button"
                                                                 value="حذف المقاس" />
@@ -179,25 +167,85 @@
                                                 </div>
                                             </div>
                                         </div>
-
-                                        <div class="repeater">
-                                            <div data-repeater-list="images">
+                                        <br>
+                                        <div class="repeater-default">
+                                            <div data-repeater-list="colors">
                                                 <div data-repeater-item>
                                                     <div class="row">
                                                         <div class="col">
-                                                            <label for="Name_en"
-                                                                class="mr-sm-2">اضافة صورة أخرى
-                                                                :</label>
-            
+                                                            <label class="form-label" for="color" style="font-size: 16px">ادخل اللون </label>
+                                                                
                                                             <div class="box ">
-                                                                <input type="file" name="secand_image" class="form-control-file" 
-                                                                id="">
-                                                            </div>
+                                                                <input
+                                                                    type="text"
+                                                                    id="color"
+                                                                    class="form-control @error('color') is-invalid @enderror"
+                                                                    placeholder=" الرجاء ادخال اللون  "
+                                                                    name="color"
+                                                                    required
+                                                                    value="{{ old('color') }}"
+                                                                />
+                                                                @if($errors->has('color'))
+                                                                    <div
+                                                                        class="invalid-feedback">{{ $errors -> first('color') }}</div>
+                                                                @endif
+                                                            </div> 
+                                                            
             
                                                         </div>
                                                         <div class="col">
                                                             <label for="Name_en"
-                                                                class="mr-sm-2">العمليات
+                                                                class="mr-sm-2" style="font-size: 16px">العمليات
+                                                                :</label>
+                                                            <input class="btn btn-danger btn-block" data-repeater-delete type="button"
+                                                                value="حذف اللون" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+            
+                                            <div class="row">
+                                                <div class="row mt-20">
+                                                    <div class="col-12">
+                                                        <input class="button" data-repeater-create type="button"
+                                                            value="اضافة لون أخر" />
+                                                    </div>
+            
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <br>
+                                        <div class="row">
+                                
+                                            <div class="col">
+                                                <div class="form-group">
+                                                    <label
+                                                        for="exampleFormControlTextarea1" style="font-size: 16px">صورة المنتج الرئيسية
+                                                        :</label>
+                                                    <input type="file" name="primary_image" class="form-control-file" required
+                                                        id="exampleFormControlFile1">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <br>
+                                        <div class="repeater-default">
+                                            <div data-repeater-list="images">
+                                                <div data-repeater-item>
+                                                    <div class="row">
+                                                        <div class="col">
+                                                            <label for="second_image"
+                                                                class="mr-sm-2" style="font-size: 16px">اضافة صورة أخرى
+                                                                :</label>
+            
+                                                            <div class="box ">
+                                                                <input type="file" name="second_image" class="form-control-file" 
+                                                                id="second_image">
+                                                            </div>
+            
+                                                        </div>
+                                                        <div class="col">
+                                                            <label for=""
+                                                                class="mr-sm-2" style="font-size: 16px">العمليات
                                                                 :</label>
                                                             <input class="btn btn-danger btn-block" data-repeater-delete type="button"
                                                                 value="حذف الصورة" />
@@ -209,16 +257,13 @@
                                             <div class="row">
                                                 <div class="row mt-20">
                                                     <div class="col-12">
-                                                        <input class="button" data-repeater-create type="button"
+                                                        <input class="button"  data-repeater-create type="button"
                                                             value="اضافة صورة أخرى" />
                                                     </div>
             
                                                 </div>
                                             </div>
                                         </div>
-            
-
-                                        
 
                                         <br>
                                         <br>

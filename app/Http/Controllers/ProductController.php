@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\category;
+use App\Models\size;
+use App\Models\color;
+use App\Models\image;
 use App\Models\product;
+use App\Models\category;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -15,12 +18,11 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $products=product::all();
-        $categories=category::all();
+        $products=product::orderBy('id' , 'desc')->get();
+        $categories=category::orderBy('id' , 'desc')->get();
 
 
-        // return $products->category->category_name;
-        // return $categories;
+        
         return view('admin.page.product.index',compact('products', $products,'categories',$categories));
 
     }
@@ -35,7 +37,7 @@ class ProductController extends Controller
     {        
 
         
-        $categories=category::all();
+        $categories=category::orderBy('id' , 'desc')->get();
 
         return view('admin.page.product.create',compact('categories',$categories));
     }
@@ -48,13 +50,8 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        // return $request;
-        $status_offer=0;
-        if ($request->has('status_offer') == 1) {
-            $request->status_offer = 1;
-        } else {
-            $request->status_offer = 0;
-        }        try {
+        try {
+            //dd($request->all());
             $image_name = '';
 
             if ($request->has('primary_image')) {
@@ -64,19 +61,48 @@ class ProductController extends Controller
             }
 
             // return   $image_name;
-            product::create([
-                
-              
+            $product = product::create([     
                 'product_name' => $request->product_name,
                 'category_id' => $request->category_id,
                 'price' => $request->price,
                 'description' => $request->description,
                 'primary_image' => $image_name,
-                'status_offer' => $request->status_offer,
-                'created_at' => now()
-         
+                'status_offer' =>  0,
+                'created_at' => now()   
             ]);
-            return redirect()->route('admin.products.index');
+
+            $sizes = $request->sizes;
+            foreach ($sizes as $size) {
+                size::create([
+                    'product_id' => $product->id,
+                    'size_name' => $size['size'],
+                ]);
+            }
+
+            $colors = $request->colors;
+            foreach ($colors as $color) {
+                color::create([
+                    'product_id' => $product->id,
+                    'color_name' => $color['color'],
+                ]);
+            }
+
+            $images = $request->images;
+            foreach ($images as $image) {
+                $image_second = '';
+
+                if ($image->has('second_image')) {
+                    $FileEx = $image->file('second_image')->getClientOriginalExtension();
+                    $image_second = time() . '_' . rand() . '.' . $FileEx;
+                    $image->file('second_image')->move(public_path('upload/admin/product'), $image_second);
+                }
+                image::create([
+                    'product_id' => $product->id,
+                    'image_name' => $image_second,
+                ]);
+            }
+            return redirect()->route('admin.products.index')->with('success' , 'تم اضافة المنتج بنجاح');
+
         } catch (\Throwable $th) {
             return redirect()->route('admin.products.index');
         }

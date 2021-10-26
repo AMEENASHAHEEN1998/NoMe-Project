@@ -42,11 +42,11 @@ class CategoryController extends Controller
         ]);
         // dd($request->all());
         category::create(['category_name' => $request->category_name,]);
+        return redirect()->route('admin.categories.index')->with('success' , 'تم اضافة القسم بنجاح');
 
         }catch (\Exception $e){
             return redirect()->route('admin.categories.index')->with('warning','فشل في عملية انشاء القسم');
         }
-        return redirect()->route('admin.categories.index')->with('success' , 'تم اضافة القسم بنجاح');
     }
 
     /**

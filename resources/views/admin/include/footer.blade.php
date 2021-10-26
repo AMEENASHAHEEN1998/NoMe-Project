@@ -15,6 +15,7 @@
 <!-- plugins-jquery -->
 <script src="{{ URL::asset('dashboard/app-assets/js/plugins-jquery.js') }}"></script>
 <!-- plugin_path -->
+
 <script>
     var plugin_path = 'js/';
 </script>

@@ -41,6 +41,18 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="card">
+                                @if (session('success'))
+                                    <div class="alert alert-success">{{ session('success') }}</div>
+                                @endif
+                                @if (session('delete'))
+                                    <div class="alert alert-success">{{ session('delete') }}</div>
+                                @endif
+                                @if (session('update'))
+                                    <div class="alert alert-info">{{ session('update') }}</div>
+                                @endif
+                                @if (session('warning'))
+                                    <div class="alert alert-danger">{{ session('warning') }}</div>
+                                @endif
                                 <div class="card-header border-bottom">
                                     <h4 class="card-title">الأقسام</h4>
                                     <a href="{{route('admin.products.create')}}"
@@ -56,7 +68,6 @@
                                             <th> السعر</th>
                                             <th> وصف</th>
                                             <th> صورة</th>
-                                            <th> عرض</th>
                                             <th>تاريخ الاضافة</th>
                                             <th>العمليات</th>
                                         </tr>
@@ -75,15 +86,6 @@
 
                                                 </td>
 
-
-                                                <td>
-                                                    @if($product->status_offer == 1)
-                                                        <p  style="color: green">عرض </p>
-                                                    @endif
-                                                    @if($product->status_offer == 0)
-                                                        <p  style="color: red">لا يوجد عرض </p>
-                                                    @endif
-                                                </td>
                                                 <td>{{$product->created_at}}</td>
 
                                                 <td>
