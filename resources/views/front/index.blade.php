@@ -192,454 +192,51 @@
                 <div class="block-products-carousel__slider">
                     <div class="block-products-carousel__preloader"></div>
                     <div class="owl-carousel owl-rtl owl-loaded owl-drag">
-                                                    
-                                                    
-                                                    
-                                                    
-                                                    
-                                            <div class="owl-stage-outer"><div class="owl-stage" style="transform: translate3d(1122px, 0px, 0px); transition: all 0s ease 0s; width: 3649px; padding-left: 1px; padding-right: 1px;"><div class="owl-item cloned" style="width: 266.5px; margin-left: 14px;"><div class="block-products-carousel__column" data-category="">
-                                <div class="block-products-carousel__cell">
-                                    <div class="product-card product-card--hidden-actions ">
-                                        <div class="product-card__image product-image">
-                                            <a href="/products/9934" class="product-image__body">
-                                                <img class="product-image__img" alt="" src="images/products/1.jpg">
-                                            </a>
-                                        </div>
-                                        <div class="product-card__info">
-                                            <div class="product-card__name">
-                                                <a href="/products/9934">ديكورات أنتيكا بأشكال راقية</a>
+                                                   
+                        <div class="owl-stage-outer">
+                            <div class="owl-stage" style="transform: translate3d(1122px, 0px, 0px); transition: all 0s ease 0s; width: 3649px; padding-left: 1px; padding-right: 1px;">
+                                
+                                @foreach ($offerProducts as $offerProduct)
+                                <div class="owl-item cloned" style="width: 266.5px; margin-left: 14px;">
+                                    <div class="block-products-carousel__column" data-category="">
+                                        <div class="block-products-carousel__cell">
+                                            <div class="product-card product-card--hidden-actions ">
+                                                <div class="product-card__image product-image">
+                                                    <a href="{{ route('NoMe.productpage', $offerProduct->product_name) }}" class="product-image__body">
+                                                        <img class="product-image__img" alt="" src="{{ asset('upload/admin/product/'. $offerProduct->primary_image) }}">
+                                                    </a>
+                                                </div>
+                                                <div class="product-card__info">
+                                                    <div class="product-card__name">
+                                                        <a href="{{ route('NoMe.productpage', $offerProduct->product_name) }}">{{ $offerProduct->product_name }}</a>
+                                                    </div>
+                                                </div>
+                                                <div class="product-card__actions">
+                                                    <div class="product-card__prices" >
+                                                                                                            {{ $offerProduct->price }}₪
+                                                                                                    </div>
+                                                    <div class="product-card__buttons">
+                                                        <a class="btn btn-primary product-card__addtocart" href="/products/9934">الذهاب للمنتج</a>
+                                                        <meta name="csrf-token" content="jPltwjuQpZppawltECo6QtvdVdcKFU6icjO2aj3I">
+                                                        <button class="btn btn-secondary product-card__addtocart product-card__addtocart--list" type="button">الذهاب للمنتج
+                                                        </button>
+                                                        <button id="but-wishlist[9934]" onclick="return setWishlist(9934);" class="btn btn-light btn-svg-icon btn-svg-icon--fake-svg product-card__wishlist
+                                                        " type="button">
+                                                            <svg width="16px" height="16px" id="svg-wishlist[9934]" style="">&gt;
+                                                                <use xlink:href="https://waslastore.ps//website/images/sprite.svg#wishlist-16">
+                                                                </use>
+                                                            </svg>
+                                                            <span class="fake-svg-icon fake-svg-icon--wishlist-16"></span>
+                                                        </button>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
-                                        <div class="product-card__actions">
-                                            <div class="product-card__prices" >
-                                                                                                    9₪
-                                                                                            </div>
-                                            <div class="product-card__buttons">
-                                                <a class="btn btn-primary product-card__addtocart" href="/products/9934">الذهاب للمنتج</a>
-                                                <meta name="csrf-token" content="jPltwjuQpZppawltECo6QtvdVdcKFU6icjO2aj3I">
-                                                <button class="btn btn-secondary product-card__addtocart product-card__addtocart--list" type="button">الذهاب للمنتج
-                                                </button>
-                                                <button id="but-wishlist[9934]" onclick="return setWishlist(9934);" class="btn btn-light btn-svg-icon btn-svg-icon--fake-svg product-card__wishlist
-                                                " type="button">
-                                                    <svg width="16px" height="16px" id="svg-wishlist[9934]" style="">&gt;
-                                                        <use xlink:href="https://waslastore.ps//website/images/sprite.svg#wishlist-16">
-                                                        </use>
-                                                    </svg>
-                                                    <span class="fake-svg-icon fake-svg-icon--wishlist-16"></span>
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div></div><div class="owl-item cloned" style="width: 266.5px; margin-left: 14px;"><div class="block-products-carousel__column" data-category="">
-                                <div class="block-products-carousel__cell">
-                                    <div class="product-card product-card--hidden-actions ">
-                                        <div class="product-card__image product-image">
-                                            <a href="/products/9621" class="product-image__body">
-                                                <img class="product-image__img" alt="" src="images/products/2.jpg">
-                                            </a>
-                                        </div>
-                                        <div class="product-card__info">
-                                            <div class="product-card__name">
-                                                <a href="/products/9621">كڤر ايفون ملون ناعم</a>
-                                            </div>
-                                        </div>
-                                        <div class="product-card__actions">
-                                            <div class="product-card__prices">
-                                                                                                    9₪
-                                                                                            </div>
-                                            <div class="product-card__buttons">
-                                                <a class="btn btn-primary product-card__addtocart" href="/products/9621">الذهاب للمنتج</a>
-                                                <meta name="csrf-token" content="jPltwjuQpZppawltECo6QtvdVdcKFU6icjO2aj3I">
-                                                <button class="btn btn-secondary product-card__addtocart product-card__addtocart--list" type="button">الذهاب للمنتج
-                                                </button>
-                                                <button id="but-wishlist[9621]" onclick="return setWishlist(9621);" class="btn btn-light btn-svg-icon btn-svg-icon--fake-svg product-card__wishlist
-                                                " type="button">
-                                                    <svg width="16px" height="16px" id="svg-wishlist[9621]" style="">&gt;
-                                                        <use xlink:href="https://waslastore.ps//website/images/sprite.svg#wishlist-16">
-                                                        </use>
-                                                    </svg>
-                                                    <span class="fake-svg-icon fake-svg-icon--wishlist-16"></span>
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div></div><div class="owl-item cloned" style="width: 266.5px; margin-left: 14px;"><div class="block-products-carousel__column" data-category="">
-                                <div class="block-products-carousel__cell">
-                                    <div class="product-card product-card--hidden-actions ">
-                                        <div class="product-card__image product-image">
-                                            <a href="/products/9965" class="product-image__body">
-                                                <img class="product-image__img" alt="" src="images/products/3.jpg">
-                                            </a>
-                                        </div>
-                                        <div class="product-card__info">
-                                            <div class="product-card__name">
-                                                <a href="/products/9965">10 عروق وردة التوليب</a>
-                                            </div>
-                                        </div>
-                                        <div class="product-card__actions">
-                                            <div class="product-card__prices" >
-                                                                                                    29₪
-                                                                                            </div>
-                                            <div class="product-card__buttons">
-                                                <a class="btn btn-primary product-card__addtocart" href="/products/9965">الذهاب للمنتج</a>
-                                                <meta name="csrf-token" content="jPltwjuQpZppawltECo6QtvdVdcKFU6icjO2aj3I">
-                                                <button class="btn btn-secondary product-card__addtocart product-card__addtocart--list" type="button">الذهاب للمنتج
-                                                </button>
-                                                <button id="but-wishlist[9965]" onclick="return setWishlist(9965);" class="btn btn-light btn-svg-icon btn-svg-icon--fake-svg product-card__wishlist
-                                                " type="button">
-                                                    <svg width="16px" height="16px" id="svg-wishlist[9965]" style="">&gt;
-                                                        <use xlink:href="https://waslastore.ps//website/images/sprite.svg#wishlist-16">
-                                                        </use>
-                                                    </svg>
-                                                    <span class="fake-svg-icon fake-svg-icon--wishlist-16"></span>
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div></div><div class="owl-item cloned" style="width: 266.5px; margin-left: 14px;"><div class="block-products-carousel__column" data-category="">
-                                <div class="block-products-carousel__cell">
-                                    <div class="product-card product-card--hidden-actions ">
-                                        <div class="product-card__image product-image">
-                                            <a href="/products/2956" class="product-image__body">
-                                                <img class="product-image__img" alt="" src="images/products/4.jpg">
-                                            </a>
-                                        </div>
-                                        <div class="product-card__info">
-                                            <div class="product-card__name">
-                                                <a href="/products/2956">cover iphone</a>
-                                            </div>
-                                        </div>
-                                        <div class="product-card__actions">
-                                            <div class="product-card__prices" >
-                                                                                                    20₪
-                                                                                            </div>
-                                            <div class="product-card__buttons">
-                                                <a class="btn btn-primary product-card__addtocart" href="/products/2956">الذهاب للمنتج</a>
-                                                <meta name="csrf-token" content="jPltwjuQpZppawltECo6QtvdVdcKFU6icjO2aj3I">
-                                                <button class="btn btn-secondary product-card__addtocart product-card__addtocart--list" type="button">الذهاب للمنتج
-                                                </button>
-                                                <button id="but-wishlist[2956]" onclick="return setWishlist(2956);" class="btn btn-light btn-svg-icon btn-svg-icon--fake-svg product-card__wishlist
-                                                " type="button">
-                                                    <svg width="16px" height="16px" id="svg-wishlist[2956]" style="">&gt;
-                                                        <use xlink:href="https://waslastore.ps//website/images/sprite.svg#wishlist-16">
-                                                        </use>
-                                                    </svg>
-                                                    <span class="fake-svg-icon fake-svg-icon--wishlist-16"></span>
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div></div><div class="owl-item active" style="width: 266.5px; margin-left: 14px;"><div class="block-products-carousel__column" data-category="">
-                                <div class="block-products-carousel__cell">
-                                    <div class="product-card product-card--hidden-actions ">
-                                        <div class="product-card__image product-image">
-                                            <a href="/products/9085" class="product-image__body">
-                                                <img class="product-image__img" alt="" src="images/products/5.jpg">
-                                            </a>
-                                        </div>
-                                        <div class="product-card__info">
-                                            <div class="product-card__name">
-                                                <a href="/products/9085">طاولة رخام مدورة صغيرة مع أربع كراسي مميزة</a>
-                                            </div>
-                                        </div>
-                                        <div class="product-card__actions">
-                                            <div class="product-card__prices" >
-                                                                                                    1350₪
-                                                                                            </div>
-                                            <div class="product-card__buttons">
-                                                <a class="btn btn-primary product-card__addtocart" href="/products/9085">الذهاب للمنتج</a>
-                                                <meta name="csrf-token" content="jPltwjuQpZppawltECo6QtvdVdcKFU6icjO2aj3I">
-                                                <button class="btn btn-secondary product-card__addtocart product-card__addtocart--list" type="button">الذهاب للمنتج
-                                                </button>
-                                                <button id="but-wishlist[9085]" onclick="return setWishlist(9085);" class="btn btn-light btn-svg-icon btn-svg-icon--fake-svg product-card__wishlist
-                                                " type="button">
-                                                    <svg width="16px" height="16px" id="svg-wishlist[9085]" style="">&gt;
-                                                        <use xlink:href="https://waslastore.ps//website/images/sprite.svg#wishlist-16">
-                                                        </use>
-                                                    </svg>
-                                                    <span class="fake-svg-icon fake-svg-icon--wishlist-16"></span>
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div></div><div class="owl-item active" style="width: 266.5px; margin-left: 14px;"><div class="block-products-carousel__column" data-category="">
-                                <div class="block-products-carousel__cell">
-                                    <div class="product-card product-card--hidden-actions ">
-                                        <div class="product-card__image product-image">
-                                            <a href="/products/9934" class="product-image__body">
-                                                <img class="product-image__img" alt="" src="images/products/6.jpg">
-                                            </a>
-                                        </div>
-                                        <div class="product-card__info">
-                                            <div class="product-card__name">
-                                                <a href="/products/9934">ديكورات أنتيكا بأشكال راقية</a>
-                                            </div>
-                                        </div>
-                                        <div class="product-card__actions">
-                                            <div class="product-card__prices" >
-                                                                                                    9₪
-                                                                                            </div>
-                                            <div class="product-card__buttons">
-                                                <a class="btn btn-primary product-card__addtocart" href="/products/9934">الذهاب للمنتج</a>
-                                                <meta name="csrf-token" content="jPltwjuQpZppawltECo6QtvdVdcKFU6icjO2aj3I">
-                                                <button class="btn btn-secondary product-card__addtocart product-card__addtocart--list" type="button">الذهاب للمنتج
-                                                </button>
-                                                <button id="but-wishlist[9934]" onclick="return setWishlist(9934);" class="btn btn-light btn-svg-icon btn-svg-icon--fake-svg product-card__wishlist
-                                                " type="button">
-                                                    <svg width="16px" height="16px" id="svg-wishlist[9934]" style="">&gt;
-                                                        <use xlink:href="https://waslastore.ps//website/images/sprite.svg#wishlist-16">
-                                                        </use>
-                                                    </svg>
-                                                    <span class="fake-svg-icon fake-svg-icon--wishlist-16"></span>
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div></div><div class="owl-item active" style="width: 266.5px; margin-left: 14px;"><div class="block-products-carousel__column" data-category="">
-                                <div class="block-products-carousel__cell">
-                                    <div class="product-card product-card--hidden-actions ">
-                                        <div class="product-card__image product-image">
-                                            <a href="/products/9621" class="product-image__body">
-                                                <img class="product-image__img" alt="" src="images/products/7.jpg">
-                                            </a>
-                                        </div>
-                                        <div class="product-card__info">
-                                            <div class="product-card__name">
-                                                <a href="/products/9621">كڤر ايفون ملون ناعم</a>
-                                            </div>
-                                        </div>
-                                        <div class="product-card__actions">
-                                            <div class="product-card__prices" >
-                                                                                                    9₪
-                                                                                            </div>
-                                            <div class="product-card__buttons">
-                                                <a class="btn btn-primary product-card__addtocart" href="/products/9621">الذهاب للمنتج</a>
-                                                <meta name="csrf-token" content="jPltwjuQpZppawltECo6QtvdVdcKFU6icjO2aj3I">
-                                                <button class="btn btn-secondary product-card__addtocart product-card__addtocart--list" type="button">الذهاب للمنتج
-                                                </button>
-                                                <button id="but-wishlist[9621]" onclick="return setWishlist(9621);" class="btn btn-light btn-svg-icon btn-svg-icon--fake-svg product-card__wishlist
-                                                " type="button">
-                                                    <svg width="16px" height="16px" id="svg-wishlist[9621]" style="">&gt;
-                                                        <use xlink:href="https://waslastore.ps//website/images/sprite.svg#wishlist-16">
-                                                        </use>
-                                                    </svg>
-                                                    <span class="fake-svg-icon fake-svg-icon--wishlist-16"></span>
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div></div><div class="owl-item active" style="width: 266.5px; margin-left: 14px;"><div class="block-products-carousel__column" data-category="">
-                                <div class="block-products-carousel__cell">
-                                    <div class="product-card product-card--hidden-actions ">
-                                        <div class="product-card__image product-image">
-                                            <a href="/products/9965" class="product-image__body">
-                                                <img class="product-image__img" alt="" src="images/products/8.jpg">
-                                            </a>
-                                        </div>
-                                        <div class="product-card__info">
-                                            <div class="product-card__name">
-                                                <a href="/products/9965">10 عروق وردة التوليب</a>
-                                            </div>
-                                        </div>
-                                        <div class="product-card__actions">
-                                            <div class="product-card__prices" >
-                                                                                                    29₪
-                                                                                            </div>
-                                            <div class="product-card__buttons">
-                                                <a class="btn btn-primary product-card__addtocart" href="/products/9965">الذهاب للمنتج</a>
-                                                <meta name="csrf-token" content="jPltwjuQpZppawltECo6QtvdVdcKFU6icjO2aj3I">
-                                                <button class="btn btn-secondary product-card__addtocart product-card__addtocart--list" type="button">الذهاب للمنتج
-                                                </button>
-                                                <button id="but-wishlist[9965]" onclick="return setWishlist(9965);" class="btn btn-light btn-svg-icon btn-svg-icon--fake-svg product-card__wishlist
-                                                " type="button">
-                                                    <svg width="16px" height="16px" id="svg-wishlist[9965]" style="">&gt;
-                                                        <use xlink:href="https://waslastore.ps//website/images/sprite.svg#wishlist-16">
-                                                        </use>
-                                                    </svg>
-                                                    <span class="fake-svg-icon fake-svg-icon--wishlist-16"></span>
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div></div><div class="owl-item active" style="width: 266.5px; margin-left: 14px;"><div class="block-products-carousel__column" data-category="">
-                                <div class="block-products-carousel__cell">
-                                    <div class="product-card product-card--hidden-actions ">
-                                        <div class="product-card__image product-image">
-                                            <a href="/products/2956" class="product-image__body">
-                                                <img class="product-image__img" alt="" src="images/products/9.jpg">
-                                            </a>
-                                        </div>
-                                        <div class="product-card__info">
-                                            <div class="product-card__name">
-                                                <a href="/products/2956">cover iphone</a>
-                                            </div>
-                                        </div>
-                                        <div class="product-card__actions">
-                                            <div class="product-card__prices" >
-                                                                                                    20₪
-                                                                                            </div>
-                                            <div class="product-card__buttons">
-                                                <a class="btn btn-primary product-card__addtocart" href="/products/2956">الذهاب للمنتج</a>
-                                                <meta name="csrf-token" content="jPltwjuQpZppawltECo6QtvdVdcKFU6icjO2aj3I">
-                                                <button class="btn btn-secondary product-card__addtocart product-card__addtocart--list" type="button">الذهاب للمنتج
-                                                </button>
-                                                <button id="but-wishlist[2956]" onclick="return setWishlist(2956);" class="btn btn-light btn-svg-icon btn-svg-icon--fake-svg product-card__wishlist
-                                                " type="button">
-                                                    <svg width="16px" height="16px" id="svg-wishlist[2956]" style="">&gt;
-                                                        <use xlink:href="https://waslastore.ps//website/images/sprite.svg#wishlist-16">
-                                                        </use>
-                                                    </svg>
-                                                    <span class="fake-svg-icon fake-svg-icon--wishlist-16"></span>
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div></div><div class="owl-item cloned" style="width: 266.5px; margin-left: 14px;"><div class="block-products-carousel__column" data-category="">
-                                <div class="block-products-carousel__cell">
-                                    <div class="product-card product-card--hidden-actions ">
-                                        <div class="product-card__image product-image">
-                                            <a href="/products/9085" class="product-image__body">
-                                                <img class="product-image__img" alt="" src="images/products/10.jpg">
-                                            </a>
-                                        </div>
-                                        <div class="product-card__info">
-                                            <div class="product-card__name">
-                                                <a href="/products/9085">طاولة رخام مدورة صغيرة مع أربع كراسي مميزة</a>
-                                            </div>
-                                        </div>
-                                        <div class="product-card__actions">
-                                            <div class="product-card__prices" >
-                                                                                                    1350₪
-                                                                                            </div>
-                                            <div class="product-card__buttons">
-                                                <a class="btn btn-primary product-card__addtocart" href="/products/9085">الذهاب للمنتج</a>
-                                                <meta name="csrf-token" content="jPltwjuQpZppawltECo6QtvdVdcKFU6icjO2aj3I">
-                                                <button class="btn btn-secondary product-card__addtocart product-card__addtocart--list" type="button">الذهاب للمنتج
-                                                </button>
-                                                <button id="but-wishlist[9085]" onclick="return setWishlist(9085);" class="btn btn-light btn-svg-icon btn-svg-icon--fake-svg product-card__wishlist
-                                                " type="button">
-                                                    <svg width="16px" height="16px" id="svg-wishlist[9085]" style="">&gt;
-                                                        <use xlink:href="https://waslastore.ps//website/images/sprite.svg#wishlist-16">
-                                                        </use>
-                                                    </svg>
-                                                    <span class="fake-svg-icon fake-svg-icon--wishlist-16"></span>
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div></div><div class="owl-item cloned" style="width: 266.5px; margin-left: 14px;"><div class="block-products-carousel__column" data-category="">
-                                <div class="block-products-carousel__cell">
-                                    <div class="product-card product-card--hidden-actions ">
-                                        <div class="product-card__image product-image">
-                                            <a href="/products/9934" class="product-image__body">
-                                                <img class="product-image__img" alt="" src="images/products/11.jpg">
-                                            </a>
-                                        </div>
-                                        <div class="product-card__info">
-                                            <div class="product-card__name">
-                                                <a href="/products/9934">ديكورات أنتيكا بأشكال راقية</a>
-                                            </div>
-                                        </div>
-                                        <div class="product-card__actions">
-                                            <div class="product-card__prices" >
-                                                                                                    9₪
-                                                                                            </div>
-                                            <div class="product-card__buttons">
-                                                <a class="btn btn-primary product-card__addtocart" href="/products/9934">الذهاب للمنتج</a>
-                                                <meta name="csrf-token" content="jPltwjuQpZppawltECo6QtvdVdcKFU6icjO2aj3I">
-                                                <button class="btn btn-secondary product-card__addtocart product-card__addtocart--list" type="button">الذهاب للمنتج
-                                                </button>
-                                                <button id="but-wishlist[9934]" onclick="return setWishlist(9934);" class="btn btn-light btn-svg-icon btn-svg-icon--fake-svg product-card__wishlist
-                                                " type="button">
-                                                    <svg width="16px" height="16px" id="svg-wishlist[9934]" style="">&gt;
-                                                        <use xlink:href="https://waslastore.ps//website/images/sprite.svg#wishlist-16">
-                                                        </use>
-                                                    </svg>
-                                                    <span class="fake-svg-icon fake-svg-icon--wishlist-16"></span>
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div></div><div class="owl-item cloned" style="width: 266.5px; margin-left: 14px;"><div class="block-products-carousel__column" data-category="">
-                                <div class="block-products-carousel__cell">
-                                    <div class="product-card product-card--hidden-actions ">
-                                        <div class="product-card__image product-image">
-                                            <a href="/products/9621" class="product-image__body">
-                                                <img class="product-image__img" alt="" src="images/products/2.jpg">
-                                            </a>
-                                        </div>
-                                        <div class="product-card__info">
-                                            <div class="product-card__name">
-                                                <a href="/products/9621">كڤر ايفون ملون ناعم</a>
-                                            </div>
-                                        </div>
-                                        <div class="product-card__actions">
-                                            <div class="product-card__prices" >
-                                                                                                    9₪
-                                                                                            </div>
-                                            <div class="product-card__buttons">
-                                                <a class="btn btn-primary product-card__addtocart" href="/products/9621">الذهاب للمنتج</a>
-                                                <meta name="csrf-token" content="jPltwjuQpZppawltECo6QtvdVdcKFU6icjO2aj3I">
-                                                <button class="btn btn-secondary product-card__addtocart product-card__addtocart--list" type="button">الذهاب للمنتج
-                                                </button>
-                                                <button id="but-wishlist[9621]" onclick="return setWishlist(9621);" class="btn btn-light btn-svg-icon btn-svg-icon--fake-svg product-card__wishlist
-                                                " type="button">
-                                                    <svg width="16px" height="16px" id="svg-wishlist[9621]" style="">&gt;
-                                                        <use xlink:href="https://waslastore.ps//website/images/sprite.svg#wishlist-16">
-                                                        </use>
-                                                    </svg>
-                                                    <span class="fake-svg-icon fake-svg-icon--wishlist-16"></span>
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div></div><div class="owl-item cloned" style="width: 266.5px; margin-left: 14px;"><div class="block-products-carousel__column" data-category="">
-                                <div class="block-products-carousel__cell">
-                                    <div class="product-card product-card--hidden-actions ">
-                                        <div class="product-card__image product-image">
-                                            <a href="/products/9965" class="product-image__body">
-                                                <img class="product-image__img" alt="" src="images/products/1.jpg">
-                                            </a>
-                                        </div>
-                                        <div class="product-card__info">
-                                            <div class="product-card__name">
-                                                <a href="/products/9965">10 عروق وردة التوليب</a>
-                                            </div>
-                                        </div>
-                                        <div class="product-card__actions">
-                                            <div class="product-card__prices" >
-                                                                                                    29₪
-                                                                                            </div>
-                                            <div class="product-card__buttons">
-                                                <a class="btn btn-primary product-card__addtocart" href="/products/9965">الذهاب للمنتج</a>
-                                                <meta name="csrf-token" content="jPltwjuQpZppawltECo6QtvdVdcKFU6icjO2aj3I">
-                                                <button class="btn btn-secondary product-card__addtocart product-card__addtocart--list" type="button">الذهاب للمنتج
-                                                </button>
-                                                <button id="but-wishlist[9965]" onclick="return setWishlist(9965);" class="btn btn-light btn-svg-icon btn-svg-icon--fake-svg product-card__wishlist
-                                                " type="button">
-                                                    <svg width="16px" height="16px" id="svg-wishlist[9965]" style="">&gt;
-                                                        <use xlink:href="https://waslastore.ps//website/images/sprite.svg#wishlist-16">
-                                                        </use>
-                                                    </svg>
-                                                    <span class="fake-svg-icon fake-svg-icon--wishlist-16"></span>
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div></div></div></div><div class="owl-nav disabled"><button type="button" role="presentation" class="owl-prev"><span aria-label="Previous">‹</span></button><button type="button" role="presentation" class="owl-next"><span aria-label="Next">›</span></button></div><div class="owl-dots disabled" style="margin-bottom=266.5px"></div></div>
+                            </div></div>
+                                @endforeach
+                                
+                            
+                            </div></div><div class="owl-nav disabled"><button type="button" role="presentation" class="owl-prev"><span aria-label="Previous">‹</span></button><button type="button" role="presentation" class="owl-next"><span aria-label="Next">›</span></button></div><div class="owl-dots disabled" style="margin-bottom=266.5px"></div></div>
                 </div>
             </div>
         </div>
