@@ -11,7 +11,8 @@ use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\HomePageController;
-
+use App\Http\Controllers\OfferController;
+use App\Models\order;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,6 +37,7 @@ Auth::routes();
 Route::name('NoMe.')->group(function(){
     Route::get('/',[HomeController::class ,'home'])->name('home');
     Route::get('about',[HomeController::class ,'about'])->name('about');
+    // Route::post('findProduct',[HomeController::class ,'findProduct'])->name('findProduct');
     Route::get('products',[HomeController::class ,'products'])->name('products');
     Route::get('productpage/{product:product_name}',[HomeController::class ,'productpage'])->name('productpage');
     Route::get('contact',[HomeController::class ,'contact'])->name('contact');
@@ -53,7 +55,10 @@ Route::prefix('admin')->middleware('auth','checkRole')->name('admin.')->group(fu
     Route::resource('categories', CategoryController::class);
     Route::resource('products', ProductController::class);
     Route::resource('users', UserController::class);
+    Route::resource('offers', OfferController::class);
     Route::resource('orders', OrderController::class);
+    Route::get('order/active',[OrderController::class ,'active'])->name('orders.active');
+    Route::get('order/noactive',[OrderController::class ,'noactive'])->name('orders.noactive');
 });
 
 

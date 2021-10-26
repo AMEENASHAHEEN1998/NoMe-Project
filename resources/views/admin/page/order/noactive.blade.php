@@ -1,6 +1,6 @@
 @extends('admin.layout')
 
-@section('title', 'المنتجات')
+@section('title', 'الطلبيات')
 
 @section('styles')
     <link rel="stylesheet" type="text/css"
@@ -22,13 +22,13 @@
                 <div class="content-header-left col-md-9 col-12 mb-2">
                     <div class="row breadcrumbs-top">
                         <div class="col-12">
-                            <h2 class="content-header-title float-start mb-0">المنتجات</h2>
+                            <h2 class="content-header-title float-start mb-0">الطلبيات</h2>
                             <div class="breadcrumb-wrapper">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><a
                                             href="">لوحة التحكم</a>
                                     </li>
-                                    <li class="breadcrumb-item"><a href="#">المنتجات</a>
+                                    <li class="breadcrumb-item"><a href="#">الطلبيات</a>
                                     </li>
                                 </ol>
                             </div>
@@ -40,54 +40,64 @@
                 <section id="responsive-datatable">
                     <div class="row">
                         <div class="col-12">
+                            @if (session('success'))
+                                <div class="alert alert-success">{{ session('success') }}</div>
+                            @endif
+                            @if (session('delete'))
+                                <div class="alert alert-success">{{ session('delete') }}</div>
+                            @endif
+                            @if (session('update'))
+                                <div class="alert alert-info">{{ session('update') }}</div>
+                            @endif
+                            @if (session('warning'))
+                                <div class="alert alert-danger">{{ session('warning') }}</div>
+                            @endif
                             <div class="card">
-                                @if (session('success'))
-                                    <div class="alert alert-success">{{ session('success') }}</div>
-                                @endif
-                                @if (session('delete'))
-                                    <div class="alert alert-success">{{ session('delete') }}</div>
-                                @endif
-                                @if (session('update'))
-                                    <div class="alert alert-info">{{ session('update') }}</div>
-                                @endif
-                                @if (session('warning'))
-                                    <div class="alert alert-danger">{{ session('warning') }}</div>
-                                @endif
                                 <div class="card-header border-bottom">
-                                    <h4 class="card-title">المنتجات</h4>
-                                    <a href="{{route('admin.products.create')}}"
-                                       class="btn btn-primary me-1">اضافة قسم</a>
+                                    <h4 class="card-title">الطلبيات</h4>
+                                    
                                 </div>
                                 <div class="card-datatable">
                                     <table class="dt-responsive table">
                                         <thead>
                                         <tr>
                                             <th>#</th>
-                                            <th>اسم منتج</th>
-                                            <th>اسم قسم</th>
-                                            <th> السعر</th>
-                                            <th> وصف</th>
-                                            <th> صورة</th>
+                                            <th>اسم صاحب الطلبية</th>
+                                            <th> الجوال </th>
+                                            <th> العنوان </th>
+                                            <th> اللون </th>
+                                            <th> الحجم </th>
+                                            <th> الكمية </th>
+                                            <th> المنتج </th>
+                                            <th> الحالة </th>
+                                            
+
                                             <th>تاريخ الاضافة</th>
                                             <th>العمليات</th>
                                         </tr>
                                         </thead>
                                         <tbody>
-                                            @foreach ($products as $product)
+                                            @forelse ($orders as $order )
+                                            
                                             <tr>
-                                                <td>{{$loop->iteration}}</td>
-                                                <td>{{$product->product_name}}</td>
-                                                <td>{{$product->category->category_name}}</td>
-                                                <td>{{$product->price}}</td>
-                                                <td>{{$product->description}}</td>
-                                                <td>
-                                                    
-                                                    <img src="{{asset('upload/admin/product/'.$product->primary_image)}}" style="width: 85px" alt="">
+                                                <td>{{ $loop->iteration }}</td>
+                                                <td>{{ $order->person_name }}</td>
+                                                <td>{{ $order->phone }}</td>
+                                                <td>{{ $order->address }}</td>
+                                                <td>{{ $order->color }}</td>
+                                                <td>{{ $order->size }}</td>
+                                                <td>{{ $order->amount }}</td>
+                                                <td>{{ $order->product->product_name }}</td>
+                                               
 
-                                                </td>
 
-                                                <td>{{$product->created_at}}</td>
+                                                @if ($order->status == 0)
+                                                <td style="color:red ; font-weight:bold"> طلبيات غير مسلمة</td>
+                                                @else
+                                                    <td style="color:green ; font-weight:bold">طلبيات مسلمة</td>
 
+                                                @endif
+                                                <td>{{ $order->created_at }}</td>
                                                 <td>
                                                     <div class="dropdown">
                                                         <button
@@ -100,29 +110,35 @@
                                                             </a>
                                                         </button>
                                                         <div class="dropdown-menu dropdown-menu-end">
-                                                            <a class="dropdown-item" href="{{route('admin.products.edit',$product->id)}}">
+                                                            <a class="dropdown-item" href="{{ route('admin.orders.edit', $order->id ) }}">
                                                                 <i data-feather="edit-2" class="me-50"></i>
                                                                 <span>تعديل</span>
                                                             </a>
-                                                            <form class="dropdown-item" method="post" action="{{route('admin.products.destroy',$product->id)}}">
+                                                            <form class="dropdown-item" method="post" action="{{route('admin.orders.destroy',$order->id)}}">
                                                                 @csrf
                                                                 @method('delete')
                                                                 <i data-feather="trash" class="me-50"></i>
                                                                 <span><button data-toggle="modal"
-                                                                    data-target="#delete{{ $product->id }}" style="background: none; border: none; outline: none" type="submit">حذف</button></span>
+                                                                    data-target="#delete{{ $order->id }}" style="background: none; border: none; outline: none" type="submit">حذف</button></span>
                                                            
                                                            
                                                                 </form>
+                                                            
+                                                         
                                                         </div>
                                                     </div>
                                                 </td>
                                             </tr>
-
-                                            @endforeach
                                             
+                                            @empty
+                                            <tr colspan="3">لا يوجد أقسام</tr>
+                                            @endforelse
 
+                                
                                         </tbody>
                                     </table>
+
+                                    
                                 </div>
                             </div>
                         </div>
