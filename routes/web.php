@@ -11,7 +11,7 @@ use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\HomePageController;
-
+use App\Models\order;
 
 /*
 |--------------------------------------------------------------------------
@@ -54,6 +54,8 @@ Route::prefix('admin')->middleware('auth','checkRole')->name('admin.')->group(fu
     Route::resource('products', ProductController::class);
     Route::resource('users', UserController::class);
     Route::resource('orders', OrderController::class);
+    Route::get('order/active',[OrderController::class ,'active'])->name('orders.active');
+    Route::get('order/noactive',[OrderController::class ,'noactive'])->name('orders.noactive');
 });
 
 

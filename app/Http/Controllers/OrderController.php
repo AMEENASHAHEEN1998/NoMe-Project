@@ -14,7 +14,18 @@ class OrderController extends Controller
      */
     public function index()
     {
-        //
+        $orders=order::orderBy('id','desc')->get();
+        return view('admin.page.order.index',compact('orders',$orders));
+    }
+    public function active()
+    {
+        $orders=order::orderBy('id','desc')->where('status',1)->get();
+        return view('admin.page.order.active',compact('orders',$orders));
+    }
+    public function noactive()
+    {
+        $orders=order::orderBy('id','desc')->where('status',0)->get();
+        return view('admin.page.order.noactive',compact('orders',$orders));
     }
 
     /**
@@ -35,6 +46,7 @@ class OrderController extends Controller
      */
     public function store(Request $request)
     {
+        // return $request->product_id;
         try{
             //dd($request->all());
         $validated = $request->validate([
@@ -47,6 +59,8 @@ class OrderController extends Controller
             'product_id' => 'required'
         ]);
         order::create([
+
+         
             'color' => $request->color,
             'size' => $request->size,
             'amount' => $request->amount,
@@ -80,9 +94,11 @@ class OrderController extends Controller
      * @param  \App\Models\order  $order
      * @return \Illuminate\Http\Response
      */
-    public function edit(order $order)
+    public function edit($id)
     {
-        //
+        $orders=order::find($id);
+        return view('admin.page.order.edit',compact('orders',$orders));
+
     }
 
     /**
@@ -92,10 +108,35 @@ class OrderController extends Controller
      * @param  \App\Models\order  $order
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, order $order)
+    public function update(Request $request, $id)
     {
-        //
+        // return $request;
+
+        try {
+            if ($request->has('status') == 1) {
+                $request->status = 1;
+            } else {
+                $request->status = 0;
+            }
+    
+            // return   $image_name;
+            order::find($id)->update([
+    
+               
+                'status' => $request->status,
+                'updated_at' => now()
+         
+            ]);        
+            return redirect()->route('admin.orders.index');
+
+        } catch (\Throwable $th) {
+            return redirect()->route('admin.orders.index');
+        }
+
     }
+       
+
+   
 
     /**
      * Remove the specified resource from storage.
@@ -103,8 +144,9 @@ class OrderController extends Controller
      * @param  \App\Models\order  $order
      * @return \Illuminate\Http\Response
      */
-    public function destroy(order $order)
+    public function destroy( $id)
     {
-        //
+        order::find($id)->delete();
+        return redirect()->back();
     }
 }
