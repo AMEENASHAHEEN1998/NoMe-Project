@@ -34,4 +34,8 @@ class product extends Model
         return $this->hasMany(order::class,'product_id' );
     }
 
+    public function offer()
+    {
+        return $this->hasMany(offer::class);
+    }
 }

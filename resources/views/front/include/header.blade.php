@@ -17,7 +17,7 @@
                         </a>
                         <div class="search search--location--mobile-header mobile-header__search">
                             <div class="search__body">
-                                <form class="search__form" action="/search" method="GET" style="margin-bottom: 0px;" >
+                                <form class="search__form" action="{{route('findProduct')}}" method="post" style="margin-bottom: 0px;" >
                                     <input class="search__input" name="p" placeholder="ابحث في أكثر من 10,000 منتج" aria-label="Site search" type="text" autocomplete="off">
                                     <input type="hidden" name="c" value="all">
                                     <button class="search__button search__button--type--submit" type="submit">

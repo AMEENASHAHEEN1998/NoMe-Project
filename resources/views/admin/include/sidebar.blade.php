@@ -79,16 +79,16 @@
                     </li>
                 </ul>
             </li>
-            <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i
+            <li class=" nav-item"><a class="d-flex align-items-center" href="{{route('admin.offers.index')}}"><i
                 data-feather="gift"></i><span
                         class="menu-title text-truncate" data-i18n="Invoice">العروض</span></a>
                 <ul class="menu-content">
 
-                    <li><a class="d-flex align-items-center" href=""><i
+                    <li><a class="d-flex align-items-center" href="{{route('admin.offers.index')}}"><i
                                 data-feather="circle"></i><span class="menu-item text-truncate"
                                                                 data-i18n="List">عرض العروض</span></a>
                     </li>
-                    <li><a class="d-flex align-items-center" href=""><i
+                    <li><a class="d-flex align-items-center" href="{{route('admin.offers.create')}}"><i
                                 data-feather="circle"></i><span class="menu-item text-truncate"
                                                                 data-i18n="Preview">اضافة العروض</span></a>
                     </li>
