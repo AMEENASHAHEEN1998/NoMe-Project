@@ -35,7 +35,8 @@ class OrderController extends Controller
      */
     public function create()
     {
-        //
+        return view('errors.404');
+        
     }
 
     /**
@@ -85,7 +86,8 @@ class OrderController extends Controller
      */
     public function show(order $order)
     {
-        //
+        return view('errors.404');
+        
     }
 
     /**

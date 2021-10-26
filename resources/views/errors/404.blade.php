@@ -7,7 +7,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-	<title>404 HTML Template by Colorlib</title>
+	<title>404 </title>
 
 	<!-- Google font -->
 	<link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">
@@ -32,9 +32,9 @@
 			<div class="notfound-404">
 				<h1>404</h1>
 			</div>
-			<h2>Oops, The Page you are looking for can't be found!</h2>
+			<h2>عذرا، الصفحة التي تبحث عنها غير موجودة حاليا !</h2>
 		
-			<a href="{{route('NoMe.home')}}"><span class="arrow"></span>Return To Homepage</a>
+			<a href="{{route('NoMe.home')}}"><span class="arrow"></span>عودة الى الصفحة الرئيسية</a>
 		</div>
 	</div>
 
