@@ -268,370 +268,75 @@
                     <div class="block-products__body">
                         <div class="block-products__featured">
                             <div class="block-products__featured-item">
+                                @foreach ($product as $product)
                                 <div class="product-card product-card--hidden-actions ">
                                     <div class="product-card__badges-list">
                                     </div>
                                     <div class="product-card__image product-image">
-                                        <a href="/products/5086" class="product-image__body">
-                                            <img class="product-image__img" src="images/products/1.jpg" alt="">
+                                        <a href="{{ route('NoMe.productpage', $product->product_name) }}" class="product-image__body">
+                                            <img class="product-image__img" src="{{ asset('upload/admin/product/'. $product->primary_image) }}" alt="">
                                         </a>
                                     </div>
                                     <div class="product-card__info">
                                         <div class="product-card__name">
-                                            <a href="/products/5086">حذاء رجالي خفيف سبورت</a>
+                                            <a href="{{ route('NoMe.productpage', $product->product_name) }}">{{ $product->product_name }}</a>
                                         </div>
-                                        <div class="product-card__rating">
-                                        </div>
-                                        <ul class="product-card__features-list">
-                                            <li>Speed: 750 RPM</li>
-                                            <li>Power Source: Cordless-Electric</li>
-                                            <li>Battery Cell Type: Lithium</li>
-                                            <li>Voltage: 20 Volts</li>
-                                            <li>Battery Capacity: 2 Ah</li>
-                                        </ul>
+                                        
                                     </div>
                                     <div class="product-card__actions">
-                                        <div class="product-card__availability">
-                                            Availability: <span class="text-success">In Stock</span>
-                                        </div>
+                                        
                                         <div class="product-card__prices" >
-                                                                                            15₪
+                                                                                            {{ $product->price }}₪
                                                                                     </div>
                                         <div class="product-card__buttons">
-                                            <a class="btn btn-primary product-card__addtocart" href="/products/5086">الذهاب للمنتج</a>
-                                            <button class="btn btn-secondary product-card__addtocart product-card__addtocart--list" type="button">الذهاب للمنتج
-                                            </button>
-                                            <button class="btn btn-secondary product-card__addtocart product-card__addtocart--list" type="button">الذهاب للمنتج
-                                            </button>
-                                            <button id="but-wishlist[5086]" onclick="return setWishlist(5086);" class="btn btn-light btn-svg-icon btn-svg-icon--fake-svg product-card__wishlist
-                                            " type="button">
-                                                <svg width="16px" height="16px" id="svg-wishlist[5086]" style="">
-                                                    &gt;
-                                                    <use xlink:href="https://waslastore.ps//website/images/sprite.svg#wishlist-16">
-                                                    </use>
-                                                </svg>
-                                                <span class="fake-svg-icon fake-svg-icon--wishlist-16"></span>
-                                            </button>
+                                            <a class="btn btn-primary product-card__addtocart" href="{{ route('NoMe.productpage', $product->product_name) }}">الذهاب للمنتج</a>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                                @endforeach
+                            </div>
+                        </div>
+                        <div class="block-products__list">
+                            @foreach ($products as $product )
+                            <div class="block-products__list-item">
+                                <div class="product-card product-card--hidden-actions ">
+                                    <div class="product-card__badges-list">
+                                    </div>
+                                    <div class="product-card__image product-image">
+                                        <a href="{{ route('NoMe.productpage', $product->product_name) }}" class="product-image__body">
+                                            <img class="product-image__img" alt="" src="{{ asset('upload/admin/product/'. $product->primary_image) }}">
+                                        </a>
+                                    </div>
+                                    <div class="product-card__info">
+                                        <div class="product-card__name">
+                                            <a href="{{ route('NoMe.productpage', $product->product_name) }}">{{ $product->product_name }}</a>
+                                        </div>
+                                        <div class="product-card__rating">
+                                            <div class="product-card__rating-stars">
+                                                <div class="rating">
+                                                    <div class="rating__body">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="product-card__actions">
+                                        
+                                        <div class="product-card__prices">
+                                                                                                {{ $product->price}}₪
+                                                                                        </div>
+                                        <div class="product-card__buttons">
+                                            <a class="btn btn-primary product-card__addtocart" href="{{ route('NoMe.productpage', $product->product_name) }}">الذهاب للمنتج</a>
+                                            
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="block-products__list">
-                                                            <div class="block-products__list-item">
-                                    <div class="product-card product-card--hidden-actions ">
-                                        <div class="product-card__badges-list">
-                                        </div>
-                                        <div class="product-card__image product-image">
-                                            <a href="/products/16343" class="product-image__body">
-                                                <img class="product-image__img" alt="" src="images/products/2.jpg">
-                                            </a>
-                                        </div>
-                                        <div class="product-card__info">
-                                            <div class="product-card__name">
-                                                <a href="/products/16343">بوت صبايا سبور</a>
-                                            </div>
-                                            <div class="product-card__rating">
-                                                <div class="product-card__rating-stars">
-                                                    <div class="rating">
-                                                        <div class="rating__body">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <ul class="product-card__features-list">
-                                                <li>Speed: 750 RPM</li>
-                                                <li>Power Source: Cordless-Electric</li>
-                                                <li>Battery Cell Type: Lithium</li>
-                                                <li>Voltage: 20 Volts</li>
-                                                <li>Battery Capacity: 2 Ah</li>
-                                            </ul>
-                                        </div>
-                                        <div class="product-card__actions">
-                                            <div class="product-card__availability">
-                                                Availability: <span class="text-success">In Stock</span>
-                                            </div>
-                                            <div class="product-card__prices">
-                                                                                                    37₪
-                                                                                            </div>
-                                            <div class="product-card__buttons">
-                                                <a class="btn btn-primary product-card__addtocart" href="/products/16343">الذهاب للمنتج</a>
-                                                <button class="btn btn-secondary product-card__addtocart product-card__addtocart--list" type="button">الذهاب للمنتج
-                                                </button>
-                                                <button id="but-wishlist[16343]" onclick="return setWishlist(16343);" class="btn btn-light btn-svg-icon btn-svg-icon--fake-svg product-card__wishlist
-                                            " type="button">
-                                                    <svg width="16px" height="16px" id="svg-wishlist[16343]" style="">&gt;
-                                                        <use xlink:href="https://waslastore.ps//website/images/sprite.svg#wishlist-16">
-                                                        </use>
-                                                    </svg>
-                                                    <span class="fake-svg-icon fake-svg-icon--wishlist-16"></span>
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                                            <div class="block-products__list-item">
-                                    <div class="product-card product-card--hidden-actions ">
-                                        <div class="product-card__badges-list">
-                                        </div>
-                                        <div class="product-card__image product-image">
-                                            <a href="/products/9934" class="product-image__body">
-                                                <img class="product-image__img" alt="" src="images/products/3.jpg">
-                                            </a>
-                                        </div>
-                                        <div class="product-card__info">
-                                            <div class="product-card__name">
-                                                <a href="/products/9934">ديكورات أنتيكا بأشكال راقية</a>
-                                            </div>
-                                            <div class="product-card__rating">
-                                                <div class="product-card__rating-stars">
-                                                    <div class="rating">
-                                                        <div class="rating__body">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <ul class="product-card__features-list">
-                                                <li>Speed: 750 RPM</li>
-                                                <li>Power Source: Cordless-Electric</li>
-                                                <li>Battery Cell Type: Lithium</li>
-                                                <li>Voltage: 20 Volts</li>
-                                                <li>Battery Capacity: 2 Ah</li>
-                                            </ul>
-                                        </div>
-                                        <div class="product-card__actions">
-                                            <div class="product-card__availability">
-                                                Availability: <span class="text-success">In Stock</span>
-                                            </div>
-                                            <div class="product-card__prices" >
-                                                                                                    9₪
-                                                                                            </div>
-                                            <div class="product-card__buttons">
-                                                <a class="btn btn-primary product-card__addtocart" href="/products/9934">الذهاب للمنتج</a>
-                                                <button class="btn btn-secondary product-card__addtocart product-card__addtocart--list" type="button">الذهاب للمنتج
-                                                </button>
-                                                <button id="but-wishlist[9934]" onclick="return setWishlist(9934);" class="btn btn-light btn-svg-icon btn-svg-icon--fake-svg product-card__wishlist
-                                            " type="button">
-                                                    <svg width="16px" height="16px" id="svg-wishlist[9934]" style="">&gt;
-                                                        <use xlink:href="https://waslastore.ps//website/images/sprite.svg#wishlist-16">
-                                                        </use>
-                                                    </svg>
-                                                    <span class="fake-svg-icon fake-svg-icon--wishlist-16"></span>
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                                            <div class="block-products__list-item">
-                                    <div class="product-card product-card--hidden-actions ">
-                                        <div class="product-card__badges-list">
-                                        </div>
-                                        <div class="product-card__image product-image">
-                                            <a href="/products/5684" class="product-image__body">
-                                                <img class="product-image__img" alt="" src="images/products/4.jpg">
-                                            </a>
-                                        </div>
-                                        <div class="product-card__info">
-                                            <div class="product-card__name">
-                                                <a href="/products/5684">بلوزة هودي نسائية مميزة</a>
-                                            </div>
-                                            <div class="product-card__rating">
-                                                <div class="product-card__rating-stars">
-                                                    <div class="rating">
-                                                        <div class="rating__body">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <ul class="product-card__features-list">
-                                                <li>Speed: 750 RPM</li>
-                                                <li>Power Source: Cordless-Electric</li>
-                                                <li>Battery Cell Type: Lithium</li>
-                                                <li>Voltage: 20 Volts</li>
-                                                <li>Battery Capacity: 2 Ah</li>
-                                            </ul>
-                                        </div>
-                                        <div class="product-card__actions">
-                                            <div class="product-card__availability">
-                                                Availability: <span class="text-success">In Stock</span>
-                                            </div>
-                                            <div class="product-card__prices" >
-                                                                                                    16₪
-                                                                                            </div>
-                                            <div class="product-card__buttons">
-                                                <a class="btn btn-primary product-card__addtocart" href="/products/5684">الذهاب للمنتج</a>
-                                                <button class="btn btn-secondary product-card__addtocart product-card__addtocart--list" type="button">الذهاب للمنتج
-                                                </button>
-                                                <button id="but-wishlist[5684]" onclick="return setWishlist(5684);" class="btn btn-light btn-svg-icon btn-svg-icon--fake-svg product-card__wishlist
-                                            " type="button">
-                                                    <svg width="16px" height="16px" id="svg-wishlist[5684]" style="">&gt;
-                                                        <use xlink:href="https://waslastore.ps//website/images/sprite.svg#wishlist-16">
-                                                        </use>
-                                                    </svg>
-                                                    <span class="fake-svg-icon fake-svg-icon--wishlist-16"></span>
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                                            <div class="block-products__list-item">
-                                    <div class="product-card product-card--hidden-actions ">
-                                        <div class="product-card__badges-list">
-                                        </div>
-                                        <div class="product-card__image product-image">
-                                            <a href="/products/2751" class="product-image__body">
-                                                <img class="product-image__img" alt="" src="images/products/5.jpg">
-                                            </a>
-                                        </div>
-                                        <div class="product-card__info">
-                                            <div class="product-card__name">
-                                                <a href="/products/2751">بلوزة سادة صيفي مميزة</a>
-                                            </div>
-                                            <div class="product-card__rating">
-                                                <div class="product-card__rating-stars">
-                                                    <div class="rating">
-                                                        <div class="rating__body">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <ul class="product-card__features-list">
-                                                <li>Speed: 750 RPM</li>
-                                                <li>Power Source: Cordless-Electric</li>
-                                                <li>Battery Cell Type: Lithium</li>
-                                                <li>Voltage: 20 Volts</li>
-                                                <li>Battery Capacity: 2 Ah</li>
-                                            </ul>
-                                        </div>
-                                        <div class="product-card__actions">
-                                            <div class="product-card__availability">
-                                                Availability: <span class="text-success">In Stock</span>
-                                            </div>
-                                            <div class="product-card__prices" >
-                                                                                                    16₪
-                                                                                            </div>
-                                            <div class="product-card__buttons">
-                                                <a class="btn btn-primary product-card__addtocart" href="/products/2751">الذهاب للمنتج</a>
-                                                <button class="btn btn-secondary product-card__addtocart product-card__addtocart--list" type="button">الذهاب للمنتج
-                                                </button>
-                                                <button id="but-wishlist[2751]" onclick="return setWishlist(2751);" class="btn btn-light btn-svg-icon btn-svg-icon--fake-svg product-card__wishlist
-                                            " type="button">
-                                                    <svg width="16px" height="16px" id="svg-wishlist[2751]" style="">&gt;
-                                                        <use xlink:href="https://waslastore.ps//website/images/sprite.svg#wishlist-16">
-                                                        </use>
-                                                    </svg>
-                                                    <span class="fake-svg-icon fake-svg-icon--wishlist-16"></span>
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                                            <div class="block-products__list-item">
-                                    <div class="product-card product-card--hidden-actions ">
-                                        <div class="product-card__badges-list">
-                                        </div>
-                                        <div class="product-card__image product-image">
-                                            <a href="/products/10410" class="product-image__body">
-                                                <img class="product-image__img" alt="" src="images/products/6.jpg">
-                                            </a>
-                                        </div>
-                                        <div class="product-card__info">
-                                            <div class="product-card__name">
-                                                <a href="/products/10410">بنطال سبور واسع ربيعي</a>
-                                            </div>
-                                            <div class="product-card__rating">
-                                                <div class="product-card__rating-stars">
-                                                    <div class="rating">
-                                                        <div class="rating__body">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <ul class="product-card__features-list">
-                                                <li>Speed: 750 RPM</li>
-                                                <li>Power Source: Cordless-Electric</li>
-                                                <li>Battery Cell Type: Lithium</li>
-                                                <li>Voltage: 20 Volts</li>
-                                                <li>Battery Capacity: 2 Ah</li>
-                                            </ul>
-                                        </div>
-                                        <div class="product-card__actions">
-                                            <div class="product-card__availability">
-                                                Availability: <span class="text-success">In Stock</span>
-                                            </div>
-                                            <div class="product-card__prices" >
-                                                                                                    27₪
-                                                                                            </div>
-                                            <div class="product-card__buttons">
-                                                <a class="btn btn-primary product-card__addtocart" href="/products/10410">الذهاب للمنتج</a>
-                                                <button class="btn btn-secondary product-card__addtocart product-card__addtocart--list" type="button">الذهاب للمنتج
-                                                </button>
-                                                <button id="but-wishlist[10410]" onclick="return setWishlist(10410);" class="btn btn-light btn-svg-icon btn-svg-icon--fake-svg product-card__wishlist
-                                            " type="button">
-                                                    <svg width="16px" height="16px" id="svg-wishlist[10410]" style="">&gt;
-                                                        <use xlink:href="https://waslastore.ps//website/images/sprite.svg#wishlist-16">
-                                                        </use>
-                                                    </svg>
-                                                    <span class="fake-svg-icon fake-svg-icon--wishlist-16"></span>
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                                            <div class="block-products__list-item">
-                                    <div class="product-card product-card--hidden-actions ">
-                                        <div class="product-card__badges-list">
-                                        </div>
-                                        <div class="product-card__image product-image">
-                                            <a href="/products/10313" class="product-image__body">
-                                                <img class="product-image__img" alt="" src="images/products/7.jpg">
-                                            </a>
-                                        </div>
-                                        <div class="product-card__info">
-                                            <div class="product-card__name">
-                                                <a href="/products/10313">بلوزة رجالي صيفية</a>
-                                            </div>
-                                            <div class="product-card__rating">
-                                                <div class="product-card__rating-stars">
-                                                    <div class="rating">
-                                                        <div class="rating__body">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <ul class="product-card__features-list">
-                                                <li>Speed: 750 RPM</li>
-                                                <li>Power Source: Cordless-Electric</li>
-                                                <li>Battery Cell Type: Lithium</li>
-                                                <li>Voltage: 20 Volts</li>
-                                                <li>Battery Capacity: 2 Ah</li>
-                                            </ul>
-                                        </div>
-                                        <div class="product-card__actions">
-                                            <div class="product-card__availability">
-                                                Availability: <span class="text-success">In Stock</span>
-                                            </div>
-                                            <div class="product-card__prices" >
-                                                                                                    45₪
-                                                                                            </div>
-                                            <div class="product-card__buttons">
-                                                <a class="btn btn-primary product-card__addtocart" href="/products/10313">الذهاب للمنتج</a>
-                                                <button class="btn btn-secondary product-card__addtocart product-card__addtocart--list" type="button">الذهاب للمنتج
-                                                </button>
-                                                <button id="but-wishlist[10313]" onclick="return setWishlist(10313);" class="btn btn-light btn-svg-icon btn-svg-icon--fake-svg product-card__wishlist
-                                            " type="button">
-                                                    <svg width="16px" height="16px" id="svg-wishlist[10313]" style="">&gt;
-                                                        <use xlink:href="https://waslastore.ps//website/images/sprite.svg#wishlist-16">
-                                                        </use>
-                                                    </svg>
-                                                    <span class="fake-svg-icon fake-svg-icon--wishlist-16"></span>
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            
-                        </div>
+                    
+                            @endforeach
+                         </div>
                     </div>
                 </div>
             </div>

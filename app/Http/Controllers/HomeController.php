@@ -32,7 +32,9 @@ class HomeController extends Controller
         $latestProducts = product::orderBy('id' , 'desc')->take(20)->get();
         $categories = category::orderBy('id' , 'desc')->get();
         $offerProducts = product::where('status_offer' , 1)->get();
-        return view('front.index',compact('latestProducts', $latestProducts , 'categories' ,$categories , 'offerProducts' , $offerProducts));
+        $products = product::where('status_offer' , 0)->take(6)->get();
+        $product = product::orderBy('id' , 'desc')->take(1)->get();
+        return view('front.index',compact('latestProducts', $latestProducts , 'categories' ,$categories , 'offerProducts' , $offerProducts ,'products', $products ,'product' ,$product));
     }
     public function control_panel(){
 
