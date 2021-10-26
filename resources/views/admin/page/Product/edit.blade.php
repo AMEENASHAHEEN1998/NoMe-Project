@@ -33,16 +33,16 @@
                                     <h4 class="card-title">تعديل منتج</h4>
                                 </div>
                                 <div class="card-body">
-                                    <form class="form" method="post" action="{{route('admin.products.update',$products->id)}}" enctype="multipart/form-data">
-                                        @csrf
-                                        @method('put')
 
+                                    <form class="form" method="post" action="{{route('admin.products.update',$product->id)}}" enctype="multipart/form-data" >
+                                        @csrf
+                                        @method('patch')
                                         
                                         <div class="row">
 
-                                            <div class="col-md-4 col-12">
+                                            <div class="col-md-4 col-6">
                                                 <div class="mb-1">
-                                                    <label class="form-label" for="name">اسم المنتج</label>
+                                                    <label class="form-label" for="name" style="font-size: 16px">اسم المنتج</label>
                                                     <input
                                                         type="text"
                                                         id="name"
@@ -50,7 +50,7 @@
                                                         placeholder=" الرجاء ادخال اسم المنتج  "
                                                         name="product_name"
                                                         required
-                                                        value="{{ $products->product_name}}"
+                                                        value="{{ old('product_name')?? old('product_name') ?? $product->product_name }}"
                                                     />
                                                     @if($errors->has('product_name'))
                                                         <div
@@ -58,24 +58,20 @@
                                                     @endif
                                                 </div>
                                             </div>
-                                        </div>
 
-
-                                        <div class="row">
-                                            <div class="col-md-4 col-12">
+                                            <div class="col-md-4 col-6">
                                                 <label for="name"
-                                                    class="mr-sm-2">اسم القسم
+                                                    class="mr-sm-2" style="font-size: 16px"> اسم القسم الرئيسي
                                                     :</label>
 
                                                 <div class="box col-md-12">
-                                                    <select class="form-control form-control-lg " name="category_id">
+                                                    <select class="form-control form-control-lg " name="category_id" required>
+                                                        <option disabled="" selected="" value="{{ $product->category_id }}">{{ $product->category->category_name }}</option>
+
                                                         @foreach ($categories as $category)
                                                           
-                                                                <option value="{{ $category->id }}" @if ($category->id == $products->category_id) selected @endif >
+                                                                <option value="{{ $category->id }}">
                                                                     {{ $category->category_name }}</option>
-
-
-
                                                         @endforeach
                                                     </select>
                                                 </div>
@@ -85,9 +81,9 @@
 
                                         <div class="row">
 
-                                            <div class="col-md-4 col-12">
+                                            <div class="col-md-4 col-6">
                                                 <div class="mb-1">
-                                                    <label class="form-label" for="price">السعر </label>
+                                                    <label class="form-label" for="price" style="font-size: 16px">السعر </label>
                                                     <input
                                                         type="text"
                                                         id="price"
@@ -95,8 +91,7 @@
                                                         class="form-control @error('price') is-invalid @enderror"
                                                         placeholder=" الرجاء ادخال سعر المنتج  "
                                                         name="price"
-                                                        value="{{ $products->price}}"
-
+                                                        value="{{ old('price')?? old('price') ?? $product->price }}"
                                                     />
                                                     @if($errors->has('price'))
                                                         <div
@@ -104,21 +99,18 @@
                                                     @endif
                                                 </div>
                                             </div>
-                                        </div>
-
-                                        <div class="row">
-
-                                            <div class="col-md-4 col-12">
+                                        
+                                            <div class="col-md-4 col-6">
                                                 <div class="mb-1">
-                                                    <label class="form-label" for="description">الوصف </label>
+                                                    <label class="form-label" for="description" style="font-size: 16px">الوصف </label>
                                                     <input
                                                         type="text"
                                                         id="description"
                                                         class="form-control @error('description') is-invalid @enderror"
-                                                        placeholder=" الرجاء ادخال  وصف لمنتج  "
+                                                        placeholder=" الرجاء ادخال  وصف المنتج  "
                                                         name="description"
-                                                        value="{{ $products->description}}"
-                                                        required
+                                                        value="{{ old('description')?? old('description') ?? $product->description }}"
+                                                        
                                                     />
                                                     @if($errors->has('description'))
                                                         <div
@@ -129,38 +121,179 @@
                                             
 
                                         </div>
-
-                                        <div class="row">
-                                            <div class="col-md-6">
-
-                                                <div class="form-group">
-                                                    <input type="checkbox" name="status_offer" class="switchery" data-color="success" 
-                                                    @if ($products->status_offer == 1) checked @endif value="{{$products->status_offer}}" />
-                                                    
-
-                                                    <label class="form-label" for="description">عرض </label>
-
+                                       
+                                        
+                                        <br>
+                                        <div>
+                                            <label style="font-size: 16px">المقاسات المحددة مسبقا</label>
+                                            <p>
+                                                @foreach ($product->sizes as $size)
+                                                    <b style="font-size: 16px">{{ $size->size_name }}</b> ||
+                                                @endforeach
+                                            </p>
+                                        </div> 
+                                        <div class="repeater-default">
+                                            <div data-repeater-list="sizes">
+                                                <div data-repeater-item>
+                                                    <div class="row">
+                                                        <div class="col">
+                                                            <label class="form-label" for="size" style="font-size: 16px">ادخل المقاس </label>
+                                                                
+                                                            <div class="box ">
+                                                                <input
+                                                                    type="text"
+                                                                    id="size"
+                                                                    class="form-control @error('size') is-invalid @enderror"
+                                                                    placeholder=" الرجاء ادخال المقاس  "
+                                                                    name="size"
+                                                                    
+                                                                    value="{{ old('size') }}"
+                                                                />
+                                                                @if($errors->has('size'))
+                                                                    <div
+                                                                        class="invalid-feedback">{{ $errors -> first('size') }}</div>
+                                                                @endif
+                                                            </div> 
+                                                            
+            
+                                                        </div>
+                                                        <div class="col">
+                                                            <label for="Name_en"
+                                                                class="mr-sm-2" style="font-size: 16px">العمليات
+                                                                :</label>
+                                                            <input class="btn btn-danger btn-block" data-repeater-delete type="button"
+                                                                value="حذف المقاس" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+            
+                                            <div class="row">
+                                                <div class="row mt-20">
+                                                    <div class="col-12">
+                                                        <input class="button" data-repeater-create type="button"
+                                                            value="اضافة مقاس أخر" />
+                                                    </div>
+            
                                                 </div>
                                             </div>
                                         </div>
-
-
+                                        <br>
+                                        <div>
+                                        <label style="font-size: 16px">الألوان المحددة مسبقا</label>
+                                            <p>
+                                                @foreach ($product->colors as $color)
+                                                    <b style="font-size: 16px">{{ $color->color_name }}</b> ||
+                                                @endforeach
+                                            </p>
+                                        </div>
+                                        <div class="repeater-default">
+                                            <div data-repeater-list="colors">
+                                                <div data-repeater-item>
+                                                    <div class="row">
+                                                        <div class="col">
+                                                            <label class="form-label" for="color" style="font-size: 16px">ادخل اللون </label>
+                                                                
+                                                            <div class="box ">
+                                                                <input
+                                                                    type="text"
+                                                                    id="color"
+                                                                    class="form-control @error('color') is-invalid @enderror"
+                                                                    placeholder=" الرجاء ادخال اللون  "
+                                                                    name="color"
+                                                                    
+                                                                    value="{{ old('color') }}"
+                                                                />
+                                                                @if($errors->has('color'))
+                                                                    <div
+                                                                        class="invalid-feedback">{{ $errors -> first('color') }}</div>
+                                                                @endif
+                                                            </div> 
+                                                            
+            
+                                                        </div>
+                                                        <div class="col">
+                                                            <label for="Name_en"
+                                                                class="mr-sm-2" style="font-size: 16px">العمليات
+                                                                :</label>
+                                                            <input class="btn btn-danger btn-block" data-repeater-delete type="button"
+                                                                value="حذف اللون" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+            
+                                            <div class="row">
+                                                <div class="row mt-20">
+                                                    <div class="col-12">
+                                                        <input class="button" data-repeater-create type="button"
+                                                            value="اضافة لون أخر" />
+                                                    </div>
+            
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <br>
                                         <div class="row">
                                 
                                             <div class="col">
                                                 <div class="form-group">
                                                     <label
-                                                        for="exampleFormControlTextarea1">صورة لمنتج
+                                                        for="exampleFormControlTextarea1" style="font-size: 16px">صورة المنتج الرئيسية
                                                         :</label>
                                                     <input type="file" name="primary_image" class="form-control-file" 
                                                         id="exampleFormControlFile1">
-
-                                                    <img src="{{asset('upload/admin/product/'.$products->primary_image)}}" style="width: 100px" alt="">
-
+                                                    <img src="{{ asset('upload/admin/product/'. $product->primary_image) }}" width="100px" />
                                                 </div>
                                             </div>
                                         </div>
-
+                                        <br>
+                                        <div>
+                                            <label style="font-size: 16px">الصور المحددة مسبقا</label>
+                                                <p>
+                                                    @foreach ($product->images as $image)
+                                                    <img src="{{ asset('upload/admin/product/'. $image->image_name) }}" width="90px" />
+                                                        
+                                                    @endforeach
+                                                </p>
+                                            </div>
+                                        
+                                        <div class="repeater-default">
+                                            <div data-repeater-list="images">
+                                                <div data-repeater-item>
+                                                    <div class="row">
+                                                        <div class="col">
+                                                            <label for="second_image"
+                                                                class="mr-sm-2" style="font-size: 16px">اضافة صورة أخرى
+                                                                :</label>
+            
+                                                            <div class="box ">
+                                                                <input type="file" name="second_image" class="form-control-file" 
+                                                                id="second_image">
+                                                            </div>
+            
+                                                        </div>
+                                                        <div class="col">
+                                                            <label for=""
+                                                                class="mr-sm-2" style="font-size: 16px">العمليات
+                                                                :</label>
+                                                            <input class="btn btn-danger btn-block" data-repeater-delete type="button"
+                                                                value="حذف الصورة" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+            
+                                            <div class="row">
+                                                <div class="row mt-20">
+                                                    <div class="col-12">
+                                                        <input class="button"  data-repeater-create type="button"
+                                                            value="اضافة صورة أخرى" />
+                                                    </div>
+            
+                                                </div>
+                                            </div>
+                                        </div>
 
                                         <br>
                                         <br>
@@ -174,6 +307,7 @@
 
 
                                     </form>
+                                    
                                 </div>
                             </div>
                         </div>

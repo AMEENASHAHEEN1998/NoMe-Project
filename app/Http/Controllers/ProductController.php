@@ -50,7 +50,7 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //try {
+        try {
             
             //dd($request->all());
             $image_name = '';
@@ -104,9 +104,9 @@ class ProductController extends Controller
             }
             return redirect()->route('admin.products.index')->with('success' , 'تم اضافة المنتج بنجاح');
 
-        // } catch (\Throwable $th) {
-        //     return redirect()->route('admin.products.index');
-        // }
+        } catch (\Throwable $th) {
+            return redirect()->route('admin.products.index');
+        }
     }
 
     /**
@@ -128,11 +128,11 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-        $products=product::find($id);
+        $product=product::find($id);
         // return $products;
         $categories=category::all();
 
-        return view('admin.page.product.edit',compact('products', $products,'categories',$categories));
+        return view('admin.page.product.edit',compact('product', $product,'categories',$categories));
 
     }
 
@@ -145,10 +145,11 @@ class ProductController extends Controller
      */
     public function update(Request $request,  $id)
     {
-        try {
-            $image_name = '';
+        
+        //try{    
             $product = product::findOrFail($id);
-            $image_name = $product->primary_image;
+            //dd($request->all());
+            $image_name = $product->primary_image ;
 
             if ($request->has('primary_image')) {
                 $FileEx = $request->file('primary_image')->getClientOriginalExtension();
@@ -156,31 +157,66 @@ class ProductController extends Controller
                 $request->file('primary_image')->move(public_path('upload/admin/product'), $image_name);
             }
 
-            if ($request->has('status_offer') == 1) {
-                $request->status_offer = 1;
-            } else {
-                $request->status_offer = 0;
-            }
-
-            
-           
-
             // return   $image_name;
-            product::find($id)->update([
-
+            $product->update([     
                 'product_name' => $request->product_name,
                 'category_id' => $request->category_id,
                 'price' => $request->price,
                 'description' => $request->description,
                 'primary_image' => $image_name,
-                'status_offer' => $request->status_offer,
-                'created_at' => now()
-         
+                'status_offer' =>  0,
+                'created_at' => now()   
             ]);
-            return redirect()->route('admin.products.index');
-        } catch (\Throwable $th) {
-            return redirect()->route('admin.products.index');
-        }
+
+            $sizes = $request->sizes;
+            foreach ($sizes as $size) {
+                if ($size['size'] != null) {
+                    size::create([
+                    'product_id' => $product->id,
+                    'size_name' => $size['size'],
+                ]);
+                }
+            }
+            
+
+            $colors = $request->colors;
+            foreach ($colors as $color) {
+                if($size['size'] != null){
+                    color::create([
+                        'product_id' => $product->id,
+                        'color_name' => $color['color'],
+                    ]);
+                }
+                
+            }
+
+            if($request->has('images')){
+                $images = $request->images;
+
+                foreach ($images as $image) {
+                    
+                        $image_second = '';
+                    
+                        //dd($image);
+                            $FileEx = $image['second_image']->getClientOriginalExtension();
+                            $image_second = time() . '_' . rand() . '.' . $FileEx;
+                            $image['second_image']->move(public_path('upload/admin/product'), $image_second);
+                        
+                        image::create([
+                            'product_id' => $product->id,
+                            'image_name' => $image_second,
+                        ]);
+                    }
+                 
+                }
+            
+            
+            return redirect()->route('admin.products.index')->with('success' , 'تم تعديل المنتج بنجاح');
+
+        // } catch (\Throwable $th) {
+        //     return redirect()->route('admin.products.index');
+        // }
+        
     }
 
     /**
@@ -191,7 +227,25 @@ class ProductController extends Controller
      */
     public function destroy( $id)
     {
-        product::find($id)->delete();
-        return redirect()->back();
+        try{
+        $product = product::findOrFail($id);
+        $product->delete();
+        $sizes = size::where('product_id' , $id);
+        foreach($sizes as $size){
+            $size->delete();
+        }
+        $colors = color::where('product_id' , $id);
+        foreach($colors as $color){
+            $color->delete();
+        }
+        $images = image::where('product_id' , $id);
+        foreach($images as $image){
+            $image->delete();
+        }
+        return redirect()->route('admin.products.index')->with('delete' , 'تم حذف المنتج بنجاح');
+
+    } catch (\Throwable $th) {
+        return redirect()->route('admin.products.index');
+    }
     }
 }
