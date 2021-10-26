@@ -50,7 +50,8 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        try {
+        //try {
+            
             //dd($request->all());
             $image_name = '';
 
@@ -90,12 +91,12 @@ class ProductController extends Controller
             $images = $request->images;
             foreach ($images as $image) {
                 $image_second = '';
-
-                if ($image->has('second_image')) {
-                    $FileEx = $image->file('second_image')->getClientOriginalExtension();
+                
+                //dd($image);
+                    $FileEx = $image['second_image']->getClientOriginalExtension();
                     $image_second = time() . '_' . rand() . '.' . $FileEx;
-                    $image->file('second_image')->move(public_path('upload/admin/product'), $image_second);
-                }
+                    $image['second_image']->move(public_path('upload/admin/product'), $image_second);
+                
                 image::create([
                     'product_id' => $product->id,
                     'image_name' => $image_second,
@@ -103,9 +104,9 @@ class ProductController extends Controller
             }
             return redirect()->route('admin.products.index')->with('success' , 'تم اضافة المنتج بنجاح');
 
-        } catch (\Throwable $th) {
-            return redirect()->route('admin.products.index');
-        }
+        // } catch (\Throwable $th) {
+        //     return redirect()->route('admin.products.index');
+        // }
     }
 
     /**

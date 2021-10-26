@@ -70,104 +70,34 @@
                                                 
                                                 </div>
                                             </div>
+                                            
                                             <div class="owl-item" style="width: 531px;"><div class="product-image product-image--location--gallery">
-                                                <a href="https://wasla-laravel.s3.me-south-1.amazonaws.com/images/products/6068a4e82ce82.jpg" class="product-image__body" target="_blank">
-                                                    <img class="product-image__img" src="https://wasla-laravel.s3.me-south-1.amazonaws.com/images/products/6068a4e82ce82.jpg" alt="">
+                                                <a href="{{ asset('upload/admin/product/'. $product->primary_image) }}" class="product-image__body" target="_blank">
+                                                    <img class="product-image__img" src="{{ asset('upload/admin/product/'. $product->primary_image) }}" alt="">
                                                 </a>
-                                            </div></div><div class="owl-item" style="width: 531px;"><div class="product-image product-image--location--gallery">
-                                                <a href="https://wasla-laravel.s3.me-south-1.amazonaws.com/images/products/6068a4e9997f5.jpg" class="product-image__body" target="_blank">
-                                                    <img class="product-image__img" src="https://wasla-laravel.s3.me-south-1.amazonaws.com/images/products/6068a4e9997f5.jpg" alt="">
-                                                </a>
-                                            </div></div><div class="owl-item" style="width: 531px;"><div class="product-image product-image--location--gallery">
-                                                <a href="https://wasla-laravel.s3.me-south-1.amazonaws.com/images/products/6068a4eb2f5f2.jpg" class="product-image__body" target="_blank">
-                                                    <img class="product-image__img" src="https://wasla-laravel.s3.me-south-1.amazonaws.com/images/products/6068a4eb2f5f2.jpg" alt="">
-                                                </a>
-                                            </div></div><div class="owl-item" style="width: 531px;"><div class="product-image product-image--location--gallery">
-                                                <a href="https://wasla-laravel.s3.me-south-1.amazonaws.com/images/products/6068a4ecbe707.jpg" class="product-image__body" target="_blank">
-                                                    <img class="product-image__img" src="https://wasla-laravel.s3.me-south-1.amazonaws.com/images/products/6068a4ecbe707.jpg" alt="">
-                                                </a>
-                                            </div></div><div class="owl-item" style="width: 531px;"><div class="product-image product-image--location--gallery">
-                                                <a href="https://wasla-laravel.s3.me-south-1.amazonaws.com/images/products/6068a4ee42441.jpg" class="product-image__body" target="_blank">
-                                                    <img class="product-image__img" src="https://wasla-laravel.s3.me-south-1.amazonaws.com/images/products/6068a4ee42441.jpg" alt="">
-                                                </a>
-                                            </div></div><div class="owl-item" style="width: 531px;"><div class="product-image product-image--location--gallery">
-                                                <a href="https://wasla-laravel.s3.me-south-1.amazonaws.com/images/products/6068a4efed9da.jpg" class="product-image__body" target="_blank">
-                                                    <img class="product-image__img" src="https://wasla-laravel.s3.me-south-1.amazonaws.com/images/products/6068a4efed9da.jpg" alt="">
-                                                </a>
-                                            </div></div><div class="owl-item" style="width: 531px;"><div class="product-image product-image--location--gallery">
-                                                <a href="https://wasla-laravel.s3.me-south-1.amazonaws.com/images/products/6068a4f1aab48.jpg" class="product-image__body" target="_blank">
-                                                    <img class="product-image__img" src="https://wasla-laravel.s3.me-south-1.amazonaws.com/images/products/6068a4f1aab48.jpg" alt="">
-                                                </a>
-                                            </div></div><div class="owl-item" style="width: 531px;"><div class="product-image product-image--location--gallery">
-                                                <a href="https://wasla-laravel.s3.me-south-1.amazonaws.com/images/products/6068a4f302b9a.jpg" class="product-image__body" target="_blank">
-                                                    <img class="product-image__img" src="https://wasla-laravel.s3.me-south-1.amazonaws.com/images/products/6068a4f302b9a.jpg" alt="">
-                                                </a>
-                                            </div></div><div class="owl-item" style="width: 531px;"><div class="product-image product-image--location--gallery">
-                                                <a href="https://wasla-laravel.s3.me-south-1.amazonaws.com/images/subProduct/6068a4f65293f.jpg" class="product-image__body" target="_blank">
-                                                    <img class="product-image__img" src="https://wasla-laravel.s3.me-south-1.amazonaws.com/images/subProduct/6068a4f65293f.jpg" alt="">
-                                                </a>
-                                            </div></div><div class="owl-item" style="width: 531px;"><div class="product-image product-image--location--gallery">
-                                                <a href="https://wasla-laravel.s3.me-south-1.amazonaws.com/images/subProduct/6068a4f9bce86.jpg" class="product-image__body" target="_blank">
-                                                    <img class="product-image__img" src="https://wasla-laravel.s3.me-south-1.amazonaws.com/images/subProduct/6068a4f9bce86.jpg" alt="">
-                                                </a>
-                                            </div></div><div class="owl-item" style="width: 531px;"><div class="product-image product-image--location--gallery">
-                                                <a href="https://wasla-laravel.s3.me-south-1.amazonaws.com/images/subProduct/6068a4fcc877c.jpg" class="product-image__body" target="_blank">
-                                                    <img class="product-image__img" src="https://wasla-laravel.s3.me-south-1.amazonaws.com/images/subProduct/6068a4fcc877c.jpg" alt="">
-                                                </a>
-                                            </div></div></div></div><div class="owl-nav disabled"><button type="button" role="presentation" class="owl-prev"><span aria-label="Previous">‹</span></button><button type="button" role="presentation" class="owl-next"><span aria-label="Next">›</span></button></div><div class="owl-dots disabled"></div></div>
+                                            </div></div>
+                                            
+                                            </div></div><div class="owl-nav disabled"><button type="button" role="presentation" class="owl-prev"><span aria-label="Previous">‹</span></button><button type="button" role="presentation" class="owl-next"><span aria-label="Next">›</span></button></div><div class="owl-dots disabled"></div></div>
                                 </div>
                                 <div class="product-gallery__carousel">
                                     <div class="owl-carousel owl-rtl owl-loaded owl-drag" id="product-carousel" data-length="9">
-                                                                        
-                                                                            <div class="owl-stage-outer"><div class="owl-stage" style="transform: translate3d(0px, 0px, 0px); transition: all 0s ease 0s; width: 1308px;"><div class="owl-item active" style="width: 99px; margin-left: 10px;"><a href="https://wasla-laravel.s3.me-south-1.amazonaws.com/images/products/6068a4e6aef78.jpg" class="product-image product-gallery__carousel-item product-gallery__carousel-item--active">
-                                                <div class="product-image__body">
-                                                    <img class="product-image__img product-gallery__carousel-image" src="https://wasla-laravel.s3.me-south-1.amazonaws.com/images/products/6068a4e6aef78.jpg" alt="">
-                                                </div>
-                                            </a></div><div class="owl-item active" style="width: 99px; margin-left: 10px;"><a href="https://wasla-laravel.s3.me-south-1.amazonaws.com/images/products/6068a4e82ce82.jpg" class="product-image product-gallery__carousel-item">
-                                                <div class="product-image__body">
-                                                    <img class="product-image__img product-gallery__carousel-image" src="https://wasla-laravel.s3.me-south-1.amazonaws.com/images/products/6068a4e82ce82.jpg" alt="">
-                                                </div>
-                                            </a></div><div class="owl-item active" style="width: 99px; margin-left: 10px;"><a href="https://wasla-laravel.s3.me-south-1.amazonaws.com/images/products/6068a4e9997f5.jpg" class="product-image product-gallery__carousel-item">
-                                                <div class="product-image__body">
-                                                    <img class="product-image__img product-gallery__carousel-image" src="https://wasla-laravel.s3.me-south-1.amazonaws.com/images/products/6068a4e9997f5.jpg" alt="">
-                                                </div>
-                                            </a></div><div class="owl-item active" style="width: 99px; margin-left: 10px;"><a href="https://wasla-laravel.s3.me-south-1.amazonaws.com/images/products/6068a4eb2f5f2.jpg" class="product-image product-gallery__carousel-item">
-                                                <div class="product-image__body">
-                                                    <img class="product-image__img product-gallery__carousel-image" src="https://wasla-laravel.s3.me-south-1.amazonaws.com/images/products/6068a4eb2f5f2.jpg" alt="">
-                                                </div>
-                                            </a></div><div class="owl-item active" style="width: 99px; margin-left: 10px;"><a href="https://wasla-laravel.s3.me-south-1.amazonaws.com/images/products/6068a4ecbe707.jpg" class="product-image product-gallery__carousel-item">
-                                                <div class="product-image__body">
-                                                    <img class="product-image__img product-gallery__carousel-image" src="https://wasla-laravel.s3.me-south-1.amazonaws.com/images/products/6068a4ecbe707.jpg" alt="">
-                                                </div>
-                                            </a></div><div class="owl-item" style="width: 99px; margin-left: 10px;"><a href="https://wasla-laravel.s3.me-south-1.amazonaws.com/images/products/6068a4ee42441.jpg" class="product-image product-gallery__carousel-item">
-                                                <div class="product-image__body">
-                                                    <img class="product-image__img product-gallery__carousel-image" src="https://wasla-laravel.s3.me-south-1.amazonaws.com/images/products/6068a4ee42441.jpg" alt="">
-                                                </div>
-                                            </a></div><div class="owl-item" style="width: 99px; margin-left: 10px;"><a href="https://wasla-laravel.s3.me-south-1.amazonaws.com/images/products/6068a4efed9da.jpg" class="product-image product-gallery__carousel-item">
-                                                <div class="product-image__body">
-                                                    <img class="product-image__img product-gallery__carousel-image" src="https://wasla-laravel.s3.me-south-1.amazonaws.com/images/products/6068a4efed9da.jpg" alt="">
-                                                </div>
-                                            </a></div><div class="owl-item" style="width: 99px; margin-left: 10px;"><a href="https://wasla-laravel.s3.me-south-1.amazonaws.com/images/products/6068a4f1aab48.jpg" class="product-image product-gallery__carousel-item">
-                                                <div class="product-image__body">
-                                                    <img class="product-image__img product-gallery__carousel-image" src="https://wasla-laravel.s3.me-south-1.amazonaws.com/images/products/6068a4f1aab48.jpg" alt="">
-                                                </div>
-                                            </a></div><div class="owl-item" style="width: 99px; margin-left: 10px;"><a href="https://wasla-laravel.s3.me-south-1.amazonaws.com/images/products/6068a4f302b9a.jpg" class="product-image product-gallery__carousel-item">
-                                                <div class="product-image__body">
-                                                    <img class="product-image__img product-gallery__carousel-image" src="https://wasla-laravel.s3.me-south-1.amazonaws.com/images/products/6068a4f302b9a.jpg" alt="">
-                                                </div>
-                                            </a></div><div class="owl-item" style="width: 99px; margin-left: 10px;"><a href="https://wasla-laravel.s3.me-south-1.amazonaws.com/images/subProduct/6068a4f65293f.jpg" id="https://wasla-laravel.s3.me-south-1.amazonaws.com/images/subProduct/6068a4f65293f.jpg" data-key="0" class="product-image product-gallery__carousel-item">
-                                                <div class="product-image__body">
-                                                    <img class="product-image__img product-gallery__carousel-image" src="https://wasla-laravel.s3.me-south-1.amazonaws.com/images/subProduct/6068a4f65293f.jpg" alt="">
-                                                </div>
-                                            </a></div><div class="owl-item" style="width: 99px; margin-left: 10px;"><a href="https://wasla-laravel.s3.me-south-1.amazonaws.com/images/subProduct/6068a4f9bce86.jpg" id="https://wasla-laravel.s3.me-south-1.amazonaws.com/images/subProduct/6068a4f9bce86.jpg" data-key="1" class="product-image product-gallery__carousel-item">
-                                                <div class="product-image__body">
-                                                    <img class="product-image__img product-gallery__carousel-image" src="https://wasla-laravel.s3.me-south-1.amazonaws.com/images/subProduct/6068a4f9bce86.jpg" alt="">
-                                                </div>
-                                            </a></div><div class="owl-item" style="width: 99px; margin-left: 10px;"><a href="https://wasla-laravel.s3.me-south-1.amazonaws.com/images/subProduct/6068a4fcc877c.jpg" id="https://wasla-laravel.s3.me-south-1.amazonaws.com/images/subProduct/6068a4fcc877c.jpg" data-key="2" class="product-image product-gallery__carousel-item">
-                                                <div class="product-image__body">
-                                                    <img class="product-image__img product-gallery__carousel-image" src="https://wasla-laravel.s3.me-south-1.amazonaws.com/images/subProduct/6068a4fcc877c.jpg" alt="">
-                                                </div>
-                                            </a></div></div></div><div class="owl-nav disabled"><button type="button" role="presentation" class="owl-prev"><span aria-label="Previous">‹</span></button><button type="button" role="presentation" class="owl-next"><span aria-label="Next">›</span></button></div><div class="owl-dots disabled"></div></div>
+                                        
+                                                              
+                                        <div class="owl-stage-outer">
+                                            <div class="owl-stage" style="transform: translate3d(0px, 0px, 0px); transition: all 0s ease 0s; width: 1308px;">
+                                                @foreach ($productImages as $productImage)
+                                                <div class="owl-item {{ $loop->iteration == 1 ? 'active' : '' }} " style="width: 99px; margin-left: 10px;">
+                                                    <a href="{{ asset('upload/admin/product/'. $productImage->image_name) }}" class="product-image product-gallery__carousel-item ">
+                                                        <div class="product-image__body">
+                                                            <img class="product-image__img product-gallery__carousel-image" src="{{ asset('upload/admin/product/'. $productImage->image_name) }}" alt="">
+                                                        </div>
+                                                    </a>
+                                            </div>
+                                                @endforeach 
+                                                
+                                                
+                                        </div></div><div class="owl-nav disabled"><button type="button" role="presentation" class="owl-prev"><span aria-label="Previous">‹</span></button><button type="button" role="presentation" class="owl-next"><span aria-label="Next">›</span></button></div><div class="owl-dots disabled"></div>
+                                        </div>
                                 </div>
                             </div>
                         </div>

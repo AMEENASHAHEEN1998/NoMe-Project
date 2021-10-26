@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\category;
+use App\Models\image;
 use App\Models\product;
 use Illuminate\Http\Request;
 
@@ -50,8 +51,9 @@ class HomeController extends Controller
         $product = product::findOrFail($product->id);
         $products = product::where('category_id' , $product->category_id)->orderBy('id' ,'desc')->get();
         $categories = category::orderBy('id' , 'desc')->get();
-        
-        return view('front.productpage', compact($product , 'product' , $products , 'products' , 'categories' ,$categories));
+        $productImages = image::where('product_id' , $product->id)->get();
+       // dd($productImages);
+        return view('front.productpage', compact($product , 'product' , $products , 'products' , 'categories' ,$categories , 'productImages' , $productImages));
     }
     public function contact()
     {
