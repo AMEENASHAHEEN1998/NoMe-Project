@@ -12,7 +12,9 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\HomePageController;
 use App\Http\Controllers\OfferController;
+use App\Http\Controllers\SliderController;
 use App\Models\order;
+use DebugBar\Bridge\SlimCollector;
 
 /*
 |--------------------------------------------------------------------------
@@ -55,6 +57,7 @@ Route::name('NoMe.')->group(function(){
 
 Route::prefix('admin')->middleware('auth','checkRole')->name('admin.')->group(function(){
     Route::get('/',[HomeController::class ,'control_panel'])->name('control_panel');
+    Route::resource('slider', SliderController::class);
     Route::resource('categories', CategoryController::class);
     Route::resource('products', ProductController::class);
     Route::resource('users', UserController::class);

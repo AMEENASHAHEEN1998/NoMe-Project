@@ -7,6 +7,7 @@ use App\Models\image;
 use App\Models\offer;
 use App\Models\order;
 use App\Models\product;
+use App\Models\slider;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -32,7 +33,8 @@ class HomeController extends Controller
         $latestProducts = product::orderBy('id' , 'desc')->take(20)->get();
         $categories = category::orderBy('id' , 'desc')->get();
         $offerProducts = product::where('status_offer' , 1)->get();
-        return view('front.index',compact('latestProducts', $latestProducts , 'categories' ,$categories , 'offerProducts' , $offerProducts));
+        $slider = slider::all();
+        return view('front.index',compact('latestProducts', $latestProducts , 'categories' ,$categories , 'offerProducts' , $offerProducts ,'slider' ,$slider));
     }
     public function control_panel(){
 
@@ -90,4 +92,6 @@ class HomeController extends Controller
 
         return view('front.products',compact('products' ,$products ,'categories' ,$categories));
     }
+
+   
 }
