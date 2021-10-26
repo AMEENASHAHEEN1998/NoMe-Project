@@ -27,7 +27,8 @@
         <div class="content-wrapper container-xxl p-0">
             <div class="content-header row">
             </div>
-            <div class="content-body"><!-- Dashboard Ecommerce Starts -->
+            <div class="content-body">
+            <!-- Dashboard Ecommerce Starts -->
                 {{-- <section id="dashboard-ecommerce">
                     <div class="row match-height">
                         <!-- Medal Card -->
@@ -820,7 +821,102 @@
                     </div>
                 </section> --}}
                 <!-- Dashboard Ecommerce ends -->
+                <div class="row">
+                    
+                    <div class="col-xl-3 col-lg-6 col-md-6 mb-30">
+                        <div class="card card-statistics h-60">
+                            <div class="card-body">
+                                <div class="clearfix">
+                                    <div class="float-left">
+        
+                                            <span class="text-warning">
+                                                <i class="fa fa-tag highlight-icon" aria-hidden="true"></i>
+                                            </span>
+                                    </div>
+                                    <div class="float-right text-right">
+                                        <p class="card-text text-dark"></p>
+                                        <h4>المنتجات <span>
+                                            {{$product}}
+                                        </span></h4>
+                                    </div>
+                                </div>
+                                <p class="text-muted pt-3 mb-0 mt-2 border-top">
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-6 col-md-6 mb-30">
+                        <div class="card card-statistics h-60">
+                            <div class="card-body">
+                                <div class="clearfix">
+                                    <div class="float-left">
+        
+                                            <span class="text-warning">
+                                                <i class="fa fa-tag highlight-icon" aria-hidden="true"></i>
+                                            </span>
+                                    </div>
+                                    <div class="float-right text-right">
+                                        <p class="card-text text-dark"></p>
+                                        <h4>العروض <span>
+                                            {{ $offer}}
+                                        </span></h4>
+                                    </div>
+                                </div>
+                                <p class="text-muted pt-3 mb-0 mt-2 border-top">
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-6 col-md-6 mb-30">
+                        <div class="card card-statistics h-60">
+                            <div class="card-body">
+                                <div class="clearfix">
+                                    <div class="float-left">
+                                            <span class="text-success">
+                                                <i class="fa fa-address-card highlight-icon" aria-hidden="true"></i>
+                                            </span>
+                                    </div>
+                                    <div class="float-right text-right">
+                                        <p class="card-text text-dark"></p>
+                                        <h4>الطلبيات   <span> 
+                                            {{$orders}}
+                                        </span></h4>
+                                    </div>
+                                </div>
+                                <p class="text-muted pt-3 mb-0 mt-2 border-top">
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                   
 
+
+                    <div class="col-xl-3 col-lg-6 col-md-6 mb-30">
+                        <div class="card card-statistics h-60">
+                            <div class="card-body">
+                                <div class="clearfix">
+                                    <div class="float-left">
+        
+                                            <span class="text-warning">
+                                                <i class="fa fa-tag highlight-icon" aria-hidden="true"></i>
+                                            </span>
+                                    </div>
+                                    <div class="float-right text-right">
+                                        <p class="card-text text-dark"></p>
+                                        <h4>المستخدمين <span>
+                                            {{$users}}
+                                        </span></h4>
+                                    </div>
+                                </div>
+                                <p class="text-muted pt-3 mb-0 mt-2 border-top">
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                
             </div>
         </div>
     </div>

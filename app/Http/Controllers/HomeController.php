@@ -4,7 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\category;
 use App\Models\image;
+use App\Models\offer;
+use App\Models\order;
 use App\Models\product;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -31,7 +34,14 @@ class HomeController extends Controller
         return view('front.index',compact('latestProducts', $latestProducts , 'categories' ,$categories));
     }
     public function control_panel(){
-        return view('admin.index');
+
+        $product=product::all()->count();
+        $orders=order::all()->count();
+        $users=User::all()->count();
+        $offer=offer::all()->count();
+
+        return view('admin.index',compact('product',$product, 'orders',$orders ,'users',$users ,'offer',$offer));
+
     }
     public function about()
     {
