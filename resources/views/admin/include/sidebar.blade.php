@@ -44,7 +44,7 @@
     <div class="shadow-bottom"></div>
     <div class="main-menu-content">
         <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
-            <li class=" nav-item"><a class="d-flex align-items-center" href="{{-- route('admin.index') --}}"><i
+            <li class=" nav-item"><a class="d-flex align-items-center" href="{{route('admin.control_panel')}}"><i
                         data-feather="home"></i><span class="menu-title text-truncate"
                                                       data-i18n="Dashboards">لوحة تحكم</span></a>
 
