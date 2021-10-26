@@ -17,16 +17,29 @@
                         </a>
                         <div class="search search--location--mobile-header mobile-header__search">
                             <div class="search__body">
-                                <form class="search__form" action="{{route('findProduct')}}" method="post" style="margin-bottom: 0px;" >
-                                    <input class="search__input" name="p" placeholder="ابحث في أكثر من 10,000 منتج" aria-label="Site search" type="text" autocomplete="off">
-                                    <input type="hidden" name="c" value="all">
+                                
+                                <form class="search__form" action="{{route('NoMe.findProduct')}}" method="get" style="margin-bottom: 0px;" >
+                                    @csrf
+                                    <input class="search__input search" value="{{ request()->input('query') }}" name="query" placeholder="ابحث في أكثر من 10,000 منتج" aria-label="Site search" type="text" autocomplete="off">
+                                    
+                                   
+                                   
+
+                                    <input type="hidden" value="{{ request()->input('query') }}" name="query">
+
                                     <button class="search__button search__button--type--submit" type="submit">
                                         <i class="fa fa-search"></i>
                                     </button>
+
                                     <button class="search__button search__button--type--close" type="button">
                                         <i class="fa fa-cross"></i>
                                     </button>
+
                                     <div class="search__border"></div>
+
+
+
+
                                 </form>
                                 <div class="search__suggestions suggestions suggestions--location--mobile-header"></div>
                             </div>
@@ -123,8 +136,8 @@
                         <div class="search search--location--header ">
                             <div class="search__body">
 
-                                <form class="search__form" action="/search" method="GET" style="margin-bottom: 0px;">
-                                    <select class="search__categories" aria-label="Category" name="c">
+                                <form class="search__form" action="{{route('NoMe.findProduct')}}" method="GET" style="margin-bottom: 0px;">
+                                    <select class="search__categories" aria-label="Category" value="{{ request()->input('query') }}" name="query">
                                         <option value="all">جميع التصنيفات</option>
                                             @foreach ($categories as $category)
                                             <option value="{{ $category->category_name }}">
@@ -133,7 +146,7 @@
                                             
                                                                                         
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     </select>
-                                    <input class="search__input" name="p" placeholder="ابحث في أكثر من 10,000 منتج" aria-label="Site search" type="text" autocomplete="off">
+                                    <input class="search__input" value="{{ request()->input('query') }}" name="query" placeholder="ابحث في أكثر من 10,000 منتج" aria-label="Site search" type="text" autocomplete="off">
                                     <button class="search__button search__button--type--submit" type="submit">
                                         <svg width="20px" height="20px">
                                             <use xlink:href="https://waslastore.ps//website/images/sprite.svg#search-20"></use>
