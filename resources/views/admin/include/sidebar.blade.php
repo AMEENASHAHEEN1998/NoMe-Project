@@ -131,7 +131,7 @@
 
             <li class=" nav-item"><a class="d-flex align-items-center" href="{{route('NoMe.send-email.index')}}"><i data-feather="users"></i><span
                 class="menu-title text-truncate" data-i18n="Invoice">الرسائل</span></a>
-        <ul class="menu-content">
+                <ul class="menu-content">
 
             <li><a class="d-flex align-items-center" href="{{route('NoMe.send-email.index')}}"><i
                         data-feather="circle"></i><span class="menu-item text-truncate"
@@ -139,7 +139,18 @@
             </li>
            
           
+           
+          
         </ul>
+
+        <li class=" nav-item"><a class="d-flex align-items-center" href="{{route('admin.slider.index')}}"><i data-feather="users"></i><span
+            class="menu-title text-truncate" data-i18n="Invoice">الصور</span></a>
+            <ul class="menu-content">
+
+        <li><a class="d-flex align-items-center" href="{{route('admin.slider.index')}}"><i
+                    data-feather="circle"></i><span class="menu-item text-truncate"
+                                                    data-i18n="List">عرض الصور</span></a>
+        </li>
     </li>
         </ul>
     </div>
