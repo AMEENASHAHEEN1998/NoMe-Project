@@ -69,6 +69,7 @@
                                             <th> الحجم </th>
                                             <th> الكمية </th>
                                             <th> المنتج </th>
+                                            <th> الخصم</th>
                                             <th> الحالة </th>
                                             
 
@@ -88,9 +89,7 @@
                                                 <td>{{ $order->size }}</td>
                                                 <td>{{ $order->amount }}</td>
                                                 <td>{{ $order->product->product_name }}</td>
-                                               
-
-
+                                               <td>{{ $order->discount }}</td>
                                                 @if ($order->status == 0)
                                                 <td style="color:red ; font-weight:bold"> طلبيات غير مسلمة</td>
                                                 @else

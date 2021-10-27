@@ -149,18 +149,11 @@
                                                                                                             {{ $offerProduct->price }}₪
                                                                                                     </div>
                                                     <div class="product-card__buttons">
-                                                        <a class="btn btn-primary product-card__addtocart" href="/products/9934">الذهاب للمنتج</a>
+                                                        <a class="btn btn-primary product-card__addtocart" href="{{ route('NoMe.productpage', $offerProduct->product_name) }}">الذهاب للمنتج</a>
                                                         <meta name="csrf-token" content="jPltwjuQpZppawltECo6QtvdVdcKFU6icjO2aj3I">
                                                         <button class="btn btn-secondary product-card__addtocart product-card__addtocart--list" type="button">الذهاب للمنتج
                                                         </button>
-                                                        <button id="but-wishlist[9934]" onclick="return setWishlist(9934);" class="btn btn-light btn-svg-icon btn-svg-icon--fake-svg product-card__wishlist
-                                                        " type="button">
-                                                            <svg width="16px" height="16px" id="svg-wishlist[9934]" style="">&gt;
-                                                                <use xlink:href="https://waslastore.ps//website/images/sprite.svg#wishlist-16">
-                                                                </use>
-                                                            </svg>
-                                                            <span class="fake-svg-icon fake-svg-icon--wishlist-16"></span>
-                                                        </button>
+                                                        
                                                     </div>
                                                 </div>
                                             </div>

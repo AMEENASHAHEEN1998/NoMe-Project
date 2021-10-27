@@ -56,7 +56,7 @@ class HomeController extends Controller
     {
         $categories = category::orderBy('id' , 'desc')->get();
 
-        return view('front.about', 'categories' ,$categories);
+        return view('front.about', compact('categories' ,$categories));
     }
     public function products()
     {
@@ -100,4 +100,45 @@ class HomeController extends Controller
     }
 
    
+    public function order(Request $request)
+    {
+        // return $request->product_id;
+        try{
+            //dd($request->all());
+            $discount = "";
+            if($request->discount == "111021"){
+                $discount = "خصم بنسبة 10% ";
+            }elseif($request->discount == "111521"){
+                $discount = "خصم بنسبة 15% ";
+            }else{
+                $discount = "لا يوجد خصم";
+            }
+        $validated = $request->validate([
+            'color' => 'required',
+            'size' => 'required',
+            'amount' => 'required',
+            'person_name' => 'required',
+            'phone' => 'required',
+            'address' => 'required',
+            'product_id' => 'required'
+        ]);
+        order::create([
+
+         
+            'color' => $request->color,
+            'size' => $request->size,
+            'amount' => $request->amount,
+            'person_name' => $request->person_name,
+            'phone' => $request->phone,
+            'address' => $request->address,
+            'product_id' => $request->product_id,
+            'status' => 0,
+            'discount' =>$discount,
+        ]);
+        return redirect()->back()->with('success' , 'تم اضافة الطلبية بنجاح');
+
+        }catch (\Exception $e){
+            return redirect()->back()->with('warning','فشل في عملية انشاء الطلبية');
+        }
+    }
 }

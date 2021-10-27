@@ -131,7 +131,7 @@
                                 <div class="product__prices">
                                     <span id="price">{{ $product->price }}</span> ₪
                                 </div>
-<form action="{{ route('admin.orders.store') }}" method="POST">
+<form action="{{ route('NoMe.order') }}" method="POST">
     @csrf                                   
     <div class="product__options">
         <div class="form-group" id="Color" data-product="5086">
@@ -218,6 +218,14 @@
     @if($errors->has('address'))
     <div
         class="invalid-feedback">{{ $errors->first('address') }}
+    </div>
+@endif</div>
+<div class="form-group" id="" >
+    <label class="control-label"> هل لديك كود خصم ؟</label>
+    <input class="form-control @error('discount') is-invalid @enderror" name="discount" type="text" value="{{ old('discount') }}" placeholder="ادخل كود الخصك الخاص بك واذا لا يوجد أدخل 0" >
+    @if($errors->has('discount'))
+    <div
+        class="invalid-feedback">{{ $errors->first('discount') }}
     </div>
 @endif</div>
 <div class="product__actions-item product__actions-item--addtocart">

@@ -42,6 +42,7 @@ Route::name('NoMe.')->group(function(){
     // Route::post('findProduct',[HomeController::class ,'findProduct'])->name('findProduct');
     Route::get('products',[HomeController::class ,'products'])->name('products');
     Route::get('productpage/{product:product_name}',[HomeController::class ,'productpage'])->name('productpage');
+    Route::post('order' , [HomeController::class , 'order'])->name('order');
     Route::get('contact',[HomeController::class ,'contact'])->name('contact');
     Route::post('send-email', [MailController::class, 'sendEmail'])->name('send-email');
     Route::get('send-email/index', [MailController::class, 'index'])->name('send-email.index');
