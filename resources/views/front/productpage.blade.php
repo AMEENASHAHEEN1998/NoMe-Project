@@ -222,7 +222,7 @@
 @endif</div>
 <div class="form-group" id="" >
     <label class="control-label"> هل لديك كود خصم ؟</label>
-    <input class="form-control @error('discount') is-invalid @enderror" name="discount" type="text" value="{{ old('discount') }}" placeholder="ادخل كود الخصك الخاص بك واذا لا يوجد أدخل 0" >
+    <input class="form-control @error('discount') is-invalid @enderror" name="discount" type="text" value="{{ old('discount') }}" placeholder="ادخل كود الخصم الخاص بك واذا لا يوجد أدخل 0" >
     @if($errors->has('discount'))
     <div
         class="invalid-feedback">{{ $errors->first('discount') }}

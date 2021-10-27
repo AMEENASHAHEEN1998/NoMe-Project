@@ -72,8 +72,6 @@
                                             <th> الخصم</th>
                                             <th> الحالة </th>
                                             
-
-                                            <th>تاريخ الاضافة</th>
                                             <th>العمليات</th>
                                         </tr>
                                         </thead>
@@ -96,7 +94,7 @@
                                                     <td style="color:green ; font-weight:bold">طلبيات مسلمة</td>
 
                                                 @endif
-                                                <td>{{ $order->created_at }}</td>
+                                                
                                                 <td>
                                                     <div class="dropdown">
                                                         <button

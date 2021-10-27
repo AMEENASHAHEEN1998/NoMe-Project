@@ -55,7 +55,7 @@
                             <div class="card">
                                 <div class="card-header border-bottom">
                                     <h4 class="card-title">الطلبيات</h4>
-                                    
+
                                 </div>
                                 <div class="card-datatable">
                                     <table class="dt-responsive table">
@@ -73,13 +73,13 @@
 
                                             <th> الحالة </th>
 
-                                            <th>تاريخ الاضافة</th>
+                                            
                                             <th>العمليات</th>
                                         </tr>
                                         </thead>
                                         <tbody>
                                             @forelse ($orders as $order )
-                                            
+
                                             <tr>
                                                 <td>{{ $loop->iteration }}</td>
                                                 <td>{{ $order->person_name }}</td>
@@ -96,7 +96,7 @@
                                                     <td style="color:green ; font-weight:bold">طلبيات مسلمة</td>
 
                                                 @endif
-                                                <td>{{ $order->created_at }}</td>
+                                                
                                                 <td>
                                                     <div class="dropdown">
                                                         <button
@@ -119,25 +119,25 @@
                                                                 <i data-feather="trash" class="me-50"></i>
                                                                 <span><button data-toggle="modal"
                                                                     data-target="#delete{{ $order->id }}" style="background: none; border: none; outline: none" type="submit">حذف</button></span>
-                                                           
-                                                           
+
+
                                                                 </form>
-                                                            
-                                                         
+
+
                                                         </div>
                                                     </div>
                                                 </td>
                                             </tr>
-                                            
+
                                             @empty
                                             <tr colspan="3">لا يوجد أقسام</tr>
                                             @endforelse
 
-                                
+
                                         </tbody>
                                     </table>
 
-                                    
+
                                 </div>
                             </div>
                         </div>
