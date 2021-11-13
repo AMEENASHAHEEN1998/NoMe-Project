@@ -11,7 +11,7 @@
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item">
-                            <a href="index.html">الرئيسية</a>
+                            <a href="{{route('NoMe.home')}}">الرئيسية</a>
                             <svg class="breadcrumb-arrow" width="6px" height="9px">
                                 <use xlink:href="https://waslastore.ps//website/images/sprite.svg#arrow-rounded-right-6x9">
                                 </use>
@@ -33,15 +33,15 @@
                             <h4 class="contact-us__header card-title">تواصل معنا</h4>
                             <form action="{{route('NoMe.send-email')}}" method="post">
                                 @csrf
-                                <input type="hidden">                                
+                                <input type="hidden">
                                 <div class="form-row">
                                     <div class="form-group col-md-6">
                                         <label for="form-name">الاسم</label>
                                         <input type="text" id="form-name" class="form-control" placeholder="الاسم" name="name">
                                     </div>
                                     <div class="form-group col-md-6">
-                                        <label for="form-email">البريد الالكتروني</label>
-                                        <input type="email" id="form-email" name='email' class="form-control" placeholder="البريد الالكتروني">
+                                        <label for="form-email">رقم الجوال</label>
+                                        <input type="text" id="form-email" name='email' class="form-control" placeholder="رقم الجوال">
                                     </div>
                                 </div>
 
@@ -67,4 +67,3 @@
         </div>
     </div>
 @endsection
-

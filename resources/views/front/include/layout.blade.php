@@ -3,7 +3,7 @@
     @include('front.include.head')
 </head>
 <body data-new-gr-c-s-check-loaded="14.1031.0" data-gr-ext-installed="">
-   
+
     <!-- site -->
     <div class="site">
         @include('front.include.header')

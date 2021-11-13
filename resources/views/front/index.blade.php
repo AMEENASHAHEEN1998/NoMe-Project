@@ -2,19 +2,19 @@
 @section('title', 'الصفحة الرئيسية')
 
 @section('content')
-    
+
     <div class="site__body">
         <!-- .block-slideshow -->
     <div class="block-slideshow block-slideshow--layout--with-departments block">
         <div class="container">
             <div class="row">
-                
+
             <div class="col-lg-3 d-none d-lg-block"></div>
                 <div class="col-12 col-lg-9">
                     <div class="block-slideshow__body">
                         <div class="owl-carousel owl-rtl owl-loaded owl-drag">
             <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-                
+
                 <div class="carousel-inner">
                 @foreach ($sliders as $slider)
                 <div class="carousel-item {{ ($loop->iteration == 1) ?  'active' : '' }} cloned" ><a class="block-slideshow__slide" href="">
@@ -24,13 +24,13 @@
                     </div>
                 </a></div>
                 @endforeach
-                    
-                
-                    
-                    
-                    
+
+
+
+
+
                 </div>
-                
+
                 <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="sr-only">Previous</span>
@@ -55,9 +55,7 @@
             <div class="block-features__list">
                 <div class="block-features__item">
                     <div class="block-features__icon">
-                        <svg width="48px" height="48px">
-                            <use xlink:href="https://waslastore.ps//website/images/sprite.svg#fi-free-delivery-48"></use>
-                        </svg>
+                        <img src="{{asset('image/perfect.jpg')}}" width="48px" height="48px"  />
                     </div>
                     <div class="block-features__content">
                         <div class="block-features__title"> أجود الأحذية</div>
@@ -67,21 +65,20 @@
                 <div class="block-features__divider"></div>
                 <div class="block-features__item">
                     <div class="block-features__icon">
-                        <svg width="48px" height="48px">
-                            <use xlink:href="https://waslastore.ps//website/images/sprite.svg#fi-24-hours-48"></use>
-                        </svg>
+                        <img src="{{asset('image/support.jpg')}}" width="48px" height="48px"  />
                     </div>
                     <div class="block-features__content">
-                        <div class="block-features__title">دعم 24/7</div>
+                        <div class="block-features__title">دعم 24/24</div>
                         <div class="block-features__subtitle">اتصل بنا في أي وقت</div>
                     </div>
                 </div>
                 <div class="block-features__divider"></div>
                 <div class="block-features__item">
                     <div class="block-features__icon">
-                        <svg width="48px" height="48px">
-                            <use xlink:href="https://waslastore.ps//website/images/sprite.svg#fi-payment-security-48"></use>
-                        </svg>
+                        <img src="{{asset('image/payment-method.png')}}" width="48px" height="48px"  />
+                        <!--<svg width="48px" height="48px">-->
+                        <!--    <use xlink:href="https://waslastore.ps//website/images/sprite.svg#fi-payment-security-48"></use>-->
+                        <!--</svg>-->
                     </div>
                     <div class="block-features__content">
                         <div class="block-features__title"> الدفع</div>
@@ -91,9 +88,7 @@
                 <div class="block-features__divider"></div>
                 <div class="block-features__item">
                     <div class="block-features__icon">
-                        <svg width="48px" height="48px">
-                            <use xlink:href="https://waslastore.ps//website/images/sprite.svg#fi-tag-48"></use>
-                        </svg>
+                        <img src="{{asset('image/products.jpg')}}" width="48px" height="48px"  />
                     </div>
                     <div class="block-features__content">
                         <div class="block-features__title">أكثر من 10000</div>
@@ -113,22 +108,22 @@
                     <div class="block-header__arrows-list">
                         <button class="block-header__arrow block-header__arrow--left" type="button">
                             <i class="fa fa-arrow-left" width="7px" height="11px"></i>
-                            
+
                         </button>
                         <button class="block-header__arrow block-header__arrow--right" type="button">
-                            
+
                                 <i class="fa fa-arrow-right" width="7px" height="11px"></i>
-                            
+
                         </button>
                     </div>
                 </div>
                 <div class="block-products-carousel__slider">
                     <div class="block-products-carousel__preloader"></div>
                     <div class="owl-carousel owl-rtl owl-loaded owl-drag">
-                                                   
+
                         <div class="owl-stage-outer">
                             <div class="owl-stage" style="transform: translate3d(1122px, 0px, 0px); transition: all 0s ease 0s; width: 3649px; padding-left: 1px; padding-right: 1px;">
-                                
+
                                 @foreach ($offerProducts as $offerProduct)
                                 <div class="owl-item cloned" style="width: 266.5px; margin-left: 14px;">
                                     <div class="block-products-carousel__column" data-category="">
@@ -153,15 +148,15 @@
                                                         <meta name="csrf-token" content="jPltwjuQpZppawltECo6QtvdVdcKFU6icjO2aj3I">
                                                         <button class="btn btn-secondary product-card__addtocart product-card__addtocart--list" type="button">الذهاب للمنتج
                                                         </button>
-                                                        
+
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                             </div></div>
                                 @endforeach
-                                
-                            
+
+
                             </div></div><div class="owl-nav disabled"><button type="button" role="presentation" class="owl-prev"><span aria-label="Previous">‹</span></button><button type="button" role="presentation" class="owl-next"><span aria-label="Next">›</span></button></div><div class="owl-dots disabled" style="margin-bottom=266.5px"></div></div>
                 </div>
             </div>
@@ -207,16 +202,16 @@
                                         <div class="product-card__name">
                                             <a href="{{ route('NoMe.productpage', $product->product_name) }}">{{ $product->product_name }}</a>
                                         </div>
-                                        
+
                                     </div>
                                     <div class="product-card__actions">
-                                        
+
                                         <div class="product-card__prices" >
                                                                                             {{ $product->price }}₪
                                                                                     </div>
                                         <div class="product-card__buttons">
                                             <a class="btn btn-primary product-card__addtocart" href="{{ route('NoMe.productpage', $product->product_name) }}">الذهاب للمنتج</a>
-                                            
+
                                         </div>
                                     </div>
                                 </div>
@@ -246,36 +241,36 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        
+
                                     </div>
                                     <div class="product-card__actions">
-                                        
+
                                         <div class="product-card__prices">
                                                                                                 {{ $product->price}}₪
                                                                                         </div>
                                         <div class="product-card__buttons">
                                             <a class="btn btn-primary product-card__addtocart" href="{{ route('NoMe.productpage', $product->product_name) }}">الذهاب للمنتج</a>
-                                            
+
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                    
+
                             @endforeach
                          </div>
                     </div>
                 </div>
             </div>
-        
 
 
-        
-        
+
+
+
 
 
     <!-- .block-products / end -->
         <!-- .block-products-carousel -->
-        
+
         <div class="block block-products-carousel" data-layout="grid-4" data-mobile-grid-columns="2">
             <div class="container">
                 <div class="block-header">
@@ -293,9 +288,9 @@
                 <div class="block-products-carousel__slider">
                     <div class="block-products-carousel__preloader"></div>
                     <div class="owl-carousel owl-rtl owl-loaded owl-drag">
-                        
+
                         <div class="owl-stage-outer">
-                            
+
                             <div class="owl-stage" style="transform: translate3d(1403px, 0px, 0px); transition: all 0s ease 0s; width: 5612px; padding-left: 1px; padding-right: 1px;">
                                 @foreach ($latestProducts as $latestProduct )
                                 <div class="owl-item cloned" style="width: 266.5px; margin-left: 14px;">
@@ -318,7 +313,7 @@
                                                                                                         </div>
                                                     <div class="product-card__buttons">
                                                         <a class="btn btn-primary product-card__addtocart" href="{{ route('NoMe.productpage', $latestProduct->product_name) }}">الذهاب للمنتج</a>
-                                                        
+
                                                     </div>
                                                 </div>
                                             </div>
@@ -326,14 +321,14 @@
                                     </div>
                                 </div>
                                 @endforeach
-                                
-                            </div> 
-                           
-                            
+
+                            </div>
+
+
                         </div>
-                            
-                           
-                            
+
+
+
                     </div>
                 </div>
                 </div>

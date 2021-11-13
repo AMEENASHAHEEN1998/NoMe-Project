@@ -40,7 +40,7 @@ class HomeController extends Controller
 
         return view('front.index',compact('latestProducts', $latestProducts , 'categories' ,$categories , 'offerProducts' , $offerProducts ,'products', $products ,'product' ,$product,'sliders' ,$sliders));
 
-    
+
     }
     public function control_panel(){
 
@@ -65,6 +65,13 @@ class HomeController extends Controller
         $products = product::orderBy('id' , 'desc')->get();
         return view('front.products',compact('products', $products , 'categories' ,$categories));
     }
+    public function categorypage(category $category)
+    {
+        $categories = category::orderBy('id' , 'desc')->get();
+
+        $products = product::orderBy('id' , 'desc')->where('category_id' , $category->id)->get();
+        return view('front.products',compact('products', $products , 'categories' ,$categories));
+    }
     public function productpage(product $product)
     {
         $product = product::findOrFail($product->id);
@@ -81,7 +88,7 @@ class HomeController extends Controller
         return view('front.contact',compact( 'categories' ,$categories));
     }
     public function findProduct(Request $request)
-    
+
     {
 
         // return $request;
@@ -90,8 +97,8 @@ class HomeController extends Controller
 
         $Products =product::where('product_name', 'LIKE', '%' . $search_text . '%')->pluck('id')->toarray();
         // $Products =product::where('product_name', 'LIKE',$search_text )->pluck('id')->toarray();
-    
-     
+
+
         $products  = product::whereIn('id',$Products)->get();
         $categories = category::orderBy('id' , 'desc')->get();
 
@@ -99,7 +106,7 @@ class HomeController extends Controller
         return view('front.products',compact('products' ,$products ,'categories' ,$categories));
     }
 
-   
+
     public function order(Request $request)
     {
         // return $request->product_id;
@@ -124,7 +131,7 @@ class HomeController extends Controller
         ]);
         order::create([
 
-         
+
             'color' => $request->color,
             'size' => $request->size,
             'amount' => $request->amount,

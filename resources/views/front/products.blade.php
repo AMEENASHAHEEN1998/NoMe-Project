@@ -3,7 +3,7 @@
 @section('title', ' المنتجات')
 
 @section('content')
-    
+
 <div class="site__body">
     <div class="page-header">
         <div class="page-header__container container">
@@ -11,7 +11,7 @@
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item">
-                            <a href="index.html">الرئيسية</a>
+                            <a href="{{route('NoMe.home')}}">الرئيسية</a>
                             <svg class="breadcrumb-arrow" width="6px" height="9px">
                                 <use xlink:href="https://waslastore.ps//website/images/sprite.svg#arrow-rounded-right-6x9">
                                 </use>
@@ -32,7 +32,7 @@
                 <div class="block">
                     <div class="products-view">
                         <div class="products-view__options">
-                            
+
                         </div>
                         <div class="products-view__list products-list" data-layout="grid-4-full" data-with-features="false" data-mobile-grid-columns="2">
                             <div class="products-list__body">
@@ -57,9 +57,9 @@
                                                             </div>
                                             <div class="product-card__buttons">
                                                 <a class="btn btn-primary product-card__addtocart" href="{{ route('NoMe.productpage', $product->product_name) }}">الذهاب للمنتج</a>
-                                                
+
                                                 <meta name="csrf-token" content="jPltwjuQpZppawltECo6QtvdVdcKFU6icjO2aj3I">
-                                
+
                                                 <button id="but-wishlist[16745]" onclick="return setWishlist(16745);" class="btn btn-light btn-svg-icon btn-svg-icon--fake-svg product-card__wishlist
                                                     " type="button">
                                                     <svg width="16px" height="16px" id="svg-wishlist[16745]" style="">&gt;
@@ -75,20 +75,9 @@
                                     <div>لا يوجد منتجات لعرضها</div>
                                 @endforelse
 
-
-
-
-
-
-
-
-
-
-
-
 </div>
 </div>
-                        
+
                     </div>
                 </div>
             </div>

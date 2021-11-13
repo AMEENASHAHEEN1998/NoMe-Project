@@ -7,7 +7,7 @@
                         <div class="site-footer__widget footer-contacts">
                             <h5 class="footer-contacts__title">اتصل بنا</h5>
                             <div class="footer-contacts__text">
-                                شركة نو مي للتجارة العالية
+                                شركة  NOME للتجارة العامة
                             </div>
                             <ul class="footer-contacts__contacts">
                                 <li><i class="footer-contacts__icon fa fa-globe"></i> فلسطين , غزة ,الرمال ,   مفترق السرايا</li>
@@ -38,7 +38,7 @@
             <div class="site-footer__bottom">
                 <div class="site-footer__copyright">
                     <!-- copyright -->
-                    جميع الحقوق محفوظة لشركة نو مي
+                    جميع الحقوق محفوظة لشركة NOME
                     <!-- copyright / end -->
                 </div>
                 <div class="site-footer__payments">
@@ -59,4 +59,3 @@
         </div>
     </div>
 </footer>        <!-- site__footer / end -->
-

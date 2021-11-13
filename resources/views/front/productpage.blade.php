@@ -3,7 +3,7 @@
 @section('title', 'الصفحة الرئيسية')
 
 @section('content')
-    
+
 <div class="site__body">
         <div class="page-header">
             <meta name="csrf-token" content="NF7U9zNC5Dg8IZLCbj8eW7XBxJouzW95qA1gQk4s">
@@ -12,14 +12,14 @@
                     <nav aria-label="breadcrumb ">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item">
-                                <a href="index.html">الرئيسية</a>
+                                <a href="{{route('NoMe.home')}}">الرئيسية</a>
                                 <svg class="breadcrumb-arrow" width="6px" height="9px">
                                     <use xlink:href="https://waslastore.ps//website/images/sprite.svg#arrow-rounded-right-6x9">
                                     </use>
                                 </svg>
                             </li>
                             <li class="breadcrumb-item">
-                                <a href="/products">المنتجات</a>
+                                <a href="{{route('NoMe.products')}}">المنتجات</a>
                                 <svg class="breadcrumb-arrow" width="6px" height="9px">
                                     <use xlink:href="https://waslastore.ps//website/images/sprite.svg#arrow-rounded-right-6x9">
                                     </use>
@@ -60,42 +60,45 @@
                                         </svg>
                                     </button>
                                     <div class="owl-carousel owl-rtl owl-loaded owl-drag" id="product-image">
-                                        
+
                                     <div class="owl-stage-outer">
                                         <div class="owl-stage" style="transform: translate3d(0px, 0px, 0px); transition: all 0s ease 0s; width: 6372px;">
                                             <div class="owl-item active" style="width: 531px;">
                                                 <div class="product-image ">
-                                                
-                                                    <img class="product-image__img" style="width: 100%; height:400px" src="{{ asset('upload/admin/product/'. $product->primary_image) }}" alt="">
-                                                
+
+                                                    <img class="product-image__img" style="width: 89%; height:400px" src="{{ asset('upload/admin/product/'. $product->primary_image) }}" alt="">
+
                                                 </div>
                                             </div>
-                                            
+
                                             <div class="owl-item" style="width: 531px;"><div class="product-image product-image--location--gallery">
                                                 <a href="{{ asset('upload/admin/product/'. $product->primary_image) }}" class="product-image__body" target="_blank">
                                                     <img class="product-image__img" src="{{ asset('upload/admin/product/'. $product->primary_image) }}" alt="">
                                                 </a>
                                             </div></div>
-                                            
+
                                             </div></div><div class="owl-nav disabled"><button type="button" role="presentation" class="owl-prev"><span aria-label="Previous">‹</span></button><button type="button" role="presentation" class="owl-next"><span aria-label="Next">›</span></button></div><div class="owl-dots disabled"></div></div>
                                 </div>
                                 <div class="product-gallery__carousel">
                                     <div class="owl-carousel owl-rtl owl-loaded owl-drag" id="product-carousel" data-length="9">
-                                        
-                                                              
+
+
                                         <div class="owl-stage-outer">
                                             <div class="owl-stage" style="transform: translate3d(0px, 0px, 0px); transition: all 0s ease 0s; width: 1308px;">
                                                 @foreach ($productImages as $productImage)
                                                 <div class="owl-item {{ $loop->iteration == 1 ? 'active' : '' }} " style="width: 99px; margin-left: 10px;">
-                                                    <a href="{{ asset('upload/admin/product/'. $productImage->image_name) }}" class="product-image product-gallery__carousel-item ">
-                                                        <div class="product-image__body">
-                                                            <img class="product-image__img product-gallery__carousel-image" src="{{ asset('upload/admin/product/'. $productImage->image_name) }}" alt="">
+                                                    <a href="{{ asset('upload/admin/product/'. $productImage->image_name) }}" class="product-image product-gallery__carousel-item " style="padding:2px;">
+                                                        <div class="product-image__body" style="
+    width: 100px;
+    height: 74px;
+">
+                                                <img class="product-image__img product-gallery__carousel-image" src="{{ asset('upload/admin/product/'. $productImage->image_name) }}" alt="" style="    padding-right: 0px; padding-left: 25px;">
                                                         </div>
                                                     </a>
                                             </div>
-                                                @endforeach 
-                                                
-                                                
+                                                @endforeach
+
+
                                         </div></div><div class="owl-nav disabled"><button type="button" role="presentation" class="owl-prev"><span aria-label="Previous">‹</span></button><button type="button" role="presentation" class="owl-next"><span aria-label="Next">›</span></button></div><div class="owl-dots disabled"></div>
                                         </div>
                                 </div>
@@ -117,11 +120,11 @@
                                 </button>
                             </div>
                             <h1 class="product__name">{{ $product->product_name }}</h1>
-                            
+
                             <ul class="product__meta">
                                 <li class="product__meta-availability">التصنيفات:</li>
                                                                     <li><a href="/category/198">{{ $product->category->category_name }}</a></li>
-                                                                    
+
                                                             </ul>
                         </div>
                         <!-- .product__info / end -->
@@ -132,21 +135,21 @@
                                     <span id="price">{{ $product->price }}</span> ₪
                                 </div>
 <form action="{{ route('NoMe.order') }}" method="POST">
-    @csrf                                   
+    @csrf
     <div class="product__options">
         <div class="form-group" id="Color" data-product="5086">
             <label class="control-label">اختر اللون</label>
-            
+
             <select class="form-control @error('color') is-invalid @enderror select2" name="color" >
                 <option disabled="" selected="">إختار اللون المناسب</option>
                     @forelse ($product->colors as $color )
                     <option value="{{ $color->color_name }}">{{ $color->color_name }}</option>
-                        
+
                     @empty
                     <option value="">لايوجد ألون لعرضها</option>
-                        
+
                     @endforelse
-                
+
             </select>
             @if($errors->has('color'))
                 <div
@@ -158,16 +161,16 @@
 
 <div class="form-group" id="Size" >
     <label class="control-label">المقاس</label>
-    <select class="form-control @error('size') is-invalid @enderror select2" name="size" onchange="selectOption()"> 
+    <select class="form-control @error('size') is-invalid @enderror select2" name="size" onchange="selectOption()">
         <option disabled="" selected="" value="null"> إختار المقاس المناسب</option>
         @forelse ($product->sizes as $size)
         <option value="{{ $size->size_name }}">{{ $size->size_name }}</option>
-            
+
         @empty
         <option value="">لا يوجد مقاس لعرضه</option>
-            
+
         @endforelse
-        
+
     </select>
     @if($errors->has('categorsizey_name'))
         <div
@@ -175,9 +178,9 @@
         </div>
     @endif
 </div>
-<p class="text-danger" id="test-error"></p>                                       
+<p class="text-danger" id="test-error"></p>
  <input type="hidden" name="product_id" value="{{ $product->id }}">
-                                        
+
 <div class="form-group product__option">
     <label class="product__option-label" for="product-quantity">الكمية</label>
     <div class="product__actions">
@@ -187,7 +190,7 @@
                 <div class="input-number__add"></div>
                 <div class="input-number__sub"></div>
             </div>
-        </div>   
+        </div>
     </div>
     @if($errors->has('amount'))
         <div
@@ -196,8 +199,8 @@
     @endif
 </div>
 <div class="form-group" id="" >
-    <label class="control-label">اكتب اسمك</label>
-    <input class="form-control @error('person_name') is-invalid @enderror" name="person_name" type="text" value="{{ old('person_name') }}" placeholder="اكتب اسمك بالكامل" >
+    <label class="control-label">ادخل الاسم</label>
+    <input class="form-control @error('person_name') is-invalid @enderror" name="person_name" type="text" value="{{ old('person_name') }}" placeholder="أدخل الاسم" >
     @if($errors->has('person_name'))
     <div
         class="invalid-feedback">{{ $errors->first('person_name') }}
@@ -205,7 +208,7 @@
 @endif</div>
 <div class="form-group" id="" >
     <label class="control-label">رقم الجوال</label>
-    <input class="form-control @error('phone') is-invalid @enderror" name="phone" type="text" value="{{ old('phone') }}" placeholder="ادخل رقم جوال صحيح" >
+    <input class="form-control @error('phone') is-invalid @enderror" name="phone" type="text" value="{{ old('phone') }}" placeholder="ادخل رقم جوال " >
     @if($errors->has('phone'))
     <div
         class="invalid-feedback">{{ $errors->first('phone') }}
@@ -213,7 +216,7 @@
 @endif
 </div>
 <div class="form-group" id="" >
-    <label class="control-label"> عنوانك</label>
+    <label class="control-label"> العنوان</label>
     <input class="form-control @error('address') is-invalid @enderror" name="address" type="text" value="{{ old('address') }}" placeholder="ادخل العنوان بالتفصيل" >
     @if($errors->has('address'))
     <div
@@ -229,7 +232,7 @@
     </div>
 @endif</div>
 <div class="product__actions-item product__actions-item--addtocart">
-    <button type="submit" id="add-to-card" class="btn btn-primary btn-lg mb-2" >إضافة 
+    <button type="submit" id="add-to-card" class="btn btn-primary btn-lg mb-2" >إضافة
         طلبية
     </button>
 </div>
@@ -238,7 +241,7 @@
                                 <!-- .product__options / end -->
                             </div>
                                         <!-- .product__end -->
-                        
+
                     </div>
                 </div>
                 <div class="product-tabs product-tabs--sticky">
@@ -252,7 +255,7 @@
                     <div class="product-tabs__content">
                         <div class="product-tabs__pane product-tabs__pane--active" id="tab-description">
                             <div class="typography">
-                                
+
                             <p> {{ $product->description ?? "هذا المنتج لايحتوي على وصف" }} </p>
                             </div>
                         </div>
@@ -278,9 +281,9 @@
                     <div class="block-products-carousel__slider">
                         <div class="block-products-carousel__preloader"></div>
                         <div class="owl-carousel owl-rtl owl-loaded owl-drag">
-                            
+
                             <div class="owl-stage-outer">
-                                
+
                                 <div class="owl-stage" style="transform: translate3d(1403px, 0px, 0px); transition: all 0s ease 0s; width: 5612px; padding-left: 1px; padding-right: 1px;">
                                     @foreach ($products as $product_tow )
                                     <div class="owl-item cloned" style="width: 266.5px; margin-left: 14px;">
@@ -303,7 +306,7 @@
                                                                                                             </div>
                                                         <div class="product-card__buttons">
                                                             <a class="btn btn-primary product-card__addtocart" href="{{ route('NoMe.productpage', $product_tow->product_name) }}">الذهاب للمنتج</a>
-                                                            
+
                                                         </div>
                                                     </div>
                                                 </div>
@@ -311,20 +314,20 @@
                                         </div>
                                     </div>
                                     @endforeach
-                                    
-                                </div> 
-                               
-                                
+
+                                </div>
+
+
                             </div>
-                                
-                               
-                                
+
+
+
                         </div>
                     </div>
                     </div>
                 </div>
             </div>
-        
+
 
     </div>
 
@@ -350,4 +353,3 @@
         </div><!-- /.modal-dialog -->
     </div>
 @endsection
-

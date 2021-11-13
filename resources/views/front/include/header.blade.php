@@ -8,31 +8,34 @@
                         <button class="mobile-header__menu-button">
                             <i class="fa fa-list fa-2x" style="color: #fff;"></i>
                         </button>
-                        <a class="mobile-header__logo" href="/">
-                            <!-- mobile-logo -->
-                            <div style="width: 196px; ">
-                                <img src="css/image/logo.jpeg" alt="" style="width: 100px">
-                            </div>
-                            <!-- mobile-logo / end -->
+<!--                        <center>-->
+<!--                        <a class="mobile-header__logo" href="/">-->
+<!--                            <center>-->
+<!--                            <div style="width: 300%; ">-->
+<!--<h3>الرئيسية</h3>-->
+<!--                            </div>-->
+<!--                            </center>-->
+<!--                            </center>-->
                         </a>
                         <div class="search search--location--mobile-header mobile-header__search">
-                            <div class="search__body">
-                                
-                                <form class="search__form" action="{{route('NoMe.findProduct')}}" method="get" style="margin-bottom: 0px;" >
-                                    @csrf
-                                    <input class="search__input search" value="{{ request()->input('query') }}" name="query" placeholder="ابحث في أكثر من 10,000 منتج" aria-label="Site search" type="text" autocomplete="off">
-                                    
-                                   
-                                   
+                            <div class="search__body" >
 
-                                    <input type="hidden" value="{{ request()->input('query') }}" name="query">
+                                <form class="search__form" action="{{route('NoMe.findProduct')}}" method="get" style="margin-right: 0px;" >
+                                    @csrf
+                                    <input type="hidden" value="all" name="query">
+                                    <input class="search__input search" value="{{ request()->input('query') }}" name="query" placeholder="ابحث في أكثر من 10,000 منتج" aria-label="Site search" type="text" autocomplete="off"  style="margin-top: 8px;">
+
+
+
+
+
 
                                     <button class="search__button search__button--type--submit" type="submit">
                                         <i class="fa fa-search"></i>
                                     </button>
 
                                     <button class="search__button search__button--type--close" type="button">
-                                        <i class="fa fa-cross"></i>
+                                        <i class="fa fa-times" aria-hidden="true"></i>
                                     </button>
 
                                     <div class="search__border"></div>
@@ -47,22 +50,24 @@
                         <div class="mobile-header__indicators">
                             <div class="indicator indicator--mobile-search indicator--mobile d-md-none">
                                 <button class="indicator__button">
-                                    <span class="indicator__area">
-                                        <svg width="20px" height="20px">
-                                            <use xlink:href="https://waslastore.ps//website/images/sprite.svg#search-20"></use>
-                                        </svg>
-                                    </span>
+                                    <i class="fa fa-search"></i>
+                                    <!--<span class="indicator__area">-->
+                                    <!--    search-->
+                                        <!--<svg width="20px" height="20px">-->
+                                        <!--    <use xlink:href="https://waslastore.ps//website/images/sprite.svg#search-20"></use>-->
+                                        <!--</svg>-->
+                                    <!--</span>-->
                                 </button>
-                            </div>
-                                                    <div class="indicator indicator--mobile">
-                                <a href="/login" class="indicator__button">
-                                    <span class="indicator__area">
-                                        <svg width="20px" height="20px">
-                                            <use xlink:href="https://waslastore.ps//website/images/sprite.svg#person-20"></use>
-                                        </svg>
-                                    </span>
-                                </a>
-                            </div>
+                            <!--</div>-->
+                            <!--                        <div class="indicator indicator--mobile">-->
+                            <!--    <a href="/login" class="indicator__button">-->
+                            <!--        <span class="indicator__area">-->
+                            <!--            <svg width="20px" height="20px">-->
+                            <!--                <use xlink:href="https://waslastore.ps//website/images/sprite.svg#person-20"></use>-->
+                            <!--            </svg>-->
+                            <!--        </span>-->
+                            <!--    </a>-->
+                            <!--</div>-->
 
                         </div>
                     </div>
@@ -142,10 +147,7 @@
                                             @foreach ($categories as $category)
                                             <option value="{{ $category->category_name }}">
                                                 &nbsp;&nbsp;&nbsp;&nbsp;{{ $category->category_name }}</option>
-                                            @endforeach                                                                                                                
-                                            
-                                                                                        
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    </select>
+                                            @endforeach                                                         </select>
                                     <input class="search__input" value="{{ request()->input('query') }}" name="query" placeholder="ابحث في أكثر من 10,000 منتج" aria-label="Site search" type="text" autocomplete="off">
                                     <button class="search__button search__button--type--submit" type="submit">
                                         <svg width="20px" height="20px">
@@ -176,12 +178,12 @@
                                                 <div class="departments__submenus-container"></div>
                                                 <ul class="departments__links ">
 
-                                                
+
 
 
                     @foreach ($categories as $category)
                     <li class="departments__item">
-                        <a class="departments__item-link " href="/category/198" id="198">
+                        <a class="departments__item-link " href="{{route('NoMe.categorypage',$category->category_name)}}" id="198">
                             {{ $category->category_name }}
                             <i class="fa fa-arrow-right departments__item-arrow" width="6px" height="9px"></i>
 
@@ -195,24 +197,24 @@
                                         <div class="col-12">
                                             <ul class="megamenu__links megamenu__links--level--0">
                                                             @foreach ($category->product as $product )
-                                                            <a href="/category/368">{{ $product->product_name }}</a>
+                                                            <a href="{{route('NoMe.products')}}">{{ $product->product_name }}</a>
                                                         </li>
                                                             @endforeach                                                                                        <li class="megamenu__item ">
-                                                            
+
                                                                                                                                                                                                     <li class="megamenu__item ">
-                                                            
+
                                                                                                                                                                                                     <li class="megamenu__item ">
-                                                            
+
                                                                                                                                         </ul>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                                
+
                     </li>
-                    @endforeach                                
-                    
+                    @endforeach
+
 
 
 
