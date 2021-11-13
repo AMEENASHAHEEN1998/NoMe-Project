@@ -1,20 +1,21 @@
 <?php
 
+use App\Models\order;
 use GuzzleHttp\Middleware;
+
+
+use DebugBar\Bridge\SlimCollector;
 use Illuminate\Support\Facades\Route;
-
-
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MailController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\OfferController;
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\SliderController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\HomePageController;
-use App\Http\Controllers\OfferController;
-use App\Http\Controllers\SliderController;
-use App\Models\order;
-use DebugBar\Bridge\SlimCollector;
+use App\Http\Controllers\SecondCategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -55,6 +56,7 @@ Route::prefix('admin')->middleware('auth','checkRole')->name('admin.')->group(fu
     Route::get('/',[HomeController::class ,'control_panel'])->name('control_panel');
     Route::resource('slider', SliderController::class);
     Route::resource('categories', CategoryController::class);
+    Route::resource('second_categories', SecondCategoryController::class);
     Route::resource('products', ProductController::class);
     Route::resource('users', UserController::class);
     Route::resource('offers', OfferController::class);

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\category;
 use App\Models\SecondCategory;
 use Illuminate\Http\Request;
 
@@ -14,7 +15,8 @@ class SecondCategoryController extends Controller
      */
     public function index()
     {
-        //
+        $secondCategories = SecondCategory::orderBy('id' , 'desc')->get();
+        return view('admin.page.Second_Category.index',['secondCategories' =>$secondCategories ]);
     }
 
     /**
@@ -24,7 +26,8 @@ class SecondCategoryController extends Controller
      */
     public function create()
     {
-        //
+        $categories = category::all();
+        return view('admin.page.Second_Category.create',['categories' =>$categories]);
     }
 
     /**
@@ -35,7 +38,21 @@ class SecondCategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        try{
+            $validated = $request->validate([
+                'second_category_name' => 'required',
+                'category_id' => 'required'
+            ]);
+            // dd($request->all());
+            SecondCategory::create([
+                'second_category_name' => $request->second_category_name,
+                'category_id' => $request->category_id
+            ]);
+            return redirect()->route('admin.second_categories.index')->with('success' , 'تم اضافة القسم الثانوي بنجاح');
+
+        }catch (\Exception $e){
+            return redirect()->route('admin.second_categories.index')->with('warning','فشل في عملية انشاء القسم الثانوي');
+        }
     }
 
     /**
@@ -57,7 +74,9 @@ class SecondCategoryController extends Controller
      */
     public function edit(SecondCategory $secondCategory)
     {
-        //
+        $secondCategory = SecondCategory::findOrFail($secondCategory->id);
+        $categories = category::all();
+        return view('admin.page.Second_Category.edit',['secondCategory' =>$secondCategory , 'categories' => $categories]);
     }
 
     /**
@@ -69,7 +88,22 @@ class SecondCategoryController extends Controller
      */
     public function update(Request $request, SecondCategory $secondCategory)
     {
-        //
+        try{
+            $validated = $request->validate([
+                'second_category_name' => 'required',
+
+            ]);
+            // dd($request->all());
+            $secondCategory = SecondCategory::findOrFail($secondCategory->id);
+            $secondCategory->update([
+                'second_category_name' => $request->second_category_name,
+                'category_id' => $request->category_id
+        ]);
+            }catch (\Exception $e){
+                return redirect()->route('admin.second_categories.index')->with('warning','فشل في عملية تعديل القسم الثانوي');
+            }
+            return redirect()->route('admin.second_categories.index')->with('success' , 'تم تعديل القسم الثانوي بنجاح');
+
     }
 
     /**
@@ -80,6 +114,9 @@ class SecondCategoryController extends Controller
      */
     public function destroy(SecondCategory $secondCategory)
     {
-        //
+        $secondCategory = SecondCategory::findOrFail($secondCategory->id);
+        $secondCategory->delete();
+        return redirect()->route('admin.second_categories.index')->with('delete' , 'تم حذف القسم الثانوي بنجاح');
+
     }
 }

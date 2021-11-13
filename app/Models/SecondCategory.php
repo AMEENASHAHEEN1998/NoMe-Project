@@ -9,7 +9,7 @@ class SecondCategory extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['*'];
+    protected $fillable = ['second_category_name' , 'category_id'];
 
     public function category()
     {

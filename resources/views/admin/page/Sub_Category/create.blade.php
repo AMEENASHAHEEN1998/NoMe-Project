@@ -1,6 +1,6 @@
 @extends('admin.layout')
 
-@section('title', __('الأقسام الرئيسة'))
+@section('title', __('الأقسام'))
 
 @section('content')
     <div class="app-content content ">
@@ -27,7 +27,7 @@
             </div>
             <div class="content-body">
                 <section id="multiple-column-form">
-
+                    
                     @if ($errors->any())
                         <div class="alert alert-danger">
                             <ul>

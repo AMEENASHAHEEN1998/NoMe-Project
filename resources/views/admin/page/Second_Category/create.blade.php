@@ -1,6 +1,6 @@
 @extends('admin.layout')
 
-@section('title', __('الأقسام الرئيسة'))
+@section('title', __('الأقسام الثانوية'))
 
 @section('content')
     <div class="app-content content ">
@@ -41,29 +41,46 @@
                         <div class="col-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <h4 class="card-title">اضافة قسم</h4>
+                                    <h4 class="card-title"> اضافة قسم ثانوي</h4>
                                 </div>
                                 <div class="card-body">
-                                    <form class="form" method="post" action="{{ route('admin.categories.store') }}" enctype="multipart/form-data">
+                                    <form class="form" method="post" action="{{ route('admin.second_categories.store') }}" enctype="multipart/form-data">
                                         @csrf
                                         <div class="row">
-                                            <div class="col-md-4 col-12">
+                                            <div class="col-md-4 col-6">
                                                 <div class="mb-1">
-                                                    <label class="form-label" for="category_name">اسم القسم</label>
+                                                    <label class="form-label" for="second_category_name"> اسم القسم الثانوي</label>
                                                     <input
                                                         type="text"
-                                                        id="category_name"
+                                                        id="second_category_name"
 
                                                         class="form-control @error('category_name') is-invalid @enderror"
-                                                        placeholder=" الرجاء ادخال اسم القسم  "
-                                                        name="category_name"
-                                                        value="{{ old('category_name') }}"
+                                                        placeholder="الرجاء ادخال اسم القسم الثانوي  "
+                                                        name="second_category_name"
+                                                        value="{{ old('second_category_name') }}"
                                                     />
-                                                    @if($errors->has('category_name'))
+                                                    @if($errors->has('second_category_name'))
                                                         <div
-                                                            class="invalid-feedback">{{ $errors->first('category_name') }}
+                                                            class="invalid-feedback">{{ $errors->first('second_category_name') }}
                                                         </div>
                                                     @endif
+                                                </div>
+
+                                                <div class="col-md-4 col-6">
+                                                    <label for="name"
+                                                        class="mr-sm-2" style="font-size: 16px"> اسم القسم الرئيسي
+                                                        :</label>
+
+                                                    <div class="box col-md-12">
+                                                        <select class="form-control form-control-lg " name="category_id">
+                                                            @foreach ($categories as $category)
+
+                                                                    <option value="{{ $category->id }}">
+                                                                        {{ $category->category_name }}</option>
+                                                            @endforeach
+                                                        </select>
+                                                    </div>
+
                                                 </div>
                                             </div>
 
