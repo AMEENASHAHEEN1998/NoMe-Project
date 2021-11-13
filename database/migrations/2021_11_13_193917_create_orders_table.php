@@ -21,6 +21,8 @@ class CreateOrdersTable extends Migration
             $table->string('person_name' , 100);
             $table->string('phone' , 100);
             $table->string('address' , 100);
+            $table->integer('status')->default(0);
+            $table->string('discount')->default("0")->nullable();
             $table->foreignId('product_id');
             $table->timestamps();
         });

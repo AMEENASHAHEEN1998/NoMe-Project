@@ -12,9 +12,9 @@ class product extends Model
 
 
 
-    public function category()
+    public function subCategory()
     {
-        return $this->belongsTo(category::class);
+        return $this->belongsTo(SubCategory::class);
     }
 
     public function sizes(){
