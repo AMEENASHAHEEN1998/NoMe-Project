@@ -79,7 +79,7 @@
                                         </div>
                                             <div class="col-12">
                                                 <button type="submit" class="btn btn-primary me-1">تعديل</button>
-                                                <a href="{{ route('admin.categories.index') }}" class="btn btn-outline-secondary">عودة</a>
+                                                <a href="{{ route('admin.second_categories.index') }}" class="btn btn-outline-secondary">عودة</a>
                                             </div>
 
                                     </form>

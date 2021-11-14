@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\SecondCategory;
 use App\Models\SubCategory;
 use Illuminate\Http\Request;
 
@@ -14,7 +15,9 @@ class SubCategoryController extends Controller
      */
     public function index()
     {
-        //
+        $subCategories = SubCategory::orderBy('id' , 'desc')->get();
+        return view('admin.page.Sub_Category.index',['subCategories' =>$subCategories ]);
+
     }
 
     /**
@@ -24,7 +27,9 @@ class SubCategoryController extends Controller
      */
     public function create()
     {
-        //
+        $secondCategories = SecondCategory::all();
+        return view('admin.page.Sub_Category.create',['secondCategories' =>$secondCategories]);
+
     }
 
     /**
@@ -35,7 +40,22 @@ class SubCategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        try{
+
+            $validated = $request->validate([
+                'sub_category_name' => 'required',
+                'second_category_id' => 'required'
+            ]);
+            //dd($request->all());
+            SubCategory::create([
+                'sub_category_name' => $request->sub_category_name,
+                'second_category_id' => $request->second_category_id
+            ]);
+            return redirect()->route('admin.sub_categories.index')->with('success' , 'تم اضافة القسم الفرعي بنجاح');
+
+        }catch (\Exception $e){
+            return redirect()->route('admin.sub_categories.index')->with('warning','فشل في عملية انشاء القسم الفرعي');
+        }
     }
 
     /**
@@ -57,7 +77,10 @@ class SubCategoryController extends Controller
      */
     public function edit(SubCategory $subCategory)
     {
-        //
+        $subCategory = SubCategory::findOrFail($subCategory->id);
+        $secondCategories = SecondCategory::all();
+        return view('admin.page.Sub_Category.edit',['secondCategories' =>$secondCategories , 'subCategory' => $subCategory]);
+
     }
 
     /**
@@ -69,7 +92,22 @@ class SubCategoryController extends Controller
      */
     public function update(Request $request, SubCategory $subCategory)
     {
-        //
+        try{
+            $validated = $request->validate([
+                'sub_category_name' => 'required',
+
+            ]);
+            // dd($request->all());
+            $subCategory = SubCategory::findOrFail($subCategory->id);
+            $subCategory->update([
+                'sub_category_name' => $request->sub_category_name,
+                'second_category_id' => $request->second_category_id
+            ]);
+        }catch (\Exception $e){
+            return redirect()->route('admin.sub_categories.index')->with('warning','فشل في عملية تعديل القسم الفرعي');
+        }
+        return redirect()->route('admin.sub_categories.index')->with('success' , 'تم تعديل القسم الفرعي بنجاح');
+
     }
 
     /**

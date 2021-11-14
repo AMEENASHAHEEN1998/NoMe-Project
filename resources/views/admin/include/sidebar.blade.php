@@ -54,15 +54,41 @@
                     data-feather="more-horizontal"></i>
             </li>
             <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="hash"></i><span
-                        class="menu-title text-truncate" data-i18n="Invoice">الأقسام</span></a>
+                        class="menu-title text-truncate" data-i18n="Invoice">الأقسام الأساسية</span></a>
                 <ul class="menu-content">
                     <li><a class="d-flex align-items-center" href="{{ route('admin.categories.index') }}"><i
                                 data-feather="circle"></i><span class="menu-item text-truncate"
-                                                                data-i18n="List">عرض الأقسام</span></a>
+                                                                data-i18n="List">عرض الأقسام الرئيسية</span></a>
                     </li>
                     <li><a class="d-flex align-items-center" href="{{ route('admin.categories.create') }}"><i
                                 data-feather="circle"></i><span class="menu-item text-truncate"
-                                                                data-i18n="Preview">اضافة قسم</span></a>
+                                                                data-i18n="Preview">اضافة قسم رئيسي</span></a>
+                    </li>
+                </ul>
+            </li>
+            <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="hash"></i><span
+                class="menu-title text-truncate" data-i18n="Invoice">الأقسام الثانوية</span></a>
+                <ul class="menu-content">
+                    <li><a class="d-flex align-items-center" href="{{ route('admin.second_categories.index') }}"><i
+                                data-feather="circle"></i><span class="menu-item text-truncate"
+                                                                data-i18n="List">عرض الأقسام الثانوية</span></a>
+                    </li>
+                    <li><a class="d-flex align-items-center" href="{{ route('admin.second_categories.create') }}"><i
+                                data-feather="circle"></i><span class="menu-item text-truncate"
+                                                                data-i18n="Preview">اضافة قسم ثانوي</span></a>
+                    </li>
+                </ul>
+            </li>
+            <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="hash"></i><span
+                class="menu-title text-truncate" data-i18n="Invoice">الأقسام الفرعية</span></a>
+                <ul class="menu-content">
+                    <li><a class="d-flex align-items-center" href="{{ route('admin.sub_categories.index') }}"><i
+                                data-feather="circle"></i><span class="menu-item text-truncate"
+                                                                data-i18n="List">عرض الأقسام الفرعية</span></a>
+                    </li>
+                    <li><a class="d-flex align-items-center" href="{{ route('admin.sub_categories.create') }}"><i
+                                data-feather="circle"></i><span class="menu-item text-truncate"
+                                                                data-i18n="Preview">اضافة قسم فرعي</span></a>
                     </li>
                 </ul>
             </li>
@@ -103,8 +129,8 @@
                                 data-feather="circle"></i><span class="menu-item text-truncate"
                                                                 data-i18n="List">عرض المستخدمين</span></a>
                     </li>
-                   
-                  
+
+
                 </ul>
             </li>
 
@@ -137,10 +163,10 @@
                         data-feather="circle"></i><span class="menu-item text-truncate"
                                                         data-i18n="List">عرض الرسائل</span></a>
             </li>
-           
-          
-           
-          
+
+
+
+
         </ul>
 
         <li class=" nav-item"><a class="d-flex align-items-center" href="{{route('admin.slider.index')}}"><i data-feather="users"></i><span

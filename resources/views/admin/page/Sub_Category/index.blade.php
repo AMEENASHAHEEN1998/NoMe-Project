@@ -1,6 +1,6 @@
 @extends('admin.layout')
 
-@section('title', 'الأقسام')
+@section('title', 'الأقسام الفرعية')
 
 @section('styles')
     <link rel="stylesheet" type="text/css"
@@ -22,13 +22,13 @@
                 <div class="content-header-left col-md-9 col-12 mb-2">
                     <div class="row breadcrumbs-top">
                         <div class="col-12">
-                            <h2 class="content-header-title float-start mb-0">الأقسام</h2>
+                            <h2 class="content-header-title float-start mb-0">الاقسام الفرعية</h2>
                             <div class="breadcrumb-wrapper">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><a
                                             href="">لوحة التحكم</a>
                                     </li>
-                                    <li class="breadcrumb-item"><a href="#">الأقسام</a>
+                                    <li class="breadcrumb-item"><a href="#">الاقسام الفرعية</a>
                                     </li>
                                 </ol>
                             </div>
@@ -54,26 +54,28 @@
                             @endif
                             <div class="card">
                                 <div class="card-header border-bottom">
-                                    <h4 class="card-title">الأقسام</h4>
-                                    <a href="{{ route('admin.categories.create') }}"
-                                       class="btn btn-primary me-1">اضافة قسم</a>
+                                    <h4 class="card-title">الأقسام الفرعية</h4>
+                                    <a href="{{ route('admin.sub_categories.create') }}"
+                                       class="btn btn-primary me-1">اضافة قسم فرعي</a>
                                 </div>
                                 <div class="card-datatable">
                                     <table class="dt-responsive table">
                                         <thead>
                                         <tr>
                                             <th>#</th>
-                                            <th>اسم القسم</th>
+                                            <th>اسم القسم الفرعي</th>
+                                            <th>القسم الثانوي</th>
                                             <th>تاريخ الاضافة</th>
                                             <th>العمليات</th>
                                         </tr>
                                         </thead>
                                         <tbody>
-                                            @forelse ($categories as $category )
+                                            @forelse ($subCategories as $subCategory )
                                             <tr>
                                                 <td>{{ $loop->iteration }}</td>
-                                                <td>{{ $category->category_name }}</td>
-                                                <td>{{ $category->created_at }}</td>
+                                                <td>{{ $subCategory->sub_category_name }}</td>
+                                                <td>{{ $subCategory->secondCategory->second_category_name }}</td>
+                                                <td>{{ $subCategory->created_at }}</td>
                                                 <td>
                                                     <div class="dropdown">
                                                         <button
@@ -86,15 +88,15 @@
                                                             </a>
                                                         </button>
                                                         <div class="dropdown-menu dropdown-menu-end">
-                                                            <a class="dropdown-item" href="{{ route('admin.categories.edit', $category->id ) }}">
+                                                            <a class="dropdown-item" href="{{ route('admin.sub_categories.edit', $subCategory->id ) }}">
                                                                 <i data-feather="edit-2" class="me-50"></i>
                                                                 <span>تعديل</span>
                                                             </a>
-                                                            <form class="dropdown-item" method="post" action="{{ route('admin.categories.destroy', $category->id ) }}">
+                                                            <form class="dropdown-item" method="post" action="{{ route('admin.sub_categories.destroy', $subCategory->id ) }}">
                                                                 @csrf
                                                                 @method('delete')
                                                                 <i data-feather="trash" class="me-50"></i>
-                                                                <input type="hidden" value="{{ $category->id }}" name="id" />
+                                                                <input type="hidden" value="{{ $subCategory->id }}" name="id" />
                                                                 <span><button  style="background: none; border: none; outline: none" type="submit">حذف</button></span>
                                                             </form>
                                                         </div>
@@ -109,7 +111,7 @@
                                         </tbody>
                                     </table>
 
-                                    
+
                                 </div>
                             </div>
                         </div>

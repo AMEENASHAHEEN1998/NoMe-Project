@@ -54,7 +54,7 @@
                                                         type="text"
                                                         id="second_category_name"
 
-                                                        class="form-control @error('category_name') is-invalid @enderror"
+                                                        class="form-control @error('second_category_name') is-invalid @enderror"
                                                         placeholder="الرجاء ادخال اسم القسم الثانوي  "
                                                         name="second_category_name"
                                                         value="{{ old('second_category_name') }}"
@@ -87,7 +87,7 @@
 
                                             <div class="col-12">
                                                 <button type="submit" class="btn btn-primary me-1">حفظ</button>
-                                                <a href="{{ route('admin.products.index') }}" class="btn btn-outline-secondary">عودة</a>
+                                                <a href="{{ route('admin.second_categories.index') }}" class="btn btn-outline-secondary">عودة</a>
                                             </div>
                                         </div>
                                     </form>
