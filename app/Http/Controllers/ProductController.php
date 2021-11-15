@@ -7,6 +7,7 @@ use App\Models\color;
 use App\Models\image;
 use App\Models\product;
 use App\Models\category;
+use App\Models\SubCategory;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -22,7 +23,7 @@ class ProductController extends Controller
         $categories=category::orderBy('id' , 'desc')->get();
 
 
-        
+
         return view('admin.page.product.index',compact('products', $products,'categories',$categories));
 
     }
@@ -34,12 +35,12 @@ class ProductController extends Controller
      */
     public function create()
 
-    {        
+    {
 
-        
-        $categories=category::orderBy('id' , 'desc')->get();
 
-        return view('admin.page.product.create',compact('categories',$categories));
+        $subCategories=SubCategory::orderBy('id' , 'desc')->get();
+
+        return view('admin.page.product.create',compact('subCategories',$subCategories));
     }
 
     /**
@@ -51,7 +52,7 @@ class ProductController extends Controller
     public function store(Request $request)
     {
         try {
-            
+
             //dd($request->all());
             $image_name = '';
 
@@ -62,14 +63,14 @@ class ProductController extends Controller
             }
 
             // return   $image_name;
-            $product = product::create([     
+            $product = product::create([
                 'product_name' => $request->product_name,
-                'category_id' => $request->category_id,
+                'sub_category_id' => $request->sub_category_id,
                 'price' => $request->price,
                 'description' => $request->description,
                 'primary_image' => $image_name,
                 'status_offer' =>  0,
-                'created_at' => now()   
+                'created_at' => now()
             ]);
 
             $sizes = $request->sizes;
@@ -91,12 +92,12 @@ class ProductController extends Controller
             $images = $request->images;
             foreach ($images as $image) {
                 $image_second = '';
-                
+
                 //dd($image);
                     $FileEx = $image['second_image']->getClientOriginalExtension();
                     $image_second = time() . '_' . rand() . '.' . $FileEx;
                     $image['second_image']->move(public_path('upload/admin/product'), $image_second);
-                
+
                 image::create([
                     'product_id' => $product->id,
                     'image_name' => $image_second,
@@ -118,7 +119,7 @@ class ProductController extends Controller
     public function show(product $product)
     {
         return view('errors.404');
-        
+
     }
 
     /**
@@ -131,9 +132,9 @@ class ProductController extends Controller
     {
         $product=product::find($id);
         // return $products;
-        $categories=category::all();
+        $subCategories=SubCategory::all();
 
-        return view('admin.page.product.edit',compact('product', $product,'categories',$categories));
+        return view('admin.page.product.edit',compact('product', $product,'subCategories',$subCategories));
 
     }
 
@@ -146,8 +147,8 @@ class ProductController extends Controller
      */
     public function update(Request $request,  $id)
     {
-        
-        //try{    
+
+        //try{
             $product = product::findOrFail($id);
             //dd($request->all());
             $image_name = $product->primary_image ;
@@ -159,14 +160,14 @@ class ProductController extends Controller
             }
 
             // return   $image_name;
-            $product->update([     
+            $product->update([
                 'product_name' => $request->product_name,
-                'category_id' => $request->category_id,
+                'sub_category_id' => $request->sub_category_id,
                 'price' => $request->price,
                 'description' => $request->description,
                 'primary_image' => $image_name,
                 'status_offer' =>  0,
-                'created_at' => now()   
+                'created_at' => now()
             ]);
 
             $sizes = $request->sizes;
@@ -178,7 +179,7 @@ class ProductController extends Controller
                 ]);
                 }
             }
-            
+
 
             $colors = $request->colors;
             foreach ($colors as $color) {
@@ -188,36 +189,36 @@ class ProductController extends Controller
                         'color_name' => $color['color'],
                     ]);
                 }
-                
+
             }
 
             if($request->has('images')){
                 $images = $request->images;
 
                 foreach ($images as $image) {
-                    
+
                         $image_second = '';
-                    
+
                         //dd($image);
                             $FileEx = $image['second_image']->getClientOriginalExtension();
                             $image_second = time() . '_' . rand() . '.' . $FileEx;
                             $image['second_image']->move(public_path('upload/admin/product'), $image_second);
-                        
+
                         image::create([
                             'product_id' => $product->id,
                             'image_name' => $image_second,
                         ]);
                     }
-                 
+
                 }
-            
-            
+
+
             return redirect()->route('admin.products.index')->with('success' , 'تم تعديل المنتج بنجاح');
 
         // } catch (\Throwable $th) {
         //     return redirect()->route('admin.products.index');
         // }
-        
+
     }
 
     /**

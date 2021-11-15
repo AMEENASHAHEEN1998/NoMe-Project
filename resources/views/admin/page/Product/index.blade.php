@@ -56,7 +56,7 @@
                                 <div class="card-header border-bottom">
                                     <h4 class="card-title">المنتجات</h4>
                                     <a href="{{route('admin.products.create')}}"
-                                       class="btn btn-primary me-1">اضافة قسم</a>
+                                       class="btn btn-primary me-1">اضافة منتج جديد</a>
                                 </div>
                                 <div class="card-datatable">
                                     <table class="dt-responsive table">
@@ -77,11 +77,11 @@
                                             <tr>
                                                 <td>{{$loop->iteration}}</td>
                                                 <td>{{$product->product_name}}</td>
-                                                <td>{{$product->category->category_name}}</td>
+                                                <td>{{$product->subCategory->sub_category_name}}</td>
                                                 <td>{{$product->price}}</td>
                                                 <td>{{$product->description}}</td>
                                                 <td>
-                                                    
+
                                                     <img src="{{asset('upload/admin/product/'.$product->primary_image)}}" style="width: 85px" alt="">
 
                                                 </td>
@@ -110,8 +110,8 @@
                                                                 <i data-feather="trash" class="me-50"></i>
                                                                 <span><button data-toggle="modal"
                                                                     data-target="#delete{{ $product->id }}" style="background: none; border: none; outline: none" type="submit">حذف</button></span>
-                                                           
-                                                           
+
+
                                                                 </form>
                                                         </div>
                                                     </div>
@@ -119,7 +119,7 @@
                                             </tr>
 
                                             @endforeach
-                                            
+
 
                                         </tbody>
                                     </table>

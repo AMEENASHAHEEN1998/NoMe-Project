@@ -118,6 +118,9 @@ class SubCategoryController extends Controller
      */
     public function destroy(SubCategory $subCategory)
     {
-        //
+        $subCategory = SubCategory::findOrFail($subCategory->id);
+        $subCategory->delete();
+        return redirect()->route('admin.sub_categories.index')->with('delete' , 'تم حذف القسم الفرعي بنجاح');
+
     }
 }

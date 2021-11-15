@@ -36,7 +36,7 @@
                                     <form class="form" method="post" action="{{route('admin.products.store')}}" enctype="multipart/form-data" >
                                         @csrf
 
-                                        
+
                                         <div class="row">
 
                                             <div class="col-md-4 col-6">
@@ -60,15 +60,15 @@
 
                                             <div class="col-md-4 col-6">
                                                 <label for="name"
-                                                    class="mr-sm-2" style="font-size: 16px"> اسم القسم الرئيسي
+                                                    class="mr-sm-2" style="font-size: 16px"> اسم القسم الفرعي
                                                     :</label>
 
                                                 <div class="box col-md-12">
-                                                    <select class="form-control form-control-lg " name="category_id">
-                                                        @foreach ($categories as $category)
-                                                          
-                                                                <option value="{{ $category->id }}">
-                                                                    {{ $category->category_name }}</option>
+                                                    <select class="form-control form-control-lg " name="sub_category_id">
+                                                        @foreach ($subCategories as $subCategory)
+
+                                                                <option value="{{ $subCategory->id }}">
+                                                                    {{ $subCategory->sub_category_name }}</option>
                                                         @endforeach
                                                     </select>
                                                 </div>
@@ -96,7 +96,7 @@
                                                     @endif
                                                 </div>
                                             </div>
-                                        
+
                                             <div class="col-md-4 col-6">
                                                 <div class="mb-1">
                                                     <label class="form-label" for="description" style="font-size: 16px">الوصف </label>
@@ -107,7 +107,7 @@
                                                         placeholder=" الرجاء ادخال  وصف المنتج  "
                                                         name="description"
                                                         value="{{ old('description') }}"
-                                                        
+
                                                     />
                                                     @if($errors->has('description'))
                                                         <div
@@ -115,19 +115,19 @@
                                                     @endif
                                                 </div>
                                             </div>
-                                            
+
 
                                         </div>
-                                       
-                                        
-                                        <br> 
+
+
+                                        <br>
                                         <div class="repeater-default">
                                             <div data-repeater-list="sizes">
                                                 <div data-repeater-item>
                                                     <div class="row">
                                                         <div class="col">
                                                             <label class="form-label" for="size" style="font-size: 16px">ادخل المقاس </label>
-                                                                
+
                                                             <div class="box ">
                                                                 <input
                                                                     type="text"
@@ -142,9 +142,9 @@
                                                                     <div
                                                                         class="invalid-feedback">{{ $errors -> first('size') }}</div>
                                                                 @endif
-                                                            </div> 
-                                                            
-            
+                                                            </div>
+
+
                                                         </div>
                                                         <div class="col">
                                                             <label for="Name_en"
@@ -156,14 +156,14 @@
                                                     </div>
                                                 </div>
                                             </div>
-            
+
                                             <div class="row">
                                                 <div class="row mt-20">
                                                     <div class="col-12">
                                                         <input class="button" data-repeater-create type="button"
                                                             value="اضافة مقاس أخر" />
                                                     </div>
-            
+
                                                 </div>
                                             </div>
                                         </div>
@@ -174,7 +174,7 @@
                                                     <div class="row">
                                                         <div class="col">
                                                             <label class="form-label" for="color" style="font-size: 16px">ادخل اللون </label>
-                                                                
+
                                                             <div class="box ">
                                                                 <input
                                                                     type="text"
@@ -189,9 +189,9 @@
                                                                     <div
                                                                         class="invalid-feedback">{{ $errors -> first('color') }}</div>
                                                                 @endif
-                                                            </div> 
-                                                            
-            
+                                                            </div>
+
+
                                                         </div>
                                                         <div class="col">
                                                             <label for="Name_en"
@@ -203,20 +203,20 @@
                                                     </div>
                                                 </div>
                                             </div>
-            
+
                                             <div class="row">
                                                 <div class="row mt-20">
                                                     <div class="col-12">
                                                         <input class="button" data-repeater-create type="button"
                                                             value="اضافة لون أخر" />
                                                     </div>
-            
+
                                                 </div>
                                             </div>
                                         </div>
                                         <br>
                                         <div class="row">
-                                
+
                                             <div class="col">
                                                 <div class="form-group">
                                                     <label
@@ -236,12 +236,12 @@
                                                             <label for="second_image"
                                                                 class="mr-sm-2" style="font-size: 16px">اضافة صورة أخرى
                                                                 :</label>
-            
+
                                                             <div class="box ">
-                                                                <input type="file" name="second_image" class="form-control-file" 
+                                                                <input type="file" name="second_image" class="form-control-file"
                                                                 id="second_image">
                                                             </div>
-            
+
                                                         </div>
                                                         <div class="col">
                                                             <label for=""
@@ -253,27 +253,27 @@
                                                     </div>
                                                 </div>
                                             </div>
-            
+
                                             <div class="row">
                                                 <div class="row mt-20">
                                                     <div class="col-12">
                                                         <input class="button"  data-repeater-create type="button"
                                                             value="اضافة صورة أخرى" />
                                                     </div>
-            
+
                                                 </div>
                                             </div>
                                         </div>
 
                                         <br>
                                         <br>
-                                       
+
 
                                             <div class="col-12">
                                                 <button type="submit" class="btn btn-primary me-1">حفظ</button>
                                                 <a href="" class="btn btn-outline-secondary">عودة</a>
                                             </div>
-                                        
+
 
 
                                     </form>
