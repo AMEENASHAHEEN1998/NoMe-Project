@@ -93,11 +93,13 @@ class SecondCategoryController extends Controller
                 'second_category_name' => 'required',
 
             ]);
+
             // dd($request->all());
             $secondCategory = SecondCategory::findOrFail($secondCategory->id);
+            $category_id = $request->category_id ?? $secondCategory->category_id ;
             $secondCategory->update([
                 'second_category_name' => $request->second_category_name,
-                'category_id' => $request->category_id
+                'category_id' => $category_id
         ]);
             }catch (\Exception $e){
                 return redirect()->route('admin.second_categories.index')->with('warning','فشل في عملية تعديل القسم الثانوي');

@@ -24,7 +24,7 @@ class ProductController extends Controller
 
 
 
-        return view('admin.page.product.index',compact('products', $products,'categories',$categories));
+        return view('admin.page.Product.index',compact('products', $products,'categories',$categories));
 
     }
 
@@ -40,7 +40,7 @@ class ProductController extends Controller
 
         $subCategories=SubCategory::orderBy('id' , 'desc')->get();
 
-        return view('admin.page.product.create',compact('subCategories',$subCategories));
+        return view('admin.page.Product.create',compact('subCategories',$subCategories));
     }
 
     /**
@@ -134,7 +134,7 @@ class ProductController extends Controller
         // return $products;
         $subCategories=SubCategory::all();
 
-        return view('admin.page.product.edit',compact('product', $product,'subCategories',$subCategories));
+        return view('admin.page.Product.edit',compact('product', $product,'subCategories',$subCategories));
 
     }
 
@@ -152,7 +152,7 @@ class ProductController extends Controller
             $product = product::findOrFail($id);
             //dd($request->all());
             $image_name = $product->primary_image ;
-
+            $sub_category_id = $request->sub_category_id ?? $product->sub_category_id ;
             if ($request->has('primary_image')) {
                 $FileEx = $request->file('primary_image')->getClientOriginalExtension();
                 $image_name = time() . '_' . rand() . '.' . $FileEx;
@@ -162,7 +162,7 @@ class ProductController extends Controller
             // return   $image_name;
             $product->update([
                 'product_name' => $request->product_name,
-                'sub_category_id' => $request->sub_category_id,
+                'sub_category_id' =>$sub_category_id ,
                 'price' => $request->price,
                 'description' => $request->description,
                 'primary_image' => $image_name,

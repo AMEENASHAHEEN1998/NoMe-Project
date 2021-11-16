@@ -74,7 +74,7 @@
                                             <tr>
                                                 <td>{{ $loop->iteration }}</td>
                                                 <td>{{ $subCategory->sub_category_name }}</td>
-                                                <td>{{ $subCategory->secondCategory->second_category_name }}</td>
+                                                <td>{{ $subCategory->secondCategory->second_category_name ?? "القسم غير موجود"}}</td>
                                                 <td>{{ $subCategory->created_at }}</td>
                                                 <td>
                                                     <div class="dropdown">

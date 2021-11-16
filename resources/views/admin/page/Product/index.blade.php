@@ -77,7 +77,7 @@
                                             <tr>
                                                 <td>{{$loop->iteration}}</td>
                                                 <td>{{$product->product_name}}</td>
-                                                <td>{{$product->subCategory->sub_category_name}}</td>
+                                                <td>{{$product->subCategory->sub_category_name ?? "القسم غير موجود"}}</td>
                                                 <td>{{$product->price}}</td>
                                                 <td>{{$product->description}}</td>
                                                 <td>

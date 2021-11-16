@@ -1,6 +1,6 @@
 @extends('front.include.layout')
 
-@section('title', 'الصفحة الرئيسية')
+@section('title', 'الصفحة المنتج')
 
 @section('content')
 
@@ -97,11 +97,15 @@
                                                         </div>
 
                                                         <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-                                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                                        <span class="carousel-control-prev-icon" aria-hidden="true"style="
+    background-color: #b61f76;
+"></span>
                                                         <span class="sr-only">Previous</span>
                                                         </a>
                                                         <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-                                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                                        <span class="carousel-control-next-icon" aria-hidden="true" style="
+    background-color: #b61f76;
+"></span>
                                                         <span class="sr-only">Next</span>
                                                         </a>
                                                     </div>
@@ -145,30 +149,30 @@
 
                                              </div></div><div class="owl-nav disabled"><button type="button" role="presentation" class="owl-prev"><span aria-label="Previous">‹</span></button><button type="button" role="presentation" class="owl-next"><span aria-label="Next">›</span></button></div><div class="owl-dots disabled"></div></div>
                                 </div>
-                                <div class="product-gallery__carousel">
-                                    <div class="owl-carousel owl-rtl owl-loaded owl-drag" id="product-carousel" data-length="9">
+<!--                                <div class="product-gallery__carousel">-->
+<!--                                    <div class="owl-carousel owl-rtl owl-loaded owl-drag" id="product-carousel" data-length="9">-->
 
 
-                                         <div class="owl-stage-outer">
-                                            <div class="owl-stage product-image--location--gallery" style="transform: translate3d(0px, 0px, 0px); transition: all 0s ease 0s; width: 1308px;">
-                                                @foreach ($productImages as $productImage)
-                                                <div class="owl-item  $loop->iteration==$productImage->id?'active':''  " style="width: 99px; margin-left: 10px;">
-                                                    <a href="{{ asset('upload/admin/product/'. $productImage->image_name) }}" class="product-image product-gallery__carousel-item " style="padding:2px;">
-                                                        <div class="product-image__body" style="
-    width: 100px;
-    height: 74px;
-">
-                                                <img class="product-image__img product-gallery__carousel-image" src="{{ asset('upload/admin/product/'. $productImage->image_name) }}" alt="" style="    padding-right: 0px; padding-left: 25px;">
-                                                        </div>
-                                                    </a>
-                                            </div>
-                                                @endforeach
+<!--                                         <div class="owl-stage-outer">-->
+<!--                                            <div class="owl-stage product-image--location--gallery" style="transform: translate3d(0px, 0px, 0px); transition: all 0s ease 0s; width: 1308px;">-->
+<!--                                                @foreach ($productImages as $productImage)-->
+<!--                                                <div class="owl-item  $loop->iteration==$productImage->id?'active':''  " style="width: 99px; margin-left: 10px;">-->
+<!--                                                    <a  class="product-image " style="padding:2px;">-->
+<!--                                                        <div class="product-image__body" style="-->
+<!--    width: 100px;-->
+<!--    height: 74px;-->
+<!--">-->
+<!--                                                <img class="product-image__img product-gallery__carousel-image " src="{{ asset('upload/admin/product/'. $productImage->image_name) }}" alt="" style="    padding-right: 0px; padding-left: 25px;">-->
+<!--                                                        </div>-->
+<!--                                                    </a>-->
+<!--                                            </div>-->
+<!--                                                @endforeach-->
 
 
-                                        </div></div>
-                                        <div class="owl-nav disabled"><button type="button" role="presentation" class="owl-prev"><span aria-label="Previous">‹</span></button><button type="button" role="presentation" class="owl-next"><span aria-label="Next">›</span></button></div><div class="owl-dots disabled"></div>
-                                        </div>
-                                </div>
+<!--                                        </div></div>-->
+<!--                                        <div class="owl-nav disabled"><button type="button" role="presentation" class="owl-prev"><span aria-label="Previous">‹</span></button><button type="button" role="presentation" class="owl-next"><span aria-label="Next">›</span></button></div><div class="owl-dots disabled"></div>-->
+<!--                                        </div>-->
+<!--                                </div>-->
                             </div>
                         </div>
                         <!-- .product__gallery / end -->

@@ -99,9 +99,10 @@ class SubCategoryController extends Controller
             ]);
             // dd($request->all());
             $subCategory = SubCategory::findOrFail($subCategory->id);
+            $second_category_id = $request->second_category_id ?? $subCategory->second_category_id;
             $subCategory->update([
                 'sub_category_name' => $request->sub_category_name,
-                'second_category_id' => $request->second_category_id
+                'second_category_id' => $second_category_id
             ]);
         }catch (\Exception $e){
             return redirect()->route('admin.sub_categories.index')->with('warning','فشل في عملية تعديل القسم الفرعي');
