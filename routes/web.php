@@ -45,6 +45,9 @@ Route::name('NoMe.')->group(function(){
     Route::get('products',[HomeController::class ,'products'])->name('products');
     Route::get('productpage/{product:product_name}',[HomeController::class ,'productpage'])->name('productpage');
     Route::get('category/{category:category_name}',[HomeController::class ,'categorypage'])->name('categorypage');
+    Route::get('secondCategory/{secondCategory:second_category_name}',[HomeController::class ,'secondCategorypage'])->name('secondCategorypage');
+    Route::get('subCategory/{subCategory:sub_category_name}',[HomeController::class ,'subCategorypage'])->name('subCategorypage');
+
     Route::post('order' , [HomeController::class , 'order'])->name('order');
     Route::get('contact',[HomeController::class ,'contact'])->name('contact');
     Route::post('send-email', [MailController::class, 'sendEmail'])->name('send-email');

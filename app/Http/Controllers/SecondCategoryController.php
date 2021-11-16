@@ -63,7 +63,7 @@ class SecondCategoryController extends Controller
      */
     public function show(SecondCategory $secondCategory)
     {
-        //
+        return view('errors.404');
     }
 
     /**

@@ -183,7 +183,7 @@
 
                     @foreach ($categories as $category)
                     <li class="departments__item">
-                        <a class="departments__item-link " href="{{route('NoMe.categorypage',$category->category_name)}}" id="198">
+                        <a class="departments__item-link " id="198">
                             {{ $category->category_name }}
                             <i class="fa fa-arrow-right departments__item-arrow" width="6px" height="9px"></i>
 
@@ -194,7 +194,30 @@
                                 <div class="megamenu__body">
 
                                     <div class="row">
+
                                         <div class="col-12">
+                                            <ul class="megamenu__links megamenu__links--level--0">
+                                                @foreach ($category->secondCategory as $secondCategory )
+
+
+                                                <li class="megamenu__item  megamenu__item--with-submenu ">
+                                                    <a href="{{ route('NoMe.secondCategorypage',$secondCategory->second_category_name) }}">{{ $secondCategory->second_category_name }}</a>
+                                                    @foreach ($secondCategory->subCategories as $subCategory)
+                                                    <ul class="megamenu__links megamenu__links--level--1">
+                                                        <li class="megamenu__item" id="700">
+                                                            <a href="{{ route('NoMe.subCategorypage',$subCategory->sub_category_name) }}">{{ $subCategory->sub_category_name }}</a>
+                                                        </li>
+                                                    </ul>
+                                                    @endforeach
+
+
+
+
+                                                </li>
+                                                @endforeach
+                                            </ul>
+                                        </div>
+                                        {{-- <div class="col-12">
                                             <ul class="megamenu__links megamenu__links--level--0">
                                                             @foreach ($category->product as $product )
                                                             <a href="{{route('NoMe.products')}}">{{ $product->product_name }}</a>
@@ -206,7 +229,7 @@
                                                                                                                                                                                                     <li class="megamenu__item ">
 
                                                                                                                                         </ul>
-                                        </div>
+                                        </div> --}}
                                     </div>
                                 </div>
                             </div>

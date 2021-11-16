@@ -27,7 +27,7 @@
                 </li>
 
 
-                                    <li class="mobile-links__item" data-collapse-item="">
+                <li class="mobile-links__item" data-collapse-item="">
                     <div class="mobile-links__item-title">
                         <a  class="mobile-links__item-link ">التصنيفات</a>
                         <button class="mobile-links__item-toggle" type="button" data-collapse-trigger="">
@@ -39,12 +39,42 @@
                             @foreach ($categories as $category)
                             <li class="mobile-links__item" data-collapse-item="">
                                         <div class="mobile-links__item-title">
-                                            <a href="{{route('NoMe.categorypage',$category->category_name)}}" class="mobile-links__item-link">{{$category->category_name}}</a>
+                                            <a  class="mobile-links__item-link">{{$category->category_name}}</a>
+                                            <button class="mobile-links__item-toggle" type="button" data-collapse-trigger="">
+                                                <i class="fa fa-arrow-left " width="6px" height="9px"></i>
+                                            </button>
+                                        </div>
+                                        <div class="mobile-links__item-sub-links" data-collapse-content="">
+                                            <ul class="mobile-links mobile-links--level--1">
+                                                @foreach ($category->secondCategory as $secondCategory )
+                                                <li class="mobile-links__item" data-collapse-item="">
+                                                    <div class="mobile-links__item-title">
+                                                        <a href="{{ route('NoMe.secondCategorypage',$secondCategory->second_category_name) }}" class="mobile-links__item-link">{{ $secondCategory->second_category_name }}</a>
 
+                                                        <button class="mobile-links__item-toggle" type="button" data-collapse-trigger="">
+                                                            <i class="fa fa-arrow-left " width="6px" height="9px"></i>
+                                                        </button>
+
+                                                    </div>
+                                        <div class="mobile-links__item-sub-links" data-collapse-content="">
+                                            <ul class="mobile-links mobile-links--level--1">
+                                                @foreach ($secondCategory->subCategories as $subCategory)
+                                                <li class="mobile-links__item" data-collapse-item="">
+                                                    <div class="mobile-links__item-title">
+                                                        <a href="{{ route('NoMe.subCategorypage',$subCategory->sub_category_name) }}" class="mobile-links__item-link">{{ $subCategory->sub_category_name }}</a>
+                                                    </div>
+                                                </li>
+                                                @endforeach
+
+                                            </ul>
                                         </div>
                                     </li>
                                     @endforeach
-                                </ul>
+                                            </ul>
+                                        </div>
+                            </li>
+                                    @endforeach
+                        </ul>
                     </div>
                 </li>
                 <li class="mobile-links__item" data-collapse-item="">

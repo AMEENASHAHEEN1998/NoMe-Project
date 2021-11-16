@@ -2,14 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\category;
+use App\Models\User;
 use App\Models\image;
 use App\Models\offer;
 use App\Models\order;
-use App\Models\product;
 use App\Models\slider;
-use App\Models\User;
+use App\Models\product;
+use App\Models\category;
+use App\Models\SubCategory;
 use Illuminate\Http\Request;
+use App\Models\SecondCategory;
 
 class HomeController extends Controller
 {
@@ -68,14 +70,28 @@ class HomeController extends Controller
     public function categorypage(category $category)
     {
         $categories = category::orderBy('id' , 'desc')->get();
-
-        $products = product::orderBy('id' , 'desc')->where('category_id' , $category->id)->get();
+        dd($category->secondCategory->subCategory->id);
+        $products = product::orderBy('id' , 'desc')->where('sub_category_id' , $category->secondCategory->subCategory->id)->get();
+        return view('front.products',compact('products', $products , 'categories' ,$categories));
+    }
+    public function secondCategorypage(SecondCategory $secondCategory){
+        $secondCategory = SecondCategory::findOrFail($secondCategory->id);
+        // dd($secondCategory->subCategoryProduct);
+        $products = product::orderBy('id' , 'desc')->get();
+        $categories = category::orderBy('id' , 'desc')->get();
+        return view('front.products',compact('products', $products , 'categories' ,$categories));
+    }
+    public function subCategorypage(SubCategory $subCategory){
+        $subCategory = SubCategory::findOrFail($subCategory->id);
+        $products = product::orderBy('id' , 'desc')->where('sub_category_id' , $subCategory['id'])->get();
+        // dd($products);
+        $categories = category::orderBy('id' , 'desc')->get();
         return view('front.products',compact('products', $products , 'categories' ,$categories));
     }
     public function productpage(product $product)
     {
         $product = product::findOrFail($product->id);
-        $products = product::where('category_id' , $product->category_id)->orderBy('id' ,'desc')->get();
+        $products = product::where('sub_category_id' , $product->sub_category_id)->orderBy('id' ,'desc')->get();
         $categories = category::orderBy('id' , 'desc')->get();
         $productImages = image::where('product_id' , $product->id)->get();
        // dd($productImages);

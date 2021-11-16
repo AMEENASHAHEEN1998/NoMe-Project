@@ -20,4 +20,9 @@ class SecondCategory extends Model
     {
         return $this->hasMany(SubCategory::class);
     }
+
+    public function subCategoryProduct()
+    {
+        return $this->hasManyThrough( product::class ,SubCategory::class );
+    }
 }

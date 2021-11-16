@@ -63,30 +63,96 @@
 
                                     <div class="owl-stage-outer">
                                         <div class="owl-stage" style="transform: translate3d(0px, 0px, 0px); transition: all 0s ease 0s; width: 6372px;">
-                                            <div class="owl-item active" style="width: 531px;">
+
+                                            <div class="block-slideshow block-slideshow--layout--with-departments block">
+                                                {{-- <div class="container"> --}}
+                                                    {{-- <div class="row"> --}}
+
+                                                    {{-- <div class=""></div> --}}
+                                                        <div class="owl-item" style="width: 531px;">
+                                                            <div class="block-slideshow__body">
+                                                                <div class="owl-carousel owl-rtl owl-loaded owl-drag">
+                                                    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+
+                                                        <div class="carousel-inner product-image ">
+                                                        @foreach ($productImages as $productImage)
+
+                                                        <div class="carousel-item {{ ($loop->iteration == 1) ?  'active' : '' }} cloned" style="
+                                                            " ><a class="block-slideshow__slide" href="">
+                                                            {{-- <div class="product-image__img block-slideshow__slide-image block-slideshow__slide-image--desktop" style="background-image: url({{ asset('upload/admin/product/'. $productImage->image_name) }})">
+                                                            </div>
+                                                            <div class="product-image__img block-slideshow__slide-image block-slideshow__slide-image--mobile" style="background-image: url({{ asset('upload/admin/product/'. $productImage->image_name) }})">
+                                                            </div> --}}
+
+                                                            <img class="product-image__img block-slideshow__slide-image block-slideshow__slide-image--desktop"  src="{{ asset('upload/admin/product/'. $productImage->image_name) }}" alt="">
+                                                            <img class="product-image__img block-slideshow__slide-image block-slideshow__slide-image--mobile" src="{{ asset('upload/admin/product/'. $productImage->image_name) }}" alt="">
+
+                                                        </a></div>
+                                                        @endforeach
+
+
+
+
+
+                                                        </div>
+
+                                                        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                                        <span class="sr-only">Previous</span>
+                                                        </a>
+                                                        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                                        <span class="sr-only">Next</span>
+                                                        </a>
+                                                    </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                            {{-- </div> --}}
+                                            {{-- </div> --}}
+                                            </div>
+
+                                            {{-- <div class="owl-item " style="width: 531px;">
                                                 <div class="product-image ">
 
                                                     <img class="product-image__img" style="width: 89%; height:400px" src="{{ asset('upload/admin/product/'. $product->primary_image) }}" alt="">
 
                                                 </div>
-                                            </div>
+                                            </div> --}}
 
-                                            <div class="owl-item" style="width: 531px;"><div class="product-image product-image--location--gallery">
+
+                                             {{-- <div class="owl-item" style="width: 531px;">
+                                                <div class="product-image product-image--location--gallery">
                                                 <a href="{{ asset('upload/admin/product/'. $product->primary_image) }}" class="product-image__body" target="_blank">
                                                     <img class="product-image__img" src="{{ asset('upload/admin/product/'. $product->primary_image) }}" alt="">
                                                 </a>
-                                            </div></div>
+                                                </div>
+                                             </div> --}}
 
-                                            </div></div><div class="owl-nav disabled"><button type="button" role="presentation" class="owl-prev"><span aria-label="Previous">‹</span></button><button type="button" role="presentation" class="owl-next"><span aria-label="Next">›</span></button></div><div class="owl-dots disabled"></div></div>
+                                                {{-- @foreach ($productImages as $productImage)
+                                                <div class="product-image product-image--location--gallery">
+                                                    <a href="{{ asset('upload/admin/product/'. $productImage->image_name) }}" class="product-image__body" target="_blank" >
+
+                                                <img class="product-image__img" src="{{ asset('upload/admin/product/'. $productImage->image_name) }}" alt="" >
+
+                                                    </a>
+                                            </div>
+                                                @endforeach --}}
+
+
+
+                                             </div></div><div class="owl-nav disabled"><button type="button" role="presentation" class="owl-prev"><span aria-label="Previous">‹</span></button><button type="button" role="presentation" class="owl-next"><span aria-label="Next">›</span></button></div><div class="owl-dots disabled"></div></div>
                                 </div>
                                 <div class="product-gallery__carousel">
                                     <div class="owl-carousel owl-rtl owl-loaded owl-drag" id="product-carousel" data-length="9">
 
 
-                                        <div class="owl-stage-outer">
-                                            <div class="owl-stage" style="transform: translate3d(0px, 0px, 0px); transition: all 0s ease 0s; width: 1308px;">
+                                         <div class="owl-stage-outer">
+                                            <div class="owl-stage product-image--location--gallery" style="transform: translate3d(0px, 0px, 0px); transition: all 0s ease 0s; width: 1308px;">
                                                 @foreach ($productImages as $productImage)
-                                                <div class="owl-item {{ $loop->iteration == 1 ? 'active' : '' }} " style="width: 99px; margin-left: 10px;">
+                                                <div class="owl-item  $loop->iteration==$productImage->id?'active':''  " style="width: 99px; margin-left: 10px;">
                                                     <a href="{{ asset('upload/admin/product/'. $productImage->image_name) }}" class="product-image product-gallery__carousel-item " style="padding:2px;">
                                                         <div class="product-image__body" style="
     width: 100px;
@@ -99,7 +165,8 @@
                                                 @endforeach
 
 
-                                        </div></div><div class="owl-nav disabled"><button type="button" role="presentation" class="owl-prev"><span aria-label="Previous">‹</span></button><button type="button" role="presentation" class="owl-next"><span aria-label="Next">›</span></button></div><div class="owl-dots disabled"></div>
+                                        </div></div>
+                                        <div class="owl-nav disabled"><button type="button" role="presentation" class="owl-prev"><span aria-label="Previous">‹</span></button><button type="button" role="presentation" class="owl-next"><span aria-label="Next">›</span></button></div><div class="owl-dots disabled"></div>
                                         </div>
                                 </div>
                             </div>
@@ -123,7 +190,7 @@
 
                             <ul class="product__meta">
                                 <li class="product__meta-availability">التصنيفات:</li>
-                                                                    <li><a href="/category/198">{{ $product->category->category_name }}</a></li>
+                                                                    <li><a href="/category/198">{{ $product->subCategory->sub_category_name }}</a></li>
 
                                                             </ul>
                         </div>

@@ -66,7 +66,7 @@ class SubCategoryController extends Controller
      */
     public function show(SubCategory $subCategory)
     {
-        //
+        return view('errors.404');
     }
 
     /**
