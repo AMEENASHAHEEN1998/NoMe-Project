@@ -54,7 +54,7 @@
                                                         type="text"
                                                         id="second_category_name"
 
-                                                        class="form-control @error('second_category_name') is-invalid @enderror"
+                                                        class="form-control form-control-lg @error('second_category_name') is-invalid @enderror"
                                                         placeholder="الرجاء ادخال اسم القسم الثانوي  "
                                                         name="second_category_name"
                                                         value="{{ old('second_category_name') }}"
@@ -65,7 +65,7 @@
                                                         </div>
                                                     @endif
                                                 </div>
-
+                                            </div>
                                                 <div class="col-md-4 col-6">
                                                     <label for="name"
                                                         class="mr-sm-2" style="font-size: 16px"> اسم القسم الرئيسي
