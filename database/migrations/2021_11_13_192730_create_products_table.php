@@ -19,6 +19,7 @@ class CreateProductsTable extends Migration
             $table->string('price' , 100);
             $table->longText('description');
             $table->string('primary_image' , 255);
+            $table->integer('out_of_stock')->default(0);
             $table->integer('status_offer');
             $table->foreignId('sub_category_id');
             $table->timestamps();

@@ -270,6 +270,13 @@
                                             </a>
                                         </li>
                                         <li class="nav-links__item  nav-links__item--has-submenu ">
+                                            <a class="nav-links__item-link" href="{{route('NoMe.offers')}}">
+                                                <div class="nav-links__item-body">
+                                                    العروض
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li class="nav-links__item  nav-links__item--has-submenu ">
                                             <a class="nav-links__item-link" href="{{route('NoMe.about')}}">
                                                 <div class="nav-links__item-body">
                                                     من نحن

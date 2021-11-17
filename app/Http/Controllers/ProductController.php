@@ -250,4 +250,22 @@ class ProductController extends Controller
         return redirect()->route('admin.products.index');
     }
     }
+
+    public function out_of_stock(Request $request,  $id){
+        $product = product::findOrFail($request->product_id);
+        $product->update([
+            'out_of_stock' => 1,
+        ]);
+        return redirect()->route('admin.products.index')->with('success' , 'نفذت كمية المنتج');
+
+    }
+
+    public function not_out_of_stock(Request $request,  $id){
+        $product = product::findOrFail($request->product_id);
+        $product->update([
+            'out_of_stock' => 0,
+        ]);
+        return redirect()->route('admin.products.index')->with('success' , ' كمية المنتج متوفرة');
+
+    }
 }

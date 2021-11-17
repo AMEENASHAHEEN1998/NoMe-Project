@@ -48,12 +48,15 @@ class OfferController extends Controller
             'new_price' => 'required',
             'product_id' => 'required'
         ]);
+        $product = product::findOrFail($request->product_id);
+        $oldPrice = $product->price;
         offer::create([
 
-         
+
             'new_price' => $request->new_price,
+            'old_price' => $oldPrice,
             'product_id' => $request->product_id,
-           
+
         ]);
         product::find($request->product_id)->update([
             'price' => $request->new_price,
@@ -76,7 +79,7 @@ class OfferController extends Controller
     public function show($id)
     {
         return view('errors.404');
-        
+
     }
 
     /**
@@ -88,7 +91,7 @@ class OfferController extends Controller
     public function edit($id)
     {
         return view('errors.404');
-        
+
     }
 
     /**
@@ -101,7 +104,7 @@ class OfferController extends Controller
     public function update(Request $request, $id)
     {
         return view('errors.404');
-        
+
     }
 
     /**

@@ -104,6 +104,30 @@
                                                                 <i data-feather="edit-2" class="me-50"></i>
                                                                 <span>تعديل</span>
                                                             </a>
+                                                            @if ($product->out_of_stock == 0)
+                                                            <form class="dropdown-item" method="post" action="{{route('admin.out_of_stock',$product->id)}}">
+                                                                @csrf
+                                                                @method('put')
+                                                                <input type="hidden" value="{{$product->id}}" name="product_id"/>
+                                                                <i data-feather="edit-2" class="me-50"></i>
+                                                                <span><button data-toggle="modal"
+                                                                    data-target="#delete{{ $product->id }}" style="background: none; border: none; outline: none" type="submit">نفذت الكمية</button></span>
+
+
+                                                                </form>
+                                                            @else
+                                                            <form class="dropdown-item" method="post" action="{{route('admin.not_out_of_stock',$product->id)}}">
+                                                                @csrf
+                                                                @method('put')
+                                                                <input type="hidden" value="{{$product->id}}" name="product_id"/>
+                                                                <i data-feather="edit-2" class="me-50"></i>
+                                                                <span><button data-toggle="modal"
+                                                                    data-target="#delete{{ $product->id }}" style="background: none; border: none; outline: none" type="submit"> كمية المنتج متوفرة</button></span>
+
+
+                                                                </form>
+                                                            @endif
+
                                                             <form class="dropdown-item" method="post" action="{{route('admin.products.destroy',$product->id)}}">
                                                                 @csrf
                                                                 @method('delete')

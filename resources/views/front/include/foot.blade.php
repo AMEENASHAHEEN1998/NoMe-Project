@@ -84,6 +84,11 @@
                 </li>
                 <li class="mobile-links__item" data-collapse-item="">
                     <div class="mobile-links__item-title">
+                        <a href="{{route('NoMe.offers')}}" class="mobile-links__item-link">العروض</a>
+                    </div>
+                </li>
+                <li class="mobile-links__item" data-collapse-item="">
+                    <div class="mobile-links__item-title">
                         <a href="{{route('NoMe.about')}}" class="mobile-links__item-link">من نحن</a>
                     </div>
                 </li>

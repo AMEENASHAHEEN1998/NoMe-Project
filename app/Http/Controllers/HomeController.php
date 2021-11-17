@@ -164,4 +164,11 @@ class HomeController extends Controller
             return redirect()->back()->with('warning','فشل في عملية انشاء الطلبية');
         }
     }
+
+    public function offers(){
+        $offerProducts = product::where('status_offer' , 1)->get();
+        $offers = offer::all();
+        $categories = category::orderBy('id' , 'desc')->get();
+        return view('front.offers',compact( 'categories' ,$categories ,'offers' , $offers, 'offerProducts' , $offerProducts ));
+    }
 }

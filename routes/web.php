@@ -53,7 +53,7 @@ Route::name('NoMe.')->group(function(){
     Route::post('send-email', [MailController::class, 'sendEmail'])->name('send-email');
     Route::get('send-email/index', [MailController::class, 'index'])->name('send-email.index');
     Route::get('findProduct',[HomeController::class ,'findProduct'])->name('findProduct');
-
+    Route::get('offers' , [HomeController::class , 'offers'])->name('offers');
 });
 
 Route::prefix('admin')->middleware('auth','checkRole')->name('admin.')->group(function(){
@@ -63,6 +63,8 @@ Route::prefix('admin')->middleware('auth','checkRole')->name('admin.')->group(fu
     Route::resource('second_categories', SecondCategoryController::class);
     Route::resource('sub_categories', SubCategoryController::class);
     Route::resource('products', ProductController::class);
+    Route::put('out_of_stock/{id}' , [ProductController::class , 'out_of_stock'])->name('out_of_stock');
+    Route::put('not_out_of_stock/{id}' , [ProductController::class , 'not_out_of_stock'])->name('not_out_of_stock');
     Route::resource('users', UserController::class);
     Route::resource('offers', OfferController::class);
     Route::resource('orders', OrderController::class);

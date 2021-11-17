@@ -131,6 +131,10 @@
                                             <div class="product-card product-card--hidden-actions ">
                                                 <div class="product-card__image product-image">
                                                     <a href="{{ route('NoMe.productpage', $offerProduct->product_name) }}" class="product-image__body">
+                                                        @if ($offerProduct->out_of_stock == 1)
+                                                            <img src="{{ asset('image/sold-out.jpg') }}" alt="Vostro 3500 Business Laptop i7" style="width: 50%;right: 50%;top: 28%;z-index:3;margin-bottom: -23px;position: relative;margin-top: -10px;"
+                                                            >
+                                                        @endif
                                                         <img class="product-image__img" alt="" src="{{ asset('upload/admin/product/'. $offerProduct->primary_image) }}">
                                                     </a>
                                                 </div>
@@ -195,6 +199,10 @@
                                     </div>
                                     <div class="product-card__image product-image">
                                         <a href="{{ route('NoMe.productpage', $product->product_name) }}" class="product-image__body">
+                                            @if ($product->out_of_stock == 1)
+                                                            <img src="{{ asset('image/sold-out.jpg') }}" alt="Vostro 3500 Business Laptop i7" style="width: 50%;right: 50%;top: 28%;z-index:3;margin-bottom: -23px;position: relative;margin-top: -10px;"
+                                                            >
+                                                        @endif
                                             <img class="product-image__img" src="{{ asset('upload/admin/product/'. $product->primary_image) }}" alt="">
                                         </a>
                                     </div>
@@ -226,6 +234,10 @@
                                     </div>
                                     <div class="product-card__image product-image">
                                         <a href="{{ route('NoMe.productpage', $product->product_name) }}" class="product-image__body">
+                                            @if ($product->out_of_stock == 1)
+                                                            <img src="{{ asset('image/sold-out.jpg') }}" alt="Vostro 3500 Business Laptop i7" style="width: 50%;right: 50%;top: 28%;z-index:3;margin-bottom: -23px;position: relative;margin-top: -10px;"
+                                                            >
+                                                        @endif
                                             <img class="product-image__img" alt="" src="{{ asset('upload/admin/product/'. $product->primary_image) }}">
                                         </a>
                                     </div>
@@ -299,6 +311,10 @@
                                             <div class="product-card product-card--hidden-actions ">
                                                 <div class="product-card__image product-image">
                                                     <a href="{{ route('NoMe.productpage', $latestProduct->product_name) }}" class="product-image__body">
+                                                        @if ($latestProduct->out_of_stock == 1)
+                                                            <img src="{{ asset('image/sold-out.jpg') }}" alt="Vostro 3500 Business Laptop i7" style="width: 50%;right: 50%;top: 28%;z-index:3;margin-bottom: -23px;position: relative;margin-top: -10px;"
+                                                            >
+                                                        @endif
                                                         <img class="product-image__img" alt="" src="{{ asset('upload/admin/product/'. $latestProduct->primary_image) }}">
                                                     </a>
                                                 </div>

@@ -64,8 +64,8 @@
                                         <tr>
                                             <th>#</th>
                                             <th>اسم منتج</th>
-                                            <th> السعر</th>
-                                           
+                                            <th>السعر الجديد</th>
+                                            <th>السعر القديم</th>
                                             <th>تاريخ الاضافة</th>
                                             <th>العمليات</th>
                                         </tr>
@@ -76,7 +76,8 @@
                                                 <td>{{$loop->iteration}}</td>
                                                 <td>{{$offer->product->product_name}}</td>
                                                 <td>{{$offer->new_price}}</td>
-                                      
+                                                <td>{{$offer->old_price}}</td>
+
 
                                                 <td>{{$offer->created_at}}</td>
 
@@ -92,15 +93,15 @@
                                                             </a>
                                                         </button>
                                                         <div class="dropdown-menu dropdown-menu-end">
-                                                           
+
                                                             <form class="dropdown-item" method="post" action="{{route('admin.offers.destroy',$offer->id)}}">
                                                                 @csrf
                                                                 @method('delete')
                                                                 <i data-feather="trash" class="me-50"></i>
                                                                 <span><button data-toggle="modal"
                                                                     data-target="#delete{{ $offer->id }}" style="background: none; border: none; outline: none" type="submit">حذف</button></span>
-                                                           
-                                                           
+
+
                                                                 </form>
                                                         </div>
                                                     </div>
@@ -108,7 +109,7 @@
                                             </tr>
 
                                             @endforeach
-                                            
+
 
                                         </tbody>
                                     </table>
