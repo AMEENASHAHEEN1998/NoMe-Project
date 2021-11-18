@@ -77,9 +77,10 @@ class HomeController extends Controller
     public function secondCategorypage(SecondCategory $secondCategory){
         $secondCategory = SecondCategory::findOrFail($secondCategory->id);
         // dd($secondCategory->subCategoryProduct);
+
         $products = product::orderBy('id' , 'desc')->get();
         $categories = category::orderBy('id' , 'desc')->get();
-        return view('front.products',compact('products', $products , 'categories' ,$categories));
+        return view('front.secondCategory',compact('secondCategory' ,$secondCategory ,'products', $products , 'categories' ,$categories));
     }
     public function subCategorypage(SubCategory $subCategory){
         $subCategory = SubCategory::findOrFail($subCategory->id);

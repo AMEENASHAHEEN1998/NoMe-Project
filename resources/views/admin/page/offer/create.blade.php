@@ -36,8 +36,8 @@
                                     <form class="form" method="post" action="{{route('admin.offers.store')}}" enctype="multipart/form-data" >
                                         @csrf
 
-                                        
-                                     
+
+
 
                                         <div class="row">
 
@@ -59,9 +59,9 @@
                                                     @endif
                                                 </div>
                                             </div>
-                                        
-                                          
-                                            
+
+
+
 
                                         </div>
                                         <div class="row">
@@ -73,27 +73,29 @@
 
                                                 <div class="box col-md-12">
                                                     <select class="form-control form-control-lg " name="product_id">
-                                                        @foreach ($products as $product)
-                                                          
-                                                                <option value="{{ $product->id }}">
-                                                                    {{ $product->product_name }}</option>
-                                                        @endforeach
+                                                        
+                                                        @forelse ($products as $product)
+                                                        <option value="{{ $product->id }}">
+                                                            {{ $product->product_name }}</option>
+                                                        @empty
+                                                            <div>جميع المنتجات عليها عروض</div>
+                                                        @endforelse
                                                     </select>
                                                 </div>
 
                                             </div>
                                         </div>
-                                       
-                                   
+
+
                                         <br>
                                         <br>
-                                       
+
 
                                             <div class="col-12">
                                                 <button type="submit" class="btn btn-primary me-1">حفظ</button>
                                                 <a href="" class="btn btn-outline-secondary">عودة</a>
                                             </div>
-                                        
+
 
 
                                     </form>

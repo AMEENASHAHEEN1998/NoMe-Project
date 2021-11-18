@@ -15,13 +15,17 @@
                         <div class="owl-carousel owl-rtl owl-loaded owl-drag">
             <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
 
-                <div class="carousel-inner">
+                <div class="carousel-inner product-image">
                 @foreach ($sliders as $slider)
                 <div class="carousel-item {{ ($loop->iteration == 1) ?  'active' : '' }} cloned" ><a class="block-slideshow__slide" href="">
-                    <div class="block-slideshow__slide-image block-slideshow__slide-image--desktop" style="background-image: url({{ asset('upload/admin/slider/'. $slider->image_src) }})">
+                    {{-- <div class="block-slideshow__slide-image block-slideshow__slide-image--desktop" style="background-image: url({{ asset('upload/admin/slider/'. $slider->image_src) }})">
                     </div>
                     <div class="block-slideshow__slide-image block-slideshow__slide-image--mobile" style="background-image: url({{ asset('upload/admin/slider/'. $slider->image_src) }})">
-                    </div>
+                    </div> --}}
+
+                    <img class="product-image__img block-slideshow__slide-image block-slideshow__slide-image--desktop"  src="{{ asset('upload/admin/slider/'. $slider->image_src) }}" alt="">
+                    <img class="product-image__img block-slideshow__slide-image block-slideshow__slide-image--mobile" src="{{ asset('upload/admin/slider/'. $slider->image_src) }}" alt="">
+
                 </a></div>
                 @endforeach
 
@@ -30,15 +34,18 @@
 
 
                 </div>
-
                 <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-                </a>
-                <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-                </a>
+                    <span class="carousel-control-prev-icon" aria-hidden="true"style="
+background-color: #b61f76;
+"></span>
+                    <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true" style="
+background-color: #b61f76;
+"></span>
+                    <span class="sr-only">Next</span>
+                    </a>
             </div>
             </div>
         </div>
@@ -132,7 +139,11 @@
                                                 <div class="product-card__image product-image">
                                                     <a href="{{ route('NoMe.productpage', $offerProduct->product_name) }}" class="product-image__body">
                                                         @if ($offerProduct->out_of_stock == 1)
+
                                                             <img src="{{ asset('image/sold-out.jpg') }}" alt="Vostro 3500 Business Laptop i7" style="width: 50%;right: 50%;top: 28%;z-index:3;margin-bottom: -23px;position: relative;margin-top: -10px;"
+                                                            >
+                                                            @else
+                                                            <img src="{{ asset('image/offer.png') }}" alt="Vostro 3500 Business Laptop i7" style="width: 50%;right: 50%;top: 28%;z-index:3;margin-bottom: -23px;position: relative;margin-top: -10px;"
                                                             >
                                                         @endif
                                                         <img class="product-image__img" alt="" src="{{ asset('upload/admin/product/'. $offerProduct->primary_image) }}">
@@ -146,6 +157,7 @@
                                                 <div class="product-card__actions">
                                                     <div class="product-card__prices" >
                                                                                                             {{ $offerProduct->price }}₪
+                                                                                                            <s style="margin-right: 10px">{{ $offerProduct->offer->old_price }}₪</s>
                                                                                                     </div>
                                                     <div class="product-card__buttons">
                                                         <a class="btn btn-primary product-card__addtocart" href="{{ route('NoMe.productpage', $offerProduct->product_name) }}">الذهاب للمنتج</a>

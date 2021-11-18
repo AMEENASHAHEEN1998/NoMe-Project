@@ -42,11 +42,14 @@
                                     <div class="product-card product-card--hidden-actions ">
                                         <div class="product-card__image product-image">
                                             <a href="{{ route('NoMe.productpage', $product->product_name) }}" class="product-image__body">
+
                                                 @if ($product->out_of_stock == 1)
                                                 <img src="{{ asset('image/sold-out.jpg') }}" alt="Vostro 3500 Business Laptop i7" style="width: 50%;right: 50%;top: 28%;z-index:3;margin-bottom: -23px;position: relative;margin-top: -10px;"
                                                 >
-                                                @endif
-
+                                                @elseif($product->status_offer == 1)
+                                                <img src="{{ asset('image/offer.png') }}" alt="Vostro 3500 Business Laptop i7" style="width: 50%;right: 50%;top: 28%;z-index:3;margin-bottom: -23px;position: relative;margin-top: -10px;"
+                                                >
+                                            @endif
                                                 <img class="product-image__img" src="{{ asset('upload/admin/product/'. $product->primary_image) }}" alt="" >
 
                                             </a>
@@ -60,6 +63,8 @@
                                         <div class="product-card__actions">
                                             <div class="product-card__prices">
                                                                 {{ $product->price }}₪
+                                                                {{-- <s style="margin-right: 10px">{{ $product->offer->old_price }}₪</s> --}}
+
                                                             </div>
                                             <div class="product-card__buttons">
                                                 <a class="btn btn-primary product-card__addtocart" href="{{ route('NoMe.productpage', $product->product_name) }}">الذهاب للمنتج</a>

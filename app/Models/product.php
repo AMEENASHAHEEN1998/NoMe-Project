@@ -36,6 +36,6 @@ class product extends Model
 
     public function offer()
     {
-        return $this->hasMany(offer::class);
+        return $this->hasOne(offer::class);
     }
 }

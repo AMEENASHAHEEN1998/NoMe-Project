@@ -1,6 +1,6 @@
 @extends('front.include.layout')
 
-@section('title', ' العروض')
+@section('title', ' المنتجات')
 
 @section('content')
 
@@ -17,12 +17,12 @@
                                 </use>
                             </svg>
                         </li>
-                        <li class="breadcrumb-item active" aria-current="page">العروض</li>
+                        <li class="breadcrumb-item active" aria-current="page">المنتجات</li>
                     </ol>
                 </nav>
             </div>
             <div class="page-header__title">
-                <h1>العروض</h1>
+                <h1>المنتجات</h1>
             </div>
         </div>
     </div>
@@ -37,36 +37,38 @@
                         <div class="products-view__list products-list" data-layout="grid-4-full" data-with-features="false" data-mobile-grid-columns="2">
                             <div class="products-list__body">
 
-                                @forelse ($offers as $offer )
+                                @foreach ($secondCategory->subCategories as $subCategory)
+                                @forelse ($subCategory->products as $product )
                                 <div class="products-list__item">
                                     <div class="product-card product-card--hidden-actions ">
                                         <div class="product-card__image product-image">
-                                            <a href="{{ route('NoMe.productpage', $offer->product->product_name) }}" class="product-image__body">
-                                                @if ($offer->product->out_of_stock == 1)
-                                                            <img src="{{ asset('image/sold-out.jpg') }}" alt="Vostro 3500 Business Laptop i7" style="width: 50%;right: 50%;top: 28%;z-index:3;margin-bottom: -23px;position: relative;margin-top: -10px;"
-                                                            >
-                                                            @else
-                                                            <img src="{{ asset('image/offer.png') }}" alt="Vostro 3500 Business Laptop i7" style="width: 50%;right: 50%;top: 28%;z-index:3;margin-bottom: -23px;position: relative;margin-top: -10px;"
-                                                            >
-                                                        @endif
-                                                <img class="product-image__img" src="{{ asset('upload/admin/product/'. $offer->product->primary_image) }}" alt="">
+                                            <a href="{{ route('NoMe.productpage', $product->product_name) }}" class="product-image__body">
+                                                @if ($product->out_of_stock == 1)
+                                                <img src="{{ asset('image/sold-out.jpg') }}" alt="Vostro 3500 Business Laptop i7" style="width: 50%;right: 50%;top: 28%;z-index:3;margin-bottom: -23px;position: relative;margin-top: -10px;"
+                                                >
+                                                @elseif($product->status_offer == 1)
+                                                <img src="{{ asset('image/offer.png') }}" alt="Vostro 3500 Business Laptop i7" style="width: 50%;right: 50%;top: 28%;z-index:3;margin-bottom: -23px;position: relative;margin-top: -10px;"
+                                                >
+                                            @endif
+
+                                                <img class="product-image__img" src="{{ asset('upload/admin/product/'. $product->primary_image) }}" alt="" >
+
                                             </a>
                                         </div>
                                         <div class="product-card__info">
                                             <div class="product-card__name">
-                                                <a href="{{ route('NoMe.productpage', $offer->product->product_name) }}">{{ $offer->product->product_name }}</a>
+                                                <a href="{{ route('NoMe.productpage', $product->product_name) }}">{{ $product->product_name }}</a>
                                             </div>
                                             <hr>
                                         </div>
                                         <div class="product-card__actions">
                                             <div class="product-card__prices">
-                                                {{ $offer->new_price }}₪
+                                                                {{ $product->price }}₪
+                                                                {{-- <s style="margin-right: 10px">{{ $product->offer->old_price }}₪</s> --}}
 
-
-                                               <s style="margin-right: 10px">{{ $offer->old_price }}₪</s>
-                                              </div>
+                                                            </div>
                                             <div class="product-card__buttons">
-                                                <a class="btn btn-primary product-card__addtocart" href="{{ route('NoMe.productpage', $offer->product->product_name) }}">الذهاب للمنتج</a>
+                                                <a class="btn btn-primary product-card__addtocart" href="{{ route('NoMe.productpage', $product->product_name) }}">الذهاب للمنتج</a>
 
                                                 <meta name="csrf-token" content="jPltwjuQpZppawltECo6QtvdVdcKFU6icjO2aj3I">
 
@@ -82,8 +84,10 @@
                                     </div>
                                 </div>
                                 @empty
-                                    <div>لا يوجد منتجات لعرضها</div>
+                                    {{-- <div>لا يوجد منتجات لعرضها</div> --}}
                                 @endforelse
+                                @endforeach
+
 
 </div>
 </div>
