@@ -98,6 +98,12 @@
                     </div>
                 </li>
                 <li class="mobile-links__item" data-collapse-item="">
+                    <div class="mobile-links__item-title">
+                        <a href="{{route('NoMe.app')}}" class="mobile-links__item-link"> حمل التطبيق</a>
+                    </div>
+                </li>
+                
+                <li class="mobile-links__item" data-collapse-item="">
                 <div class="mobile-links__item-title" >
                     <a href="https://www.facebook.com/NO.ME888/" style="color: #f5a1d1 ; margin-left: 10px ; margin-right: 30px;"  class="indicator__button">
 

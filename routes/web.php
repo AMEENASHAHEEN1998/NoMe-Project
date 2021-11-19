@@ -54,6 +54,7 @@ Route::name('NoMe.')->group(function(){
     Route::get('send-email/index', [MailController::class, 'index'])->name('send-email.index');
     Route::get('findProduct',[HomeController::class ,'findProduct'])->name('findProduct');
     Route::get('offers' , [HomeController::class , 'offers'])->name('offers');
+    Route::get('app', [HomeController::class , 'app'])->name('app');
 });
 
 Route::prefix('admin')->middleware('auth','checkRole')->name('admin.')->group(function(){

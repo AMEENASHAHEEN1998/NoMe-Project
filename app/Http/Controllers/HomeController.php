@@ -172,4 +172,10 @@ class HomeController extends Controller
         $categories = category::orderBy('id' , 'desc')->get();
         return view('front.offers',compact( 'categories' ,$categories ,'offers' , $offers, 'offerProducts' , $offerProducts ));
     }
+
+    public function app(){
+        $categories = category::orderBy('id' , 'desc')->get();
+
+        return view('front.app',compact( 'categories' ,$categories ));
+    }
 }

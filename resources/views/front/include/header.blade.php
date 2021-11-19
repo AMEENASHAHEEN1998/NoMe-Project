@@ -290,6 +290,13 @@
                                                 </div>
                                             </a>
                                         </li>
+                                        <li class="nav-links__item  nav-links__item--has-submenu ">
+                                            <a class="nav-links__item-link" href="{{route('NoMe.app')}}">
+                                                <div class="nav-links__item-body">
+                                                     حمل التطبيق
+                                                </div>
+                                            </a>
+                                        </li>
                                         <!-- <li class="nav-links__item  nav-links__item--has-submenu ">
                                             <a class="nav-links__item-link" href="/usage-policy">
                                                 <div class="nav-links__item-body">
